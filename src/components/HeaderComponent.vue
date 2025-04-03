@@ -20,7 +20,7 @@ const changeLocale = async (val: string): Promise<void> => {
     <h1 class="header__title">ZUZANA VOLFOVÁ</h1>
     <menu class="header__menu">
       <HamburgerMenu class="header__menu__hamburger" @open-menu="isMenuOpen = !isMenuOpen" />
-      <div v-if="isMenuOpen">
+      <div v-if="isMenuOpen" class="header__menu__hamburger__container">
         <div>{{ $t('coding-h') }}</div>
         <div>{{ $t('ux-design-h') }}</div>
         <div>{{ $t('graphic-h') }}</div>
@@ -58,6 +58,32 @@ const changeLocale = async (val: string): Promise<void> => {
     padding: 6px 20px;
     &__hamburger {
       justify-self: center;
+      margin: 8px;
+      &__container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: max-content;
+        text-align: center;
+        padding: 8px 0;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        z-index: 1000;
+        box-shadow: 1px 2px 6px rgba(124, 124, 124, 0.5);
+
+        div {
+          cursor: pointer;
+          padding: 8px 12px;
+          width: 100%;
+
+          &:hover {
+            background-color: var(--light-background) 0;
+          }
+        }
+      }
     }
   }
   &__locale {
