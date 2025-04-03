@@ -1,12 +1,20 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import HamburgerMenu from './../widgets/HamburgerMenu.vue'
-
 import i18next from 'i18next'
+import { useStore } from './../stores/main'
 
-const isMenuOpen = ref(false)
+const store = useStore()
+const isMenuOpen = ref<boolean>(false)
+const isLocaleMenuOpen = ref<boolean>(false)
+const locale = computed<string>(() => store.currentLocale)
+
+const changeLocale = async (val: string): Promise<void> => {
+  await i18next.changeLanguage(val)
+  store.currentLocale = val
+  isLocaleMenuOpen.value = false
+}
 </script>
-
 <template>
   <div class="header">
     <h1 class="header__title">ZUZANA VOLFOVÁ</h1>
@@ -19,7 +27,25 @@ const isMenuOpen = ref(false)
         <div>{{ $t('curriculum-h') }}</div>
       </div>
     </menu>
-    <div class="header__locale">{{ i18next.language }}</div>
+    <div
+      class="header__locale"
+      @click="isLocaleMenuOpen = !isLocaleMenuOpen"
+      :class="{ 'header__locale--active': isLocaleMenuOpen }"
+    >
+      {{ $t(locale) }}
+    </div>
+    <div v-if="isLocaleMenuOpen" class="header__locale__dropdown">
+      <div class="header__locale__dropdown__arrow"></div>
+      <div
+        v-for="(item, index) in store.availableLocale"
+        :key="index"
+        class="header__locale__dropdown__item"
+        @click="changeLocale(item.title)"
+      >
+        <img class="header__locale__dropdown__image" :src="item.image" :alt="item.title" />
+        <span class="header__locale__dropdown__title">{{ $t(item.title) }}</span>
+      </div>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -38,7 +64,8 @@ const isMenuOpen = ref(false)
     position: absolute;
     right: 40px;
     top: 62px;
-    width: 32px;
+    width: auto;
+    min-width: 32px;
     height: 32px;
     text-transform: uppercase;
     cursor: pointer;
@@ -49,6 +76,52 @@ const isMenuOpen = ref(false)
     color: var(--text-dark-grey);
     border: 1px solid var(--text-medium-grey);
     box-shadow: 1px 2px 6px rgba(124, 124, 124, 0.5);
+    padding: 0 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    &--active {
+      background-color: var(--light-background);
+    }
+    &:hover {
+      background-color: var(--light-background);
+    }
+    &:active {
+      background-color: var(--light-background);
+    }
+  }
+  &__locale__dropdown {
+    position: absolute;
+    right: 20px;
+    top: 104px;
+    width: 100px;
+    height: auto;
+    padding: 8px;
+    border: 1px solid var(--text-medium-grey);
+    box-shadow: 1px 2px 6px rgba(124, 124, 124, 0.5);
+    background-color: #fff;
+    cursor: pointer;
+    z-index: 1000;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      width: 30px;
+      height: 16px;
+      background: #ffffff;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+    &__item {
+      display: flex;
+      align-items: center;
+      padding: 6px 0;
+    }
+    &__image {
+      width: 44px;
+    }
+    &__title {
+      text-transform: uppercase;
+    }
   }
 }
 </style>
