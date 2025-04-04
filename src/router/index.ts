@@ -9,6 +9,26 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
     },
+    {
+      path: '/codding',
+      name: 'codding',
+      component: () => import('./../views/CoddingView.vue'),
+    },
+    {
+      path: '/graphic',
+      name: 'graphic',
+      component: () => import('./../views/GraphicView.vue'),
+    },
+    {
+      path: '/UX',
+      name: 'UX design',
+      component: () => import('./../views/UXDesignView.vue'),
+    },
+    {
+      path: '/curriculum',
+      name: 'curriculum',
+      component: () => import('./../views/CurriculumView.vue'),
+    },
   ],
 })
 
