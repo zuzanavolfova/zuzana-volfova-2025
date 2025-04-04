@@ -34,7 +34,7 @@ onUnmounted(() => {
     <h1 class="header__title" @click="$router.push('/')">ZUZANA VOLFOVÁ</h1>
     <menu class="header__menu" :class="{ 'header__menu--scrolled': isScrolled }">
       <HamburgerMenu class="header__menu__hamburger" @open-menu="isMenuOpen = !isMenuOpen" />
-      <div v-if="isMenuOpen" class="header__menu__hamburger__container">
+      <div v-if="isMenuOpen" @click="isMenuOpen = false" class="header__menu__hamburger__container">
         <div @click="$router.push('/')">{{ $t('home-h') }}</div>
         <div @click="$router.push('/codding')">{{ $t('coding-h') }}</div>
         <div @click="$router.push('/graphic')">{{ $t('ux-design-h') }}</div>
