@@ -4,6 +4,7 @@ import HeaderComponent from './components/HeaderComponent.vue'
 
 <template>
   <HeaderComponent />
+  <HomeView></HomeView>
 </template>
 
 <style scoped></style>
