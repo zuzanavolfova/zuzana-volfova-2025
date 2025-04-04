@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted, onUnmounted } from 'vue'
 import HamburgerMenu from './../widgets/HamburgerMenu.vue'
 import i18next from 'i18next'
 import { useStore } from './../stores/main'
@@ -14,11 +14,25 @@ const changeLocale = async (val: string): Promise<void> => {
   store.currentLocale = val
   isLocaleMenuOpen.value = false
 }
+
+const isScrolled = ref<boolean>(false)
+
+const handleScroll = (): void => {
+  isScrolled.value = window.scrollY > 50
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 <template>
   <div class="header">
     <h1 class="header__title">ZUZANA VOLFOVÁ</h1>
-    <menu class="header__menu">
+    <menu class="header__menu" :class="{ 'header__menu--scrolled': isScrolled }">
       <HamburgerMenu class="header__menu__hamburger" @open-menu="isMenuOpen = !isMenuOpen" />
       <div v-if="isMenuOpen" class="header__menu__hamburger__container">
         <div>{{ $t('coding-h') }}</div>
@@ -30,7 +44,10 @@ const changeLocale = async (val: string): Promise<void> => {
     <div
       class="header__locale"
       @click="isLocaleMenuOpen = !isLocaleMenuOpen"
-      :class="{ 'header__locale--active': isLocaleMenuOpen }"
+      :class="{
+        'header__locale--active': isLocaleMenuOpen,
+        'header__locale--scrolled': isScrolled,
+      }"
     >
       {{ $t(locale) }}
     </div>
@@ -50,12 +67,24 @@ const changeLocale = async (val: string): Promise<void> => {
 </template>
 <style lang="scss" scoped>
 .header {
+  min-height: 100px;
+  overflow: visible;
   &__title {
     text-align: center;
     padding: 8px;
   }
   &__menu {
-    padding: 6px 20px;
+    position: fixed;
+    width: 100%;
+    padding: 6px 8px;
+    background: white;
+    z-index: 1000;
+    &--scrolled {
+      top: 0;
+      left: 0;
+      background: rgba(255, 255, 255, 0.546);
+      padding: 10px;
+    }
     &__hamburger {
       justify-self: center;
       margin: 8px;
@@ -87,9 +116,9 @@ const changeLocale = async (val: string): Promise<void> => {
     }
   }
   &__locale {
-    position: absolute;
+    position: fixed;
     right: 40px;
-    top: 62px;
+    top: 68px;
     width: auto;
     min-width: 32px;
     height: 32px;
@@ -103,6 +132,7 @@ const changeLocale = async (val: string): Promise<void> => {
     border: 1px solid var(--text-medium-grey);
     box-shadow: 1px 2px 6px rgba(124, 124, 124, 0.5);
     padding: 0 4px;
+    z-index: 1001;
     cursor: pointer;
     transition: background-color 0.3s ease;
     &--active {
@@ -113,6 +143,9 @@ const changeLocale = async (val: string): Promise<void> => {
     }
     &:active {
       background-color: var(--light-background);
+    }
+    &--scrolled {
+      top: 10px;
     }
   }
   &__locale__dropdown {
