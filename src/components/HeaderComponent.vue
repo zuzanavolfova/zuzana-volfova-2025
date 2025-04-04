@@ -31,14 +31,15 @@ onUnmounted(() => {
 </script>
 <template>
   <div class="header">
-    <h1 class="header__title">ZUZANA VOLFOVÁ</h1>
+    <h1 class="header__title" @click="$router.push('/')">ZUZANA VOLFOVÁ</h1>
     <menu class="header__menu" :class="{ 'header__menu--scrolled': isScrolled }">
       <HamburgerMenu class="header__menu__hamburger" @open-menu="isMenuOpen = !isMenuOpen" />
       <div v-if="isMenuOpen" class="header__menu__hamburger__container">
-        <div>{{ $t('coding-h') }}</div>
-        <div>{{ $t('ux-design-h') }}</div>
-        <div>{{ $t('graphic-h') }}</div>
-        <div>{{ $t('curriculum-h') }}</div>
+        <div @click="$router.push('/')">{{ $t('home-h') }}</div>
+        <div @click="$router.push('/codding')">{{ $t('coding-h') }}</div>
+        <div @click="$router.push('/graphic')">{{ $t('ux-design-h') }}</div>
+        <div @click="$router.push('/UX')">{{ $t('graphic-h') }}</div>
+        <div @click="$router.push('/curriculum')">{{ $t('curriculum-h') }}</div>
       </div>
     </menu>
     <div
@@ -72,6 +73,7 @@ onUnmounted(() => {
   &__title {
     text-align: center;
     padding: 8px;
+    cursor: pointer;
   }
   &__menu {
     position: fixed;
