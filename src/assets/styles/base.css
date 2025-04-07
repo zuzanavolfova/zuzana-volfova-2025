@@ -6,6 +6,22 @@
   font-weight: normal;
 }
 
+:root {
+  --side-bar-width: 160px;
+}
+
+@media (min-width: 650px) {
+  :root {
+    --side-bar-width: 200px;
+  }
+}
+
+@media (min-width: 900px) {
+  :root {
+    --side-bar-width: 220px;
+  }
+}
+
 body {
   min-height: 100vh;
   line-height: 1.6;
