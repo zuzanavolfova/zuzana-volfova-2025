@@ -7,7 +7,7 @@
 }
 
 :root {
-  --side-bar-width: 160px;
+  --side-bar-width: 140px;
 }
 
 @media (min-width: 650px) {
