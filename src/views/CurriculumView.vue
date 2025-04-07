@@ -1,5 +1,25 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import SideBar from './../components/SideBar.vue'
+const isDetailOpen = ref<boolean[]>([
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+  false,
+])
+const isOpen = (position: number): void => {
+  for (let i = 0; i < isDetailOpen.value.length; i++) {
+    if (i === position) {
+      isDetailOpen.value[position] = !isDetailOpen.value[position]
+    } else isDetailOpen.value[i] = false
+  }
+}
 </script>
 
 <template>
@@ -45,18 +65,109 @@ import SideBar from './../components/SideBar.vue'
     </div>
     <div class="cv__description">
       <div class="cv__description__education">
-        <span class="cv__description__title">TypeScript</span>
-        <span class="cv__description__title">Vue.js - The Complete Guide</span>
-        <span class="cv__description__title">Coding</span>
-        <span class="cv__description__title">JavaScript1</span>
-        <span class="cv__description__title">UX design Professional Certificate</span>
-        <span class="cv__description__title">Culture Management</span>
+        <div class="cv__description__item">
+          <span @click="isOpen(0)" class="cv__description__title">TypeScript</span
+          ><transition name="fade">
+            <div v-if="isDetailOpen[0]" class="cv__description__detail">
+              <span class="cv__description__subtitle">Udemy (Maximilian Schwarzmüller course)</span>
+            </div>
+          </transition>
+        </div>
+        <div class="cv__description__item">
+          <span @click="isOpen(1)" class="cv__description__title">Vue.js - The Complete Guide</span
+          ><transition name="fade">
+            <div v-if="isDetailOpen[1]" class="cv__description__detail">
+              <span class="cv__description__subtitle">Udemy (Maximilian Schwarzmüller course)</span>
+            </div>
+          </transition>
+        </div>
+        <div class="cv__description__item">
+          <span @click="isOpen(2)" class="cv__description__title">Coding</span>
+          <transition name="fade">
+            <div v-if="isDetailOpen[2]" class="cv__description__detail">
+              <span class="cv__description__subtitle">Czechitas - semester course</span>
+              <div>HTML, CSS, BEM, SASS, 11ty figma, GIMP, GitHub, Visual Studio Code.</div>
+            </div>
+          </transition>
+        </div>
+        <div class="cv__description__item">
+          <span @click="isOpen(3)" class="cv__description__title">JavaScript1</span
+          ><transition name="fade">
+            <div v-if="isDetailOpen[3]" class="cv__description__detail">
+              <span class="cv__description__subtitle">Czechitas - semester course</span>
+              <div>JavaScript, GitHub, Visual Studio Code.</div>
+            </div>
+          </transition>
+        </div>
+        <div class="cv__description__item">
+          <span @click="isOpen(4)" class="cv__description__title"
+            >UX design Professional Certificate</span
+          ><transition name="fade">
+            <div v-if="isDetailOpen[4]" class="cv__description__detail">
+              <span class="cv__description__subtitle">Czechitas, Google - semester course</span>
+              <div>Figma, Adobe XD, Jamboard, Miro.</div>
+            </div>
+          </transition>
+        </div>
+        <div class="cv__description__item">
+          <span @click="isOpen(5)" class="cv__description__title">Culture Management</span
+          ><transition name="fade">
+            <div v-if="isDetailOpen[5]" class="cv__description__detail">
+              <span class="cv__description__subtitle">Masarykova univerzita Brno</span>
+              <div>Master’s degree programme.</div>
+            </div>
+          </transition>
+        </div>
       </div>
       <div class="cv__description__work-experience">
-        <span class="cv__description__title">Vue.js frontend developer</span>
-        <span class="cv__description__title">Back office manager</span>
-        <span class="cv__description__title">Manager</span>
-        <span class="cv__description__title">Coordinator of Language Courses</span>
+        <div class="cv__description__item">
+          <span @click="isOpen(6)" class="cv__description__title">Vue.js frontend developer</span
+          ><transition name="fade">
+            <div v-if="isDetailOpen[6]" class="cv__description__detail">
+              <span class="cv__description__subtitle">Rieter CZ</span>
+              <div>
+                Development of HMI Framework for industry machines. Cooperation with UX designers,
+                technical evaluation of UX designs and implementation in the framework. Cooperation
+                with frontend and backend developers in international team. UX design, Vue.js, HTML,
+                CSS, scss, Tailwind, JavaScript, Python Visual Studio Code, Git, SourceTree, Bash,
+                Postman
+              </div>
+            </div>
+          </transition>
+        </div>
+        <div class="cv__description__item">
+          <span @click="isOpen(7)" class="cv__description__title">Back office manager</span
+          ><transition name="fade">
+            <div v-if="isDetailOpen[7]" class="cv__description__detail">
+              <span class="cv__description__subtitle">KROUPAHELÁN advokátní kancelář, s.r.o.</span>
+              <div>
+                Cooperation in the development of websites www.kontrolasmluv.cz and
+                www.kroupahelan.cz. Design and implementation of effective process of recruitment.
+                Management and optimization of DMS and CRM.
+              </div>
+            </div>
+          </transition>
+        </div>
+        <div class="cv__description__item">
+          <span @click="isOpen(8)" class="cv__description__title">Manager</span
+          ><transition name="fade">
+            <div v-if="isDetailOpen[8]" class="cv__description__detail">
+              <span class="cv__description__subtitle">HELLO Language School</span>
+              <div>
+                Team management, organization of Cambridge English Exams. Search for new business
+                opportunities.
+              </div>
+            </div>
+          </transition>
+        </div>
+        <div class="cv__description__item">
+          <span @click="isOpen(9)" class="cv__description__title"
+            >Coordinator of Language Courses</span
+          >
+          <div v-if="isDetailOpen[9]" class="cv__description__detail">
+            <span class="cv__description__subtitle">Jazyková škola HELLO</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -96,6 +207,20 @@ import SideBar from './../components/SideBar.vue'
       display: grid;
       grid-template-rows: repeat(4, 24px);
     }
+    &__item {
+      position: relative;
+      height: 24px;
+    }
+    &__detail {
+      position: absolute;
+      top: 100%;
+      left: -20px;
+      z-index: 100;
+      padding: 6px 8px;
+      border: 1px solid var(--text-medium-grey);
+      box-shadow: 1px 2px 6px rgba(124, 124, 124, 0.5);
+      background-color: white;
+    }
     &__title {
       color: var(--primary-color);
       font-weight: 600;
@@ -104,9 +229,21 @@ import SideBar from './../components/SideBar.vue'
       overflow: hidden;
       text-overflow: ellipsis;
     }
+    &__subtitle {
+      font-weight: 600;
+      color: var(--text-medium-grey);
+    }
   }
 }
 .year-gap {
   height: calc(2 * 24px);
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
