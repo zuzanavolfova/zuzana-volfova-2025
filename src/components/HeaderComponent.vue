@@ -101,7 +101,7 @@ onUnmounted(() => {
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: white;
+        background-color: var(--extra-light-background);
         z-index: 1000;
         box-shadow: 1px 2px 6px rgba(124, 124, 124, 0.5);
 
@@ -111,7 +111,7 @@ onUnmounted(() => {
           width: 100%;
 
           &:hover {
-            background-color: var(--light-background) 0;
+            background-color: white;
           }
         }
       }
@@ -153,29 +153,32 @@ onUnmounted(() => {
   &__locale__dropdown {
     position: absolute;
     right: 20px;
-    top: 104px;
+    top: 110px;
     width: 100px;
     height: auto;
-    padding: 8px;
+    padding: 6px 0;
     border: 1px solid var(--text-medium-grey);
     box-shadow: 1px 2px 6px rgba(124, 124, 124, 0.5);
-    background-color: #fff;
+    background-color: var(--extra-light-background);
     cursor: pointer;
     z-index: 1000;
     &::before {
       content: '';
       position: absolute;
-      top: -10px;
+      top: -9px;
       right: 20px;
       width: 30px;
-      height: 16px;
-      background: #ffffff;
+      height: 14px;
+      background: var(--extra-light-background);
       clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     }
     &__item {
       display: flex;
       align-items: center;
       padding: 6px 0;
+      &:hover {
+        background-color: white;
+      }
     }
     &__image {
       width: 44px;
