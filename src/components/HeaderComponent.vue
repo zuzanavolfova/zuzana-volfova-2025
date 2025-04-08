@@ -44,10 +44,10 @@ onUnmounted(() => {
       <div class="header__menu__container">
         <div class="header__menu__item" @click="$router.push('/')">{{ $t('home-h') }}</div>
         <div class="header__menu__item" @click="$router.push('/codding')">{{ $t('coding-h') }}</div>
+        <div class="header__menu__item" @click="$router.push('/UX')">{{ $t('ux-design-h') }}</div>
         <div class="header__menu__item" @click="$router.push('/graphic')">
-          {{ $t('ux-design-h') }}
+          {{ $t('graphic-h') }}
         </div>
-        <div class="header__menu__item" @click="$router.push('/UX')">{{ $t('graphic-h') }}</div>
         <div class="header__menu__item" @click="$router.push('/curriculum')">
           {{ $t('curriculum-h') }}
         </div>
