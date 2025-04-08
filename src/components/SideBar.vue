@@ -29,6 +29,7 @@ defineProps({
   &__title {
     font-size: 18px;
     padding: 6px 8px;
+    text-align: end;
   }
 
   &__content {
