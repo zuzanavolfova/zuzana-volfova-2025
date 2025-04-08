@@ -212,6 +212,8 @@ onBeforeUnmount(() => {
 <style lang="scss" scoped>
 .cv {
   display: flex;
+  justify-content: center;
+  width: 100%;
   &__side-bar {
     margin-top: 16px;
     &__year {
@@ -270,6 +272,11 @@ onBeforeUnmount(() => {
     &__subtitle {
       font-weight: 600;
       color: var(--text-medium-grey);
+    }
+  }
+  @media (min-width: 650px) {
+    &__description {
+      gap: calc(86px - 28px);
     }
   }
 }
