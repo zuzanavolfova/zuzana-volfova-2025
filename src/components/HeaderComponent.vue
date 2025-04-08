@@ -37,8 +37,8 @@ onUnmounted(() => {
       <div v-if="isMenuOpen" @click="isMenuOpen = false" class="header__menu__hamburger__container">
         <div @click="$router.push('/')">{{ $t('home-h') }}</div>
         <div @click="$router.push('/codding')">{{ $t('coding-h') }}</div>
-        <div @click="$router.push('/graphic')">{{ $t('ux-design-h') }}</div>
-        <div @click="$router.push('/UX')">{{ $t('graphic-h') }}</div>
+        <div @click="$router.push('/UX')">{{ $t('ux-design-h') }}</div>
+        <div @click="$router.push('/graphic')">{{ $t('graphic-h') }}</div>
         <div @click="$router.push('/curriculum')">{{ $t('curriculum-h') }}</div>
       </div>
       <div class="header__menu__container">
