@@ -1,0 +1,1 @@
+import{_ as a,c,a as s,t as o,o as r}from"./index-DtcuJGBk.js";const i={},n={class:"graphic"},_={class:"graphic__title"};function l(t,e){return r(),c("div",n,[s("h2",_,o(t.$t("graphic-h")),1),e[0]||(e[0]=s("div",{class:"graphic__content"},null,-1))])}const d=a(i,[["render",l],["__scopeId","data-v-83821ee3"]]);export{d as default};

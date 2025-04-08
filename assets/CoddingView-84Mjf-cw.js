@@ -1,0 +1,1 @@
+import{_ as e,c as n,a as s,t as c,o as d}from"./index-DtcuJGBk.js";const a={},i={class:"codding"},_={class:"codding__title"};function r(t,o){return d(),n("div",i,[s("h2",_,c(t.$t("coding-h")),1),o[0]||(o[0]=s("div",{class:"codding__content"},null,-1))])}const f=e(a,[["render",r],["__scopeId","data-v-eb1ada26"]]);export{f as default};

@@ -1,0 +1,1 @@
+import{_ as c,c as o,a as e,t as n,o as a}from"./index-DtcuJGBk.js";const _={},i={class:"ux"},r={class:"ux__title"};function d(t,s){return a(),o("div",i,[e("h2",r,n(t.$t("ux-design-h")),1),s[0]||(s[0]=e("div",{class:"ux__content"},null,-1))])}const u=c(_,[["render",d],["__scopeId","data-v-c70c6b3c"]]);export{u as default};
