@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import SideBar from './../components/SideBar.vue'
+
 const isDetailOpen = ref<boolean[]>([
   false,
   false,
@@ -13,6 +14,7 @@ const isDetailOpen = ref<boolean[]>([
   false,
   false,
 ])
+
 const isOpen = (position: number): void => {
   for (let i = 0; i < isDetailOpen.value.length; i++) {
     if (i === position) {
@@ -20,6 +22,37 @@ const isOpen = (position: number): void => {
     } else isDetailOpen.value[i] = false
   }
 }
+
+const closeDetail = (): void => {
+  isDetailOpen.value = isDetailOpen.value.map(() => false)
+}
+
+const handleClickOutside = (event: MouseEvent): void => {
+  // If no details are open, nothing to do
+  if (!isDetailOpen.value.some((open) => open)) return
+
+  // Check if click was on detail title
+  const clickedElement = event.target as HTMLElement
+  if (clickedElement.classList.contains('cv__description__title')) return
+
+  // Check if click was inside one of the open details
+  const isClickInsideDetail = Array.from(
+    document.querySelectorAll('.cv__description__detail'),
+  ).some((detail) => detail.contains(event.target as Node))
+
+  // If click was not inside any detail, close all details
+  if (!isClickInsideDetail) {
+    closeDetail()
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', handleClickOutside)
+})
 </script>
 
 <template>
@@ -66,16 +99,16 @@ const isOpen = (position: number): void => {
     <div class="cv__description">
       <div class="cv__description__education">
         <div class="cv__description__item">
-          <span @click="isOpen(0)" class="cv__description__title">TypeScript</span
-          ><transition name="fade">
+          <span @click="isOpen(0)" class="cv__description__title">TypeScript</span>
+          <transition name="fade">
             <div v-if="isDetailOpen[0]" class="cv__description__detail">
               <span class="cv__description__subtitle">Udemy (Maximilian Schwarzmüller course)</span>
             </div>
           </transition>
         </div>
         <div class="cv__description__item">
-          <span @click="isOpen(1)" class="cv__description__title">Vue.js - The Complete Guide</span
-          ><transition name="fade">
+          <span @click="isOpen(1)" class="cv__description__title">Vue.js - The Complete Guide</span>
+          <transition name="fade">
             <div v-if="isDetailOpen[1]" class="cv__description__detail">
               <span class="cv__description__subtitle">Udemy (Maximilian Schwarzmüller course)</span>
             </div>
@@ -91,8 +124,8 @@ const isOpen = (position: number): void => {
           </transition>
         </div>
         <div class="cv__description__item">
-          <span @click="isOpen(3)" class="cv__description__title">JavaScript1</span
-          ><transition name="fade">
+          <span @click="isOpen(3)" class="cv__description__title">JavaScript1</span>
+          <transition name="fade">
             <div v-if="isDetailOpen[3]" class="cv__description__detail">
               <span class="cv__description__subtitle">Czechitas - semester course</span>
               <div>JavaScript, GitHub, Visual Studio Code.</div>
@@ -102,7 +135,8 @@ const isOpen = (position: number): void => {
         <div class="cv__description__item">
           <span @click="isOpen(4)" class="cv__description__title"
             >UX design Professional Certificate</span
-          ><transition name="fade">
+          >
+          <transition name="fade">
             <div v-if="isDetailOpen[4]" class="cv__description__detail">
               <span class="cv__description__subtitle">Czechitas, Google - semester course</span>
               <div>Figma, Adobe XD, Jamboard, Miro.</div>
@@ -110,19 +144,19 @@ const isOpen = (position: number): void => {
           </transition>
         </div>
         <div class="cv__description__item">
-          <span @click="isOpen(5)" class="cv__description__title">Culture Management</span
-          ><transition name="fade">
+          <span @click="isOpen(5)" class="cv__description__title">Culture Management</span>
+          <transition name="fade">
             <div v-if="isDetailOpen[5]" class="cv__description__detail">
               <span class="cv__description__subtitle">Masarykova univerzita Brno</span>
-              <div>Master’s degree programme.</div>
+              <div>Master's degree programme.</div>
             </div>
           </transition>
         </div>
       </div>
       <div class="cv__description__work-experience">
         <div class="cv__description__item">
-          <span @click="isOpen(6)" class="cv__description__title">Vue.js frontend developer</span
-          ><transition name="fade">
+          <span @click="isOpen(6)" class="cv__description__title">Vue.js frontend developer</span>
+          <transition name="fade">
             <div v-if="isDetailOpen[6]" class="cv__description__detail">
               <span class="cv__description__subtitle">Rieter CZ</span>
               <div>
@@ -136,8 +170,8 @@ const isOpen = (position: number): void => {
           </transition>
         </div>
         <div class="cv__description__item">
-          <span @click="isOpen(7)" class="cv__description__title">Back office manager</span
-          ><transition name="fade">
+          <span @click="isOpen(7)" class="cv__description__title">Back office manager</span>
+          <transition name="fade">
             <div v-if="isDetailOpen[7]" class="cv__description__detail">
               <span class="cv__description__subtitle">KROUPAHELÁN advokátní kancelář, s.r.o.</span>
               <div>
@@ -149,8 +183,8 @@ const isOpen = (position: number): void => {
           </transition>
         </div>
         <div class="cv__description__item">
-          <span @click="isOpen(8)" class="cv__description__title">Manager</span
-          ><transition name="fade">
+          <span @click="isOpen(8)" class="cv__description__title">Manager</span>
+          <transition name="fade">
             <div v-if="isDetailOpen[8]" class="cv__description__detail">
               <span class="cv__description__subtitle">HELLO Language School</span>
               <div>
@@ -164,14 +198,17 @@ const isOpen = (position: number): void => {
           <span @click="isOpen(9)" class="cv__description__title"
             >Coordinator of Language Courses</span
           >
-          <div v-if="isDetailOpen[9]" class="cv__description__detail">
-            <span class="cv__description__subtitle">Jazyková škola HELLO</span>
-          </div>
+          <transition name="fade">
+            <div v-if="isDetailOpen[9]" class="cv__description__detail">
+              <span class="cv__description__subtitle">Jazyková škola HELLO</span>
+            </div>
+          </transition>
         </div>
       </div>
     </div>
   </div>
 </template>
+
 <style lang="scss" scoped>
 .cv {
   display: flex;
@@ -228,6 +265,7 @@ const isOpen = (position: number): void => {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      cursor: pointer;
     }
     &__subtitle {
       font-weight: 600;
@@ -242,7 +280,7 @@ const isOpen = (position: number): void => {
 .fade-leave-active {
   transition: opacity 0.3s ease;
 }
-.fade-enter,
+.fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }
