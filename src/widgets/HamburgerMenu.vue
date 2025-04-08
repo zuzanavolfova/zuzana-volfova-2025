@@ -18,6 +18,9 @@
   width: 30px;
   height: 20px;
   cursor: pointer;
+  @media (min-width: 650px) {
+    display: none;
+  }
 }
 
 .hamburger {

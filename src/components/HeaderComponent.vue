@@ -41,6 +41,17 @@ onUnmounted(() => {
         <div @click="$router.push('/UX')">{{ $t('graphic-h') }}</div>
         <div @click="$router.push('/curriculum')">{{ $t('curriculum-h') }}</div>
       </div>
+      <div class="header__menu__container">
+        <div class="header__menu__item" @click="$router.push('/')">{{ $t('home-h') }}</div>
+        <div class="header__menu__item" @click="$router.push('/codding')">{{ $t('coding-h') }}</div>
+        <div class="header__menu__item" @click="$router.push('/graphic')">
+          {{ $t('ux-design-h') }}
+        </div>
+        <div class="header__menu__item" @click="$router.push('/UX')">{{ $t('graphic-h') }}</div>
+        <div class="header__menu__item" @click="$router.push('/curriculum')">
+          {{ $t('curriculum-h') }}
+        </div>
+      </div>
     </menu>
     <div
       class="header__locale"
@@ -90,6 +101,7 @@ onUnmounted(() => {
     &__hamburger {
       justify-self: center;
       margin: 8px;
+
       &__container {
         position: absolute;
         left: 50%;
@@ -116,6 +128,24 @@ onUnmounted(() => {
         }
       }
     }
+    &__container {
+      display: none;
+      @media (min-width: 650px) {
+        display: flex;
+        justify-content: space-between;
+        color: var(--text-dark-grey);
+        padding: 8px 80px;
+        max-width: 1250px;
+      }
+    }
+    &__item {
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.2);
+        // border-bottom: 2px dotted var(--primary-color);
+        transition: width 0.3s ease;
+      }
+    }
   }
   &__locale {
     position: fixed;
@@ -137,6 +167,12 @@ onUnmounted(() => {
     z-index: 1001;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    @media (min-width: 650px) {
+      top: 10px;
+      right: 10px;
+      width: 32px;
+      margin: 8px;
+    }
     &--active {
       background-color: var(--light-background);
     }
@@ -154,6 +190,10 @@ onUnmounted(() => {
     position: absolute;
     right: 20px;
     top: 110px;
+    @media (min-width: 650px) {
+      right: 10px;
+      top: 60px;
+    }
     width: 100px;
     height: auto;
     padding: 6px 0;
@@ -171,6 +211,9 @@ onUnmounted(() => {
       height: 14px;
       background: var(--extra-light-background);
       clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      @media (min-width: 650px) {
+        right: 8px;
+      }
     }
     &__item {
       display: flex;
