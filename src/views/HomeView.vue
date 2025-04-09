@@ -10,5 +10,9 @@ import CarouselComponent from './../components/CarouselComponent.vue'
 <style lang="scss" scoped>
 .home {
   margin-top: 20px;
+  padding: 10px;
+  @media (min-width: 650px) {
+    padding: 20px;
+  }
 }
 </style>
