@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 *,
 *::before,
 *::after {
@@ -8,6 +10,9 @@
 
 :root {
   --side-bar-width: 140px;
+  max-width: 1250px;
+  margin: 0 auto;
+  background-color: #8327330b;
 }
 
 @media (min-width: 650px) {
