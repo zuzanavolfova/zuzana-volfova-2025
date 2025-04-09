@@ -89,6 +89,7 @@ onUnmounted(() => {
   &__menu {
     position: fixed;
     width: 100%;
+    max-width: 1250px;
     padding: 6px 8px;
     background: white;
     z-index: 1000;
