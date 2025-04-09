@@ -1,0 +1,1 @@
+import{_ as e,c,a as s,t as n,o as a}from"./index-04xKWFwq.js";const d={},i={class:"codding"},_={class:"codding__title"};function r(t,o){return a(),c("div",i,[s("h2",_,n(t.$t("coding-h")),1),o[0]||(o[0]=s("div",{class:"codding__content"},null,-1))])}const f=e(d,[["render",r],["__scopeId","data-v-4fa50a3c"]]);export{f as default};
