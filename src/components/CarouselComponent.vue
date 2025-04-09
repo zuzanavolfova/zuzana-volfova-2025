@@ -30,26 +30,45 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="./../assets/images/volfova-zuzana-foto.jpg" class="d-block w-30" alt="..." />
-
+        <img
+          src="./../assets/images/volfova-zuzana-foto.jpg"
+          class="d-block w-30"
+          alt="click to navigate to curriculum"
+          @click="$router.push('/curriculum')"
+        />
         <div class="carousel-caption d-none d-md-block">
           <h5>{{ $t('curriculum-h') }}</h5>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="./../assets/images/programovani.png" class="d-block w-100" alt="..." />
+        <img
+          src="./../assets/images/programovani.png"
+          class="d-block w-100"
+          alt="click to navigate to codding"
+          @click="$router.push('/codding')"
+        />
         <div class="carousel-caption d-none d-md-block">
           <h5>{{ $t('coding-h') }}</h5>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="./../assets/images/ux-design.png" class="d-block w-100" alt="..." />
+        <img
+          src="./../assets/images/ux-design.png"
+          class="d-block w-100"
+          alt="click to navigate to UX design"
+          @click="$router.push('/UX')"
+        />
         <div class="carousel-caption d-none d-md-block">
           <h5>{{ $t('ux-design-h') }}</h5>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="./../assets/images/poukazka.jpg" class="d-block w-100" alt="..." />
+        <img
+          src="./../assets/images/poukazka.jpg"
+          class="d-block w-100"
+          alt="click to navigate to graphic"
+          @click="$router.push('/graphic')"
+        />
         <div class="carousel-caption d-none d-md-block">
           <h5>{{ $t('graphic-h') }}</h5>
         </div>
@@ -81,7 +100,29 @@
   padding: 1rem;
   border-radius: 0.5rem;
 }
+.carousel {
+  @media (min-width: 650px) {
+    height: 360px;
+    margin: auto;
+  }
+}
+.carousel-item h5 {
+  color: white;
+}
 .carousel-item > img {
-  //TODO edit images
+  height: 160px;
+  width: 100%;
+  object-fit: contain;
+  margin: auto;
+  @media (min-width: 650px) {
+    height: 360px;
+  }
+}
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23808080' stroke='%23808080' stroke-width='0.2' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0.5l3.5 3.5-3.5 3.5-1-1L4.25 4l-2.5-2.5L2.75 0.5z'/%3e%3c/svg%3e");
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23808080' stroke='%23808080' stroke-width='0.2' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0.5l-3.5 3.5 3.5 3.5 1-1L3.75 4l2.5-2.5L5.25 0.5z'/%3e%3c/svg%3e");
 }
 </style>
