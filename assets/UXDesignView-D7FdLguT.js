@@ -1,0 +1,1 @@
+import{b as o,c as a,a as e,t as n,o as c}from"./index-B1AvMOTR.js";const _={},d={class:"ux"},i={class:"ux__title"};function r(t,s){return c(),a("div",d,[e("h2",i,n(t.$t("ux-design-h")),1),s[0]||(s[0]=e("div",{class:"ux__content"},null,-1))])}const u=o(_,[["render",r],["__scopeId","data-v-417d0d8a"]]);export{u as default};
