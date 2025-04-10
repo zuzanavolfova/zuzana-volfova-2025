@@ -44,8 +44,8 @@
         <img
           src="./../assets/images/programovani.png"
           class="d-block w-100"
-          alt="click to navigate to codding"
-          @click="$router.push('/codding')"
+          alt="click to navigate to coding"
+          @click="$router.push('/coding')"
         />
         <div class="carousel-caption d-none d-md-block">
           <h5>{{ $t('coding-h') }}</h5>

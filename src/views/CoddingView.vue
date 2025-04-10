@@ -3,10 +3,10 @@ import CardComponent from './../components/CardComponent.vue'
 </script>
 
 <template>
-  <div class="codding">
-    <h2 class="codding__title">{{ $t('coding-h') }}</h2>
-    <div class="codding__content">
-      <div class="codding__content__item">
+  <div class="coding">
+    <h2 class="coding__title">{{ $t('coding-h') }}</h2>
+    <div class="coding__content">
+      <div class="coding__content__item">
         <h3>Vue.js, React</h3>
         <card-component
           card-title="Zuzana Volfova websites"
@@ -25,7 +25,7 @@ import CardComponent from './../components/CardComponent.vue'
   </div>
 </template>
 <style lang="scss" scoped>
-.codding {
+.coding {
   margin: 18px auto;
   &__title {
     text-align: center;
