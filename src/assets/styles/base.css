@@ -10,7 +10,6 @@
 
 :root {
   --side-bar-width: 140px;
-  max-width: 1250px;
   margin: 0 auto;
   background-color: #8327330b;
 }
@@ -24,6 +23,7 @@
 @media (min-width: 900px) {
   :root {
     --side-bar-width: 220px;
+    max-width: 1250px;
   }
 }
 
@@ -57,3 +57,7 @@ h1 {
 h2 {
   color: var(--primary-color);
 }
+h4 {
+  margin: auto;
+}
+
