@@ -43,6 +43,9 @@ watchEffect(async () => {
     imageUrl.value = ''
   }
 })
+const goToLink = () => {
+  window.open(props.buttonRedirect || 'https://github.com/zuzanavolfova', '_blank')
+}
 </script>
 <template>
   <div class="card__container">
@@ -54,7 +57,7 @@ watchEffect(async () => {
 
       <p class="card__item__perex">{{ cardDescription }}</p>
       <p>
-        <button class="card__item__button">{{ buttonTitle }}</button>
+        <button class="card__item__button" @click="goToLink()">{{ buttonTitle }}</button>
       </p>
     </div>
   </div>
