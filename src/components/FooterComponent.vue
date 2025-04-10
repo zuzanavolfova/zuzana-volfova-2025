@@ -3,7 +3,7 @@
     <span class="footer__title"> Zuzana Volfová</span>
     <span> +420 728 881 941</span>
     <a class="footer__link" href="mailto:zuzka.volfova@gmail.com">zuzka.volfova@gmail.com</a>
-    <a class="footer__link" href="www.linkedin.com/in/zuzana-volfová">LinkedIn</a>
+    <a class="footer__link" href="https://www.linkedin.com/in/zuzana-volfová">LinkedIn</a>
   </div>
 </template>
 <style lang="scss" scoped>
