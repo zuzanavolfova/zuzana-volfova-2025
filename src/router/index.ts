@@ -12,7 +12,7 @@ const router = createRouter({
     {
       path: '/coding',
       name: 'coding',
-      component: () => import('./../views/codingView.vue'),
+      component: () => import('./../views/CodingView.vue'),
     },
     {
       path: '/graphic',
