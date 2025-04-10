@@ -37,8 +37,7 @@ watchEffect(async () => {
   }
 
   try {
-    const imageModule = await import(`../assets/images/${props.cardImage}`)
-    imageUrl.value = imageModule.default
+    imageUrl.value = new URL(`../assets/images/${props.cardImage}`, import.meta.url).href
   } catch (error) {
     console.error('Failed to load image:', error)
     imageUrl.value = ''
