@@ -153,13 +153,16 @@ onUnmounted(() => {
       @media (min-width: 650px) {
         display: flex;
         justify-content: space-between;
-        color: var(--text-dark-grey);
+        color: var(--text-medium-grey);
         padding: 8px 80px;
         max-width: 1250px;
       }
     }
     &__item {
       cursor: pointer;
+      font-size: 18px;
+      color: var(--text-medium-grey);
+      font-weight: 600;
       &:hover {
         transform: scale(1.2);
         // border-bottom: 2px dotted var(--primary-color);
