@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import CardComponent from '../components/CardComponent.vue'
-import coddingDataJson from './../assets/data/coding-data.json'
+import dataJson from './../assets/data/coding-data.json'
 
-const coddingData = coddingDataJson
+const vueData = dataJson.vue
+const htmlCssData = dataJson.htmlCss
+const javaScriptData = dataJson.javaScript
 </script>
 
 <template>
@@ -11,7 +13,7 @@ const coddingData = coddingDataJson
     <div class="coding__content">
       <h3>Vue.js, React</h3>
       <div class="coding__content__items">
-        <div class="coding__content__item" v-for="(item, index) in coddingData" :key="index">
+        <div class="coding__content__item" v-for="(item, index) in vueData" :key="index">
           <card-component
             :card-title="item.cardTitle"
             :card-image="item.cardImage"
@@ -21,11 +23,33 @@ const coddingData = coddingDataJson
           />
         </div>
       </div>
-      <div>
+      <div class="coding__content">
         <h3>HTML, CSS</h3>
+        <div class="coding__content__items">
+          <div class="coding__content__item" v-for="(item, index) in htmlCssData" :key="index">
+            <card-component
+              :card-title="item.cardTitle"
+              :card-image="item.cardImage"
+              :card-description-short="item.cardDescriptionShort"
+              :card-description="item.cardDescription"
+              :button-redirect="item.buttonRedirect"
+            />
+          </div>
+        </div>
       </div>
-      <div>
-        <h3>JavaScript</h3>
+      <div class="coding__content">
+        <h3>JavaScript, TypeScript</h3>
+      </div>
+      <div class="coding__content__items">
+        <div class="coding__content__item" v-for="(item, index) in javaScriptData" :key="index">
+          <card-component
+            :card-title="item.cardTitle"
+            :card-image="item.cardImage"
+            :card-description-short="item.cardDescriptionShort"
+            :card-description="item.cardDescription"
+            :button-redirect="item.buttonRedirect"
+          />
+        </div>
       </div>
     </div>
   </div>
