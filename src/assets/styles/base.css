@@ -55,9 +55,8 @@ h1 {
 }
 
 h2 {
-  color: var(--primary-color);
+  color: var(--text-light-grey);
 }
 h4 {
   margin: auto;
 }
-

@@ -1,6 +1,5 @@
 @import './base.css';
 @import './colors.scss';
-@import './mixins.scss';
 
 #app {
   max-width: 1280px;
@@ -8,8 +7,10 @@
   font-weight: normal;
 
   /* Bootstrap customising */
+
   & h3 {
     margin: 18px auto;
+    color: var(--text-dark-grey);
   }
   & h4 {
     --bs-heading-color: var(--text-dark-grey);
