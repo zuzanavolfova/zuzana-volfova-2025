@@ -3,6 +3,7 @@ import { computed, ref, onMounted, onUnmounted } from 'vue'
 import HamburgerMenu from './../widgets/HamburgerMenu.vue'
 import i18next from 'i18next'
 import { useStore } from './../stores/main'
+import { createClickOutsideHandler } from './../stores/actions'
 
 const store = useStore()
 const isMenuOpen = ref<boolean>(false)
@@ -21,12 +22,27 @@ const handleScroll = (): void => {
   isScrolled.value = window.scrollY > 50
 }
 
+const handleClickOutsideMenu = createClickOutsideHandler(
+  ['.header__menu__hamburger__container'],
+  ['hamburger'],
+  isMenuOpen,
+)
+
+const handleClickOutsideLocale = createClickOutsideHandler(
+  ['.header__locale__dropdown'],
+  ['header__locale'],
+  isLocaleMenuOpen,
+)
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+  document.addEventListener('click', handleClickOutsideMenu)
+  document.addEventListener('click', handleClickOutsideLocale)
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  document.removeEventListener('click', handleClickOutsideMenu)
+  document.removeEventListener('click', handleClickOutsideLocale)
 })
 </script>
 <template>
