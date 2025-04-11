@@ -184,7 +184,6 @@ onUnmounted(() => {
     justify-content: center;
     border-radius: 50%;
     color: var(--text-dark-grey);
-    border: 1px solid var(--text-medium-grey);
     box-shadow: 1px 2px 6px rgba(124, 124, 124, 0.5);
     padding: 0 4px;
     z-index: 1001;
@@ -220,7 +219,6 @@ onUnmounted(() => {
     width: 100px;
     height: auto;
     padding: 6px 0;
-    border: 1px solid var(--text-medium-grey);
     box-shadow: 1px 2px 6px rgba(124, 124, 124, 0.5);
     background-color: var(--extra-light-background);
     cursor: pointer;
