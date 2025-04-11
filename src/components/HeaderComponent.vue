@@ -107,14 +107,15 @@ onUnmounted(() => {
     width: 100%;
     @media (min-width: 900px) {
       max-width: 1250px;
+      margin: 0 auto;
     }
     padding: 6px 8px;
     background: white;
     z-index: 1000;
     &--scrolled {
       top: 0;
-      left: 0;
-      background: rgba(255, 255, 255, 0.546);
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.871);
       padding: 10px;
     }
     &__hamburger {
