@@ -19,5 +19,15 @@
   "adobe-text": "Adobe, {{value}}",
   "project-koderka": "závěrečný projekt kurzu Koderka",
   "project-coursera": "studijní projekt kurzu Coursera",
-  "tree-wishes": "Stromek přání"
+  "tree-wishes": "Stromek přání",
+  "coding-course": "Kodérka",
+  "czechitas-semestr-course": "Czechitas - semestrální kurz",
+  "czechitas-goolge-semestr-course": "Czechitas, Google - semestrální kurz",
+  "culture-management": "Management v kultuře",
+  "mgr-study-program": "Magisterský studijní program",
+  "developer": "programátor",
+  "coordinator-language-courses": "Koordinátor jazykových kurzů",
+  "work-descr-hello": "Vedení týmu lektorů, organizace Cambridge English Exams. Hledání nových businesových příležitostí.",
+  "work-descr-KHAK": "Spolupráce na vývoji stránek www.kontrolasmluv.cz and www.kroupahelan.cz. Design a implementace efektriního procesu náboru nových zaměstanaců. Management a optimalizace DMS a CRM.",
+  "work-descr-rieter": " Vývoj HMI frameworku pro průmyslové stroje. Spolupráce s UX designery, technické zhodnocení UX designu a implementace do projektu. Spolupráce s frontend a backend developery v mezinárodním týmu. UX design, Vue.js, HTML, CSS, scss, Tailwind, JavaScript, Python Visual Studio Code, Git, SourceTree, Bash, Postman."
 }

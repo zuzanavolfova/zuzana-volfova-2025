@@ -123,10 +123,14 @@ onBeforeUnmount(() => {
             </transition>
           </div>
           <div class="cv__content__description__item">
-            <span @click="isOpen(2)" class="cv__content__description__title">Coding</span>
+            <span @click="isOpen(2)" class="cv__content__description__title">{{
+              $t('coding-course')
+            }}</span>
             <transition name="fade">
               <div v-if="isDetailOpen[2]" class="cv__content__description__detail">
-                <span class="cv__content__description__subtitle">Czechitas - semester course</span>
+                <span class="cv__content__description__subtitle">{{
+                  $t('czechitas-semestr-course')
+                }}</span>
                 <div>HTML, CSS, BEM, SASS, 11ty figma, GIMP, GitHub, Visual Studio Code.</div>
               </div>
             </transition>
@@ -135,7 +139,9 @@ onBeforeUnmount(() => {
             <span @click="isOpen(3)" class="cv__content__description__title">JavaScript1</span>
             <transition name="fade">
               <div v-if="isDetailOpen[3]" class="cv__content__description__detail">
-                <span class="cv__content__description__subtitle">Czechitas - semester course</span>
+                <span class="cv__content__description__subtitle">{{
+                  $t('czechitas-semestr-course')
+                }}</span>
                 <div>JavaScript, GitHub, Visual Studio Code.</div>
               </div>
             </transition>
@@ -146,21 +152,21 @@ onBeforeUnmount(() => {
             >
             <transition name="fade">
               <div v-if="isDetailOpen[4]" class="cv__content__description__detail">
-                <span class="cv__content__description__subtitle"
-                  >Czechitas, Google - semester course</span
-                >
+                <span class="cv__content__description__subtitle">{{
+                  $t('czechitas-google-semestr-course')
+                }}</span>
                 <div>Figma, Adobe XD, Jamboard, Miro.</div>
               </div>
             </transition>
           </div>
           <div class="cv__content__description__item">
-            <span @click="isOpen(5)" class="cv__content__description__title"
-              >Culture Management</span
-            >
+            <span @click="isOpen(5)" class="cv__content__description__title">{{
+              $t('culture-management')
+            }}</span>
             <transition name="fade">
               <div v-if="isDetailOpen[5]" class="cv__content__description__detail">
                 <span class="cv__content__description__subtitle">Masarykova univerzita Brno</span>
-                <div>Master's degree programme.</div>
+                <div>{{ $t('mgr-study-program') }}</div>
               </div>
             </transition>
           </div>
@@ -168,17 +174,13 @@ onBeforeUnmount(() => {
         <div class="cv__content__description__work-experience">
           <div class="cv__content__description__item">
             <span @click="isOpen(6)" class="cv__content__description__title"
-              >Vue.js frontend developer</span
+              >Vue.js frontend {{ $t('developer') }}</span
             >
             <transition name="fade">
               <div v-if="isDetailOpen[6]" class="cv__content__description__detail">
                 <span class="cv__content__description__subtitle">Rieter CZ</span>
                 <div>
-                  Development of HMI Framework for industry machines. Cooperation with UX designers,
-                  technical evaluation of UX designs and implementation in the framework.
-                  Cooperation with frontend and backend developers in international team. UX design,
-                  Vue.js, HTML, CSS, scss, Tailwind, JavaScript, Python Visual Studio Code, Git,
-                  SourceTree, Bash, Postman
+                  {{ $t('work-descr-rieter') }}
                 </div>
               </div>
             </transition>
@@ -193,9 +195,7 @@ onBeforeUnmount(() => {
                   >KROUPAHELÁN advokátní kancelář, s.r.o.</span
                 >
                 <div>
-                  Cooperation in the development of websites www.kontrolasmluv.cz and
-                  www.kroupahelan.cz. Design and implementation of effective process of recruitment.
-                  Management and optimization of DMS and CRM.
+                  {{ $t('work-descr-KHAK') }}
                 </div>
               </div>
             </transition>
@@ -206,16 +206,15 @@ onBeforeUnmount(() => {
               <div v-if="isDetailOpen[8]" class="cv__content__description__detail">
                 <span class="cv__content__description__subtitle">HELLO Language School</span>
                 <div>
-                  Team management, organization of Cambridge English Exams. Search for new business
-                  opportunities.
+                  {{ $t('work-descr-hello') }}
                 </div>
               </div>
             </transition>
           </div>
           <div class="cv__content__description__item">
-            <span @click="isOpen(9)" class="cv__content__description__title"
-              >Coordinator of Language Courses</span
-            >
+            <span @click="isOpen(9)" class="cv__content__description__title">{{
+              $t('coordinator-language-courses')
+            }}</span>
             <transition name="fade">
               <div v-if="isDetailOpen[9]" class="cv__content__description__detail">
                 <span class="cv__content__description__subtitle">Jazyková škola HELLO</span>
