@@ -40,7 +40,6 @@ const handleClickOutside = (event: MouseEvent): void => {
     document.querySelectorAll('.cv__content__description__detail'),
   ).some((detail) => detail.contains(event.target as Node))
 
-  // If click was not inside any detail, close all details
   if (!isClickInsideDetail) {
     closeDetail()
   }
@@ -285,12 +284,14 @@ onBeforeUnmount(() => {
       &__detail {
         position: absolute;
         top: 100%;
-        left: -20px;
+        left: -50px;
         z-index: 100;
         padding: 6px 8px;
-        border: 1px solid var(--text-medium-grey);
         box-shadow: 1px 2px 6px rgba(124, 124, 124, 0.5);
         background-color: white;
+        @media (min-width: 650px) {
+          padding: 12px 24px;
+        }
       }
       &__title {
         color: var(--primary-color);
@@ -303,7 +304,7 @@ onBeforeUnmount(() => {
       }
       &__subtitle {
         font-weight: 600;
-        color: var(--text-medium-grey);
+        color: var(--text-dark-grey);
       }
     }
   }
