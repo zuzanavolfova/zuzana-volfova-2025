@@ -5,6 +5,7 @@ const props = defineProps({
   cardTitle: {
     type: String,
     required: false,
+    default: '',
   },
   cardImage: {
     type: String,
@@ -17,11 +18,17 @@ const props = defineProps({
   cardDescription: {
     type: String,
     required: false,
+    default: '',
+  },
+  cardDescriptionParams: {
+    type: Object,
+    required: false,
+    default: () => ({}),
   },
   buttonTitle: {
     type: String,
     required: false,
-    default: 'GitHub repository',
+    default: 'gitHub-repo',
   },
   buttonRedirect: {
     type: String,
@@ -50,14 +57,16 @@ const goToLink = () => {
 <template>
   <div class="card__container">
     <div class="card__item">
-      <h4 class="card__item__title">{{ cardTitle }}</h4>
+      <h4 class="card__item__title">{{ $t(cardTitle) }}</h4>
       <p class="card__item__image">
         <img :src="imageUrl" :alt="cardImage" height="80px" />
       </p>
 
-      <p class="card__item__perex">{{ cardDescription }}</p>
+      <p class="card__item__perex">
+        {{ $t(cardDescription, { value: $t(cardDescriptionParams.value) }) }}
+      </p>
       <p>
-        <button class="card__item__button" @click="goToLink()">{{ buttonTitle }}</button>
+        <button class="card__item__button" @click="goToLink()">{{ $t(buttonTitle) }}</button>
       </p>
     </div>
   </div>
