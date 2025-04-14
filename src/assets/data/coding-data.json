@@ -1,32 +1,32 @@
 {
   "vue": [
     {
-      "cardTitle": "Zuzana Volfová prezentace",
+      "cardTitle": "zv-presentation",
       "cardImage": "cv.png",
-      "cardDescriptionShort": "Zuzana Volfová prezentace",
+      "cardDescriptionShort": "zv-presentation",
       "cardDescription": "Vue.js, Pinia, Typescript, Bootstrap, Git, fetch",
       "buttonRedirect": "https://github.com/zuzanavolfova/zuzana-volfova-2025"
     },
     {
-      "cardTitle": "React projekt",
+      "cardTitle": "react-project",
       "cardImage": "react.png",
-      "cardDescriptionShort": "React project",
+      "cardDescriptionShort": "react-project",
       "cardDescription": "React, TypeScript, @mui/x-data-grid, formik",
       "buttonRedirect": "https://github.com/zuzanavolfova/react-project"
     },
     {
-      "cardTitle": "Vue.js s externí knihovnou",
+      "cardTitle": "Vue-extern-lib",
       "cardImage": "vue.png",
-      "cardDescriptionShort": "Vue.js s externí knihovnou",
+      "cardDescriptionShort": "Vue-extern-lib",
       "cardDescription": "Vue.js, Pinia, Typescript, PrimeVue, fetch, GIT",
       "buttonRedirect": "https://github.com/zuzanavolfova/cz-nic"
     }
   ],
   "htmlCss": [
     {
-      "cardTitle": "Tvoření pro motýlky",
+      "cardTitle": "crafting-butterfly",
       "cardImage": "tvoreni.png",
-      "cardDescriptionShort": "Tvoření pro motýlky",
+      "cardDescriptionShort": "crafting-butterfly",
       "cardDescription": "HTML, CSS, BEM, SASS, 11ty, GitHub, figma",
       "buttonRedirect": "https://github.com/zuzanavolfova/Zaverecny-projekt-koderka"
     },
