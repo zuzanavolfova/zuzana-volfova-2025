@@ -6,5 +6,18 @@
   "education-h": "Vzdělání",
   "courses-h": "Kurzy",
   "curriculum-h": "Životopis",
-  "home-h": "Domů"
+  "home-h": "Domů",
+  "gitHub-repo": "GitHub repozitář",
+  "zv-presentation": "Zuzana Volfová prezentace",
+  "react-project": "React projekt",
+  "figma-project": "Figma projekt",
+  "adobe-project": "AdobeXD projekt",
+  "Vue-extern-lib": "Vue.js s externí knihovnou",
+  "crafting-butterfly": "Tvoření pro motýlky",
+  "gallery-project": "Galerie projekt",
+  "figma-text": "Figma, {{value}}",
+  "adobe-text": "Adobe, {{value}}",
+  "project-koderka": "závěrečný projekt kurzu Koderka",
+  "project-coursera": "studijní projekt kurzu Coursera",
+  "tree-wishes": "Stromek přání"
 }

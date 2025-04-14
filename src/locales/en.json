@@ -6,5 +6,18 @@
   "education-h": "Education",
   "courses-h": "Courses",
   "curriculum-h": "Curriculum",
-  "home-h": "Home"
+  "home-h": "Home",
+  "gitHub-repo": "GitHub repository",
+  "figma-project": "Figma project",
+  "adobe-project": "AdobeXD project",
+  "zv-presentation": "Zuzana Volfová presentation",
+  "react-project": "React project",
+  "Vue-extern-lib": "Vue.js with extern library",
+  "crafting-butterfly": "Crafting for Little Butterflies",
+  "gallery-project": "Gallery project",
+  "figma-text": "Figma, {{value}} ",
+  "adobe-text": "Adobe, {{value}}",
+  "project-koderka": "final project of the Koderka course",
+  "project-coursera": "Coursera course study project",
+  "tree-wishes": "Wish tree"
 }
