@@ -59,7 +59,7 @@ const goToLink = () => {
     <div class="card__item">
       <h4 class="card__item__title">{{ $t(cardTitle) }}</h4>
       <p class="card__item__image">
-        <img :src="imageUrl" :alt="cardImage" height="80px" />
+        <img :src="imageUrl" :alt="cardImage" height="80px" loading="lazy" />
       </p>
 
       <p class="card__item__perex">
