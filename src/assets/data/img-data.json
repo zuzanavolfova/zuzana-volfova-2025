@@ -1,0 +1,39 @@
+{
+  "promotional": [
+    {
+      "imageSource": "poukazka.jpg",
+      "imageDescriptionShort": "crafting-butterfly"
+    }
+  ],
+  "vector": [
+    {
+      "imageSource": "children-circle.png",
+      "imageDescriptionShort": "children circle"
+    },
+    {
+      "imageSource": "klaun.png",
+      "imageDescriptionShort": "claun"
+    },
+    {
+      "imageSource": "motyl.png",
+      "imageDescriptionShort": "butterfly"
+    },
+    {
+      "imageSource": "icons-light.png",
+      "imageDescriptionShort": "icons"
+    },
+    {
+      "imageSource": "icons.png",
+      "imageDescriptionShort": "icons"
+    },
+
+    {
+      "imageSource": "motyl.png",
+      "imageDescriptionShort": "butterfly"
+    },
+    {
+      "imageSource": "responzive.png",
+      "imageDescriptionShort": "resposive screen"
+    }
+  ]
+}
