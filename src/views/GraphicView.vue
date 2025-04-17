@@ -2,9 +2,6 @@
 import imageData from './../assets/data/img-data.json'
 const imagePromotionalData = imageData.promotional
 const imageVectorData = imageData.vector
-const getImageUrl = (source: string) => {
-  return new URL(`../assets/images/graphic`, import.meta.url).href + '/' + source
-}
 </script>
 <template>
   <div class="graphic">
@@ -14,27 +11,53 @@ const getImageUrl = (source: string) => {
       <section>
         <h3>{{ $t('promotional-graphics') }}</h3>
         <div class="graphic__content__items">
-          <div v-for="(image, key) in imagePromotionalData" :key="key">
-            <img
-              :src="getImageUrl(image.imageSource)"
-              :alt="image.imageDescriptionShort"
-              height="220px"
-              loading="lazy"
-            />
-          </div>
+          <img
+            src="./../assets/images/graphic/poukazka.jpg"
+            alt="crafting-butterfly"
+            height="220px"
+            loading="lazy"
+          />
         </div>
       </section>
       <section>
         <h3>{{ $t('vector-graphics') }}</h3>
         <div class="graphic__content__items">
-          <div v-for="(image, key) in imageVectorData" :key="key">
-            <img
-              :src="getImageUrl(image.imageSource)"
-              :alt="image.imageDescriptionShort"
-              height="220px"
-              loading="lazy"
-            />
-          </div>
+          <img
+            src="./../assets/images/graphic/children-circle.png"
+            alt="children circle"
+            height="220px"
+            loading="lazy"
+          />
+          <img
+            src="./../assets/images/graphic/klaun.png"
+            alt="claun"
+            height="220px"
+            loading="lazy"
+          />
+          <img
+            src="./../assets/images/graphic/icons-light.png"
+            alt="icons"
+            height="220px"
+            loading="lazy"
+          />
+          <img
+            src="./../assets/images/graphic/icons.png"
+            alt="icons"
+            height="220px"
+            loading="lazy"
+          />
+          <img
+            src="./../assets/images/graphic/motyl.png"
+            alt="butterfly"
+            height="220px"
+            loading="lazy"
+          />
+          <img
+            src="./../assets/images/graphic/responzive.png"
+            alt="resposive screen"
+            height="220px"
+            loading="lazy"
+          />
         </div>
       </section>
     </div>
