@@ -37,11 +37,10 @@ import uxData from './../assets/data/ux-data.json'
     display: flex;
     flex-direction: column;
     text-align: center;
-    &__items {
-      @media (min-width: 650px) {
-        display: flex;
-        flex-wrap: wrap;
-      }
+    @media (min-width: 650px) {
+      flex-direction: row;
+      display: flex;
+      flex-wrap: wrap;
     }
     &__item {
       &:hover {
