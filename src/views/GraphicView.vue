@@ -3,20 +3,23 @@
     <h2 class="graphic__title">{{ $t('graphic-h') }}</h2>
 
     <div class="graphic__content">
-      <span>In progress. Please see old pages:</span>
-      <a
-        href="https://zuzana-volfova.netlify.app/grafika"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Zuzana Volfová – Grafika
-      </a>
+      <section>
+        <h2>{{ $t('promotional-graphics') }}</h2>
+      </section>
+      <section>
+        <h2>{{ $t('vector-graphics') }}</h2>
+      </section>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 .graphic {
   margin: 18px auto;
+  padding: 18px;
+  @media (min-width: 650px) {
+    margin: 24px auto;
+    padding: 24px;
+  }
   &__title {
     text-align: center;
   }

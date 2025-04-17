@@ -57,6 +57,11 @@ const javaScriptData = dataJson.javaScript
 <style lang="scss" scoped>
 .coding {
   margin: 18px auto;
+  padding: 18px;
+  @media (min-width: 650px) {
+    margin: 24px auto;
+    padding: 24px;
+  }
   &__title {
     text-align: center;
   }
