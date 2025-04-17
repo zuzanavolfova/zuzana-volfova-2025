@@ -105,6 +105,8 @@ onUnmounted(() => {
   &__menu {
     position: fixed;
     width: 100%;
+    border-bottom: 1px solid var(--light-background);
+
     @media (min-width: 900px) {
       max-width: 1250px;
       margin: 0 auto;
