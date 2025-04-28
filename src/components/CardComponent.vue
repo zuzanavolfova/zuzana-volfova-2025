@@ -50,7 +50,7 @@ watchEffect(async () => {
     imageUrl.value = ''
   }
 })
-const goToLink = () => {
+const goToLink = (): void => {
   window.open(props.buttonRedirect || 'https://github.com/zuzanavolfova', '_blank')
 }
 </script>
