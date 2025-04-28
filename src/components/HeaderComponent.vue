@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, onMounted, onUnmounted } from 'vue'
+import { computed, ref, onMounted, onUnmounted, nextTick } from 'vue'
 import HamburgerMenu from './../widgets/HamburgerMenu.vue'
 import i18next from 'i18next'
 import { useStore } from './../stores/main'
@@ -20,6 +20,26 @@ const isScrolled = ref<boolean>(false)
 
 const handleScroll = (): void => {
   isScrolled.value = window.scrollY > 50
+}
+
+const countDropdownHeight = (element: HTMLElement): string => {
+  const rect = element.getBoundingClientRect()
+  const viewportHeight = window.innerHeight || document.documentElement.clientHeight
+
+  const heightOut = rect.bottom > viewportHeight
+  return heightOut ? '100px' : 'auto'
+}
+
+const dropdownHeight = ref('auto')
+
+const updateDropdownHeight = () => {
+  const menuDropdownElement = document.querySelector(
+    '.header__menu__hamburger__container',
+  ) as HTMLElement | null
+
+  if (menuDropdownElement) {
+    dropdownHeight.value = countDropdownHeight(menuDropdownElement)
+  }
 }
 
 const handleClickOutsideMenu = createClickOutsideHandler(
@@ -44,12 +64,19 @@ onUnmounted(() => {
   document.removeEventListener('click', handleClickOutsideMenu)
   document.removeEventListener('click', handleClickOutsideLocale)
 })
+
+const handleMenuIsOpen = () => {
+  isMenuOpen.value = !isMenuOpen.value
+  nextTick(() => {
+    updateDropdownHeight()
+  })
+}
 </script>
 <template>
   <div class="header">
     <h1 class="header__title" @click="$router.push('/')">ZUZANA VOLFOVÁ</h1>
     <menu class="header__menu" :class="{ 'header__menu--scrolled': isScrolled }">
-      <HamburgerMenu class="header__menu__hamburger" @open-menu="isMenuOpen = !isMenuOpen" />
+      <HamburgerMenu class="header__menu__hamburger" @open-menu="handleMenuIsOpen()" />
       <div v-if="isMenuOpen" @click="isMenuOpen = false" class="header__menu__hamburger__container">
         <div @click="$router.push('/')">{{ $t('home-h') }}</div>
         <div @click="$router.push('/coding')">{{ $t('coding-h') }}</div>
@@ -138,6 +165,8 @@ onUnmounted(() => {
         background-color: var(--extra-light-background);
         z-index: 1000;
         box-shadow: 1px 2px 6px rgba(124, 124, 124, 0.5);
+        height: v-bind(dropdownHeight);
+        overflow: scroll;
 
         div {
           cursor: pointer;
