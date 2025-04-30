@@ -24,10 +24,11 @@ const handleScroll = (): void => {
 
 const countDropdownHeight = (element: HTMLElement): string => {
   const rect = element.getBoundingClientRect()
+  console.log(rect)
   const viewportHeight = window.innerHeight || document.documentElement.clientHeight
-
+  console.log(window.innerHeight, 'a', document.documentElement.clientHeight)
   const heightOut = rect.bottom > viewportHeight
-  return heightOut ? '100px' : 'auto'
+  return heightOut ? viewportHeight - rect.top - 40 + 'px' : 'auto'
 }
 
 const dropdownHeight = ref('auto')
