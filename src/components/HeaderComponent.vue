@@ -239,7 +239,7 @@ const handleMenuIsOpen = () => {
     }
   }
   &__locale__dropdown {
-    position: absolute;
+    position: fixed;
     right: 20px;
     top: 110px;
     @media (min-width: 650px) {
@@ -253,6 +253,7 @@ const handleMenuIsOpen = () => {
     background-color: var(--extra-light-background);
     cursor: pointer;
     z-index: 1000;
+
     &::before {
       content: '';
       position: absolute;
