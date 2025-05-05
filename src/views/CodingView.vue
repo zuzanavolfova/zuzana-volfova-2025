@@ -1,10 +1,50 @@
 <script setup lang="ts">
+import { computed, ref } from 'vue'
 import CardComponent from '../components/CardComponent.vue'
 import dataJson from './../assets/data/coding-data.json'
+import type { CardData, SordDirection } from './../types/interfaces'
+const vueData = ref<CardData[]>(dataJson.vue)
+const htmlCssData = ref<CardData[]>(dataJson.htmlCss)
+const javaScriptData = ref<CardData[]>(dataJson.javaScript)
 
-const vueData = dataJson.vue
-const htmlCssData = dataJson.htmlCss
-const javaScriptData = dataJson.javaScript
+const sortDirections = ref({
+  vue: 'asc' as SordDirection,
+  html: 'asc' as SordDirection,
+  js: 'asc' as SordDirection,
+})
+
+const activeButton = ref({
+  vue: null as SordDirection | null,
+  html: null as SordDirection | null,
+  js: null as SordDirection | null,
+})
+
+const sortData = (data: CardData[], direction: string): CardData[] => {
+  return [...data].sort((a, b) => {
+    const comparison = a.cardTitle.localeCompare(b.cardTitle)
+    return direction === 'asc' ? comparison : -comparison
+  })
+}
+
+const sortedVueData = computed<CardData[]>(() => sortData(vueData.value, sortDirections.value.vue))
+const sortedHtmlData = computed<CardData[]>(() =>
+  sortData(htmlCssData.value, sortDirections.value.html),
+)
+const sortedJavaScriptData = computed<CardData[]>(() =>
+  sortData(javaScriptData.value, sortDirections.value.js),
+)
+const changeSortDirection = (section: 'vue' | 'html' | 'js', direction: 'asc' | 'desc'): void => {
+  if (section === 'vue') {
+    sortDirections.value.vue = direction
+  }
+  if (section === 'html') {
+    sortDirections.value.html = direction
+  }
+  if (section === 'js') {
+    sortDirections.value.js = direction
+  }
+  activeButton.value[section] = direction
+}
 </script>
 
 <template>
@@ -12,8 +52,24 @@ const javaScriptData = dataJson.javaScript
     <h2 class="coding__title">{{ $t('coding-h') }}</h2>
     <div class="coding__content">
       <h3>Vue.js, React</h3>
+      <div class="button-sort-container">
+        <button
+          class="button-sort"
+          :class="{ active: activeButton.vue === 'asc' }"
+          @click="changeSortDirection('vue', 'asc')"
+        >
+          A-Z
+        </button>
+        <button
+          class="button-sort"
+          :class="{ active: activeButton.vue === 'desc' }"
+          @click="changeSortDirection('vue', 'desc')"
+        >
+          Z-A
+        </button>
+      </div>
       <div class="coding__content__items">
-        <div class="coding__content__item" v-for="(item, index) in vueData" :key="index">
+        <div class="coding__content__item" v-for="(item, index) in sortedVueData" :key="index">
           <card-component
             :card-title="item.cardTitle"
             :card-image="item.cardImage"
@@ -25,8 +81,24 @@ const javaScriptData = dataJson.javaScript
       </div>
       <div class="coding__content">
         <h3>HTML, CSS</h3>
+        <div class="button-sort-container">
+          <button
+            class="button-sort"
+            :class="{ active: activeButton.html === 'asc' }"
+            @click="changeSortDirection('html', 'asc')"
+          >
+            A-Z
+          </button>
+          <button
+            class="button-sort"
+            :class="{ active: activeButton.html === 'desc' }"
+            @click="changeSortDirection('html', 'desc')"
+          >
+            Z-A
+          </button>
+        </div>
         <div class="coding__content__items">
-          <div class="coding__content__item" v-for="(item, index) in htmlCssData" :key="index">
+          <div class="coding__content__item" v-for="(item, index) in sortedHtmlData" :key="index">
             <card-component
               :card-title="item.cardTitle"
               :card-image="item.cardImage"
@@ -39,9 +111,29 @@ const javaScriptData = dataJson.javaScript
       </div>
       <div class="coding__content">
         <h3>JavaScript, TypeScript</h3>
+        <div class="button-sort-container">
+          <button
+            class="button-sort"
+            :class="{ active: activeButton.js === 'asc' }"
+            @click="changeSortDirection('js', 'asc')"
+          >
+            A-Z
+          </button>
+          <button
+            class="button-sort"
+            :class="{ active: activeButton.js === 'desc' }"
+            @click="changeSortDirection('js', 'desc')"
+          >
+            Z-A
+          </button>
+        </div>
       </div>
       <div class="coding__content__items">
-        <div class="coding__content__item" v-for="(item, index) in javaScriptData" :key="index">
+        <div
+          class="coding__content__item"
+          v-for="(item, index) in sortedJavaScriptData"
+          :key="index"
+        >
           <card-component
             :card-title="item.cardTitle"
             :card-image="item.cardImage"
@@ -84,5 +176,9 @@ const javaScriptData = dataJson.javaScript
       }
     }
   }
+}
+.active {
+  color: var(--primary-color);
+  font-weight: 600;
 }
 </style>
