@@ -34,7 +34,8 @@
           src="./../assets/images/volfova-zuzana-foto.jpg"
           class="d-block w-30"
           alt="click to navigate to curriculum"
-          @click="$router.push('/curriculum')" loading="lazy"
+          @click="$router.push('/curriculum')"
+          loading="lazy"
         />
         <div class="carousel-caption d-none d-md-block">
           <h5>{{ $t('curriculum-h') }}</h5>
@@ -42,10 +43,11 @@
       </div>
       <div class="carousel-item">
         <img
-          src="./../assets/images/programovani.png"
+          src="./../assets/images/javaScript.png"
           class="d-block w-100"
           alt="click to navigate to coding"
-          @click="$router.push('/coding')" loading="lazy"
+          @click="$router.push('/coding')"
+          loading="lazy"
         />
         <div class="carousel-caption d-none d-md-block">
           <h5>{{ $t('coding-h') }}</h5>
@@ -56,7 +58,8 @@
           src="./../assets/images/ux-design.png"
           class="d-block w-100"
           alt="click to navigate to UX design"
-          @click="$router.push('/UX')" loading="lazy"
+          @click="$router.push('/UX')"
+          loading="lazy"
         />
         <div class="carousel-caption d-none d-md-block">
           <h5>{{ $t('ux-design-h') }}</h5>
@@ -67,7 +70,8 @@
           src="./../assets/images/poukazka.jpg"
           class="d-block w-100"
           alt="click to navigate to graphic"
-          @click="$router.push('/graphic')" loading="lazy"
+          @click="$router.push('/graphic')"
+          loading="lazy"
         />
         <div class="carousel-caption d-none d-md-block">
           <h5>{{ $t('graphic-h') }}</h5>
