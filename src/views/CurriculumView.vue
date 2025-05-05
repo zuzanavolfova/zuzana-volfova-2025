@@ -305,6 +305,22 @@ onBeforeUnmount(() => {
         overflow: hidden;
         text-overflow: ellipsis;
         cursor: pointer;
+        position: relative;
+        display: inline-block;
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -1px;
+          width: 0px;
+          height: 3px;
+          background-color: var(--primary-color);
+          transition: width 0.6s ease;
+          z-index: 9999;
+        }
+        &:hover::after {
+          width: 100%;
+        }
       }
       &__subtitle {
         font-weight: 600;
