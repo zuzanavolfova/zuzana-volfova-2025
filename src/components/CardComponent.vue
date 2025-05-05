@@ -82,6 +82,10 @@ const goToLink = (): void => {
     box-shadow: 1px 1px 5px rgb(223, 223, 223);
     padding: 1rem;
     border-radius: 2px;
+    height: 100%;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
     &__title {
       height: 56px;
       @media (min-width: 1250px) {

@@ -70,10 +70,10 @@ const javaScriptData = dataJson.javaScript
     flex-direction: column;
     text-align: center;
     &__items {
-      @media (min-width: 650px) {
-        display: flex;
-        flex-wrap: wrap;
-      }
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-rows: auto auto 1fr auto;
+      gap: 18px;
     }
     &__item {
       &:hover {
