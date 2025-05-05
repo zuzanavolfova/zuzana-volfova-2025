@@ -2,3 +2,11 @@ export interface ImageProperties {
   title: string
   image: string
 }
+export type CardData = {
+  cardTitle: string
+  cardImage: string
+  cardDescriptionShort: string
+  cardDescription: string
+  buttonRedirect: string
+}
+export type SordDirection = 'asc' | 'desc'
