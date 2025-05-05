@@ -132,14 +132,13 @@ const handleMenuIsOpen = () => {
     position: fixed;
     width: 100%;
     border-bottom: 1px solid var(--light-background);
-
+    padding: 6px 8px;
+    background: white;
+    z-index: 1000;
     @media (min-width: 900px) {
       max-width: 1250px;
       margin: 0 auto;
     }
-    padding: 6px 8px;
-    background: white;
-    z-index: 1000;
     &--scrolled {
       top: 0;
       margin: 0 auto;
@@ -149,7 +148,6 @@ const handleMenuIsOpen = () => {
     &__hamburger {
       justify-self: center;
       margin: 8px;
-
       &__container {
         position: absolute;
         left: 50%;
@@ -166,12 +164,10 @@ const handleMenuIsOpen = () => {
         box-shadow: 1px 2px 6px rgba(124, 124, 124, 0.5);
         height: v-bind(dropdownHeight);
         overflow: scroll;
-
         div {
           cursor: pointer;
           padding: 8px 12px;
           width: 100%;
-
           &:hover {
             background-color: white;
           }
@@ -242,10 +238,6 @@ const handleMenuIsOpen = () => {
     position: fixed;
     right: 20px;
     top: 110px;
-    @media (min-width: 650px) {
-      right: 10px;
-      top: 60px;
-    }
     width: 100px;
     height: auto;
     padding: 6px 0;
@@ -253,6 +245,10 @@ const handleMenuIsOpen = () => {
     background-color: var(--extra-light-background);
     cursor: pointer;
     z-index: 1000;
+    @media (min-width: 650px) {
+      right: 10px;
+      top: 60px;
+    }
 
     &::before {
       content: '';

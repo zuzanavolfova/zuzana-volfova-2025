@@ -72,7 +72,7 @@ const goToLink = (): void => {
   </div>
 </template>
 <style lang="scss" scoped>
-@import '@/assets/styles/mixins';
+@use '@/assets/styles/mixins' as *;
 .card {
   &__container {
     margin: 28px;
