@@ -77,6 +77,10 @@ const goToLink = (): void => {
   &__container {
     margin: 28px;
     height: 380px;
+    &:hover {
+      transform: scale(1.06);
+      transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
   }
   &__item {
     box-shadow: 1px 1px 5px rgb(223, 223, 223);

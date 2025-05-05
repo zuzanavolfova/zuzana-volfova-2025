@@ -76,10 +76,6 @@ const javaScriptData = dataJson.javaScript
       gap: 18px;
     }
     &__item {
-      &:hover {
-        transform: scale(1.06);
-        transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      }
       @media (min-width: 650px) {
         flex-basis: 50%;
       }
