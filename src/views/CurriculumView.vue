@@ -104,6 +104,7 @@ onBeforeUnmount(() => {
             <span @click="isOpen(0)" class="cv__content__description__title">TypeScript</span>
             <transition name="fade">
               <div v-if="isDetailOpen[0]" class="cv__content__description__detail">
+                <h6>TypeScript</h6>
                 <span class="cv__content__description__subtitle"
                   >Udemy (Maximilian Schwarzmüller course)</span
                 >
@@ -116,6 +117,7 @@ onBeforeUnmount(() => {
             >
             <transition name="fade">
               <div v-if="isDetailOpen[1]" class="cv__content__description__detail">
+                <h6>Vue.js - The Complete Guide</h6>
                 <span class="cv__content__description__subtitle"
                   >Udemy (Maximilian Schwarzmüller course)</span
                 >
@@ -128,6 +130,7 @@ onBeforeUnmount(() => {
             }}</span>
             <transition name="fade">
               <div v-if="isDetailOpen[2]" class="cv__content__description__detail">
+                <h6>{{ $t('coding-course') }}</h6>
                 <span class="cv__content__description__subtitle">{{
                   $t('czechitas-semestr-course')
                 }}</span>
@@ -139,6 +142,7 @@ onBeforeUnmount(() => {
             <span @click="isOpen(3)" class="cv__content__description__title">JavaScript1</span>
             <transition name="fade">
               <div v-if="isDetailOpen[3]" class="cv__content__description__detail">
+                <h6>JavaScript1</h6>
                 <span class="cv__content__description__subtitle">{{
                   $t('czechitas-semestr-course')
                 }}</span>
@@ -152,6 +156,7 @@ onBeforeUnmount(() => {
             >
             <transition name="fade">
               <div v-if="isDetailOpen[4]" class="cv__content__description__detail">
+                <h6>UX design Professional Certificate</h6>
                 <span class="cv__content__description__subtitle">{{
                   $t('czechitas-google-semestr-course')
                 }}</span>
@@ -166,6 +171,7 @@ onBeforeUnmount(() => {
             <transition name="fade">
               <div v-if="isDetailOpen[5]" class="cv__content__description__detail">
                 <span class="cv__content__description__subtitle">Masarykova univerzita Brno</span>
+                <h6>{{ $t('culture-management') }}</h6>
                 <div>{{ $t('mgr-study-program') }}</div>
               </div>
             </transition>
@@ -179,6 +185,7 @@ onBeforeUnmount(() => {
             <transition name="fade">
               <div v-if="isDetailOpen[6]" class="cv__content__description__detail">
                 <span class="cv__content__description__subtitle">Rieter CZ</span>
+                <h6>Vue.js frontend {{ $t('developer') }}</h6>
                 <div>
                   {{ $t('work-descr-rieter') }}
                 </div>
@@ -194,6 +201,7 @@ onBeforeUnmount(() => {
                 <span class="cv__content__description__subtitle"
                   >KROUPAHELÁN advokátní kancelář, s.r.o.</span
                 >
+                <h6>Back office manager</h6>
                 <div>
                   {{ $t('work-descr-KHAK') }}
                 </div>
@@ -205,6 +213,7 @@ onBeforeUnmount(() => {
             <transition name="fade">
               <div v-if="isDetailOpen[8]" class="cv__content__description__detail">
                 <span class="cv__content__description__subtitle">HELLO Language School</span>
+                <h6>Manager</h6>
                 <div>
                   {{ $t('work-descr-hello') }}
                 </div>
@@ -218,6 +227,7 @@ onBeforeUnmount(() => {
             <transition name="fade">
               <div v-if="isDetailOpen[9]" class="cv__content__description__detail">
                 <span class="cv__content__description__subtitle">Jazyková škola HELLO</span>
+                <h6>{{ $t('coordinator-language-courses') }}</h6>
               </div>
             </transition>
           </div>
@@ -293,13 +303,14 @@ onBeforeUnmount(() => {
       &__detail {
         position: absolute;
         top: 100%;
-        left: -60px;
+        left: -90px;
         z-index: 100;
         margin: 0 20px;
         padding: 6px 8px;
         box-shadow: 1px 2px 6px rgba(124, 124, 124, 0.5);
         background-color: white;
         @media (min-width: 650px) {
+          left: -60px;
           padding: 12px 24px;
         }
       }
@@ -345,6 +356,12 @@ onBeforeUnmount(() => {
   .fade-enter-from,
   .fade-leave-to {
     opacity: 0;
+  }
+}
+.cv__content__description__detail h6 {
+  display: block;
+  @media (min-width: 650px) {
+    display: none;
   }
 }
 </style>
