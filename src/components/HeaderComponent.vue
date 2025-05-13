@@ -211,6 +211,9 @@ const handleMenuIsOpen = () => {
     border-radius: 50%;
     color: var(--text-dark-grey);
     box-shadow: 1px 2px 6px rgba(124, 124, 124, 0.5);
+    @media (prefers-color-scheme: dark) {
+      box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
+    }
     padding: 0 4px;
     z-index: 1001;
     cursor: pointer;
