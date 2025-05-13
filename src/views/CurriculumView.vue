@@ -284,12 +284,18 @@ onBeforeUnmount(() => {
       &__item {
         position: relative;
         height: 24px;
+        width: 100%;
+        max-width: 200px;
+        @media (min-width: 650px) {
+          max-width: 600px;
+        }
       }
       &__detail {
         position: absolute;
         top: 100%;
-        left: -50px;
+        left: -60px;
         z-index: 100;
+        margin: 0 20px;
         padding: 6px 8px;
         box-shadow: 1px 2px 6px rgba(124, 124, 124, 0.5);
         background-color: white;
@@ -301,6 +307,7 @@ onBeforeUnmount(() => {
         color: var(--primary-color);
         font-weight: 600;
         margin-left: 16px;
+        max-width: calc(100% - 16px);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
