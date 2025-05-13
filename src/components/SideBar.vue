@@ -30,6 +30,10 @@ defineProps({
     font-size: 18px;
     padding: 6px 8px;
     text-align: end;
+    @media (prefers-color-scheme: dark) {
+      font-weight: 500;
+      text-decoration-line: underline;
+    }
   }
 
   &__content {

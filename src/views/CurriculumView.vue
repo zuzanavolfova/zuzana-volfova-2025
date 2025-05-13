@@ -257,11 +257,17 @@ onBeforeUnmount(() => {
     }
 
     &__side-bar {
+      background-color: transparent;
       margin-top: 16px;
       &__year {
         display: flex;
         justify-content: end;
         align-items: center;
+        @media (prefers-color-scheme: dark) {
+          & div {
+            font-weight: 500;
+          }
+        }
       }
       &__year-point {
         height: 6px;

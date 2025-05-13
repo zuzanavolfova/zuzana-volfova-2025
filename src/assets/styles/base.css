@@ -11,7 +11,7 @@
 :root {
   --side-bar-width: 140px;
   margin: 0 auto;
-  background-color: #8327330b;
+  background-color: var(--root-background);
 }
 
 @media (min-width: 650px) {

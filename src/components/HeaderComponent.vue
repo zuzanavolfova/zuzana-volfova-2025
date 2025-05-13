@@ -221,6 +221,12 @@ const handleMenuIsOpen = () => {
       width: 32px;
       margin: 8px;
     }
+    @media (min-width: 1250px) {
+      position: fixed;
+      right: calc(50% - 600px);
+      width: 32px;
+      margin: 8px;
+    }
     &--active {
       background-color: var(--light-background);
     }

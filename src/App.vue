@@ -5,9 +5,15 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <HeaderComponent />
-  <RouterView />
-  <Footer />
+  <div class="app">
+    <HeaderComponent />
+    <RouterView />
+    <Footer />
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.app {
+  background-color: var(--basic-background)
+}
+</style>
