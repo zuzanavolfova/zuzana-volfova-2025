@@ -1,12 +1,12 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="hamburger-menu" @click="$emit('openMenu')">
+  <nav class="hamburger-menu" @click="$emit('openMenu')">
     <div class="hamburger"></div>
     <div class="hamburger"></div>
     <div class="hamburger"></div>
     <div class="hamburger"></div>
-  </div>
+  </nav>
 </template>
 
 <style lang="scss" scoped>

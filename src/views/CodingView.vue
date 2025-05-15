@@ -50,7 +50,7 @@ const changeSortDirection = (section: 'vue' | 'html' | 'js', direction: 'asc' | 
 <template>
   <div class="coding">
     <h2 class="coding__title">{{ $t('coding-h') }}</h2>
-    <div class="coding__content">
+    <section class="coding__content">
       <h3>Vue.js, React</h3>
       <div class="button-sort-container">
         <button
@@ -79,54 +79,54 @@ const changeSortDirection = (section: 'vue' | 'html' | 'js', direction: 'asc' | 
           />
         </div>
       </div>
-      <div class="coding__content">
-        <h3>HTML, CSS</h3>
-        <div class="button-sort-container">
-          <button
-            class="button-sort"
-            :class="{ active: activeButton.html === 'asc' }"
-            @click="changeSortDirection('html', 'asc')"
-          >
-            A-Z
-          </button>
-          <button
-            class="button-sort"
-            :class="{ active: activeButton.html === 'desc' }"
-            @click="changeSortDirection('html', 'desc')"
-          >
-            Z-A
-          </button>
-        </div>
-        <div class="coding__content__items">
-          <div class="coding__content__item" v-for="(item, index) in sortedHtmlData" :key="index">
-            <card-component
-              :card-title="item.cardTitle"
-              :card-image="item.cardImage"
-              :card-description-short="item.cardDescriptionShort"
-              :card-description="item.cardDescription"
-              :button-redirect="item.buttonRedirect"
-            />
-          </div>
+    </section>
+    <section class="coding__content">
+      <h3>HTML, CSS</h3>
+      <div class="button-sort-container">
+        <button
+          class="button-sort"
+          :class="{ active: activeButton.html === 'asc' }"
+          @click="changeSortDirection('html', 'asc')"
+        >
+          A-Z
+        </button>
+        <button
+          class="button-sort"
+          :class="{ active: activeButton.html === 'desc' }"
+          @click="changeSortDirection('html', 'desc')"
+        >
+          Z-A
+        </button>
+      </div>
+      <div class="coding__content__items">
+        <div class="coding__content__item" v-for="(item, index) in sortedHtmlData" :key="index">
+          <card-component
+            :card-title="item.cardTitle"
+            :card-image="item.cardImage"
+            :card-description-short="item.cardDescriptionShort"
+            :card-description="item.cardDescription"
+            :button-redirect="item.buttonRedirect"
+          />
         </div>
       </div>
-      <div class="coding__content">
-        <h3>JavaScript, TypeScript</h3>
-        <div class="button-sort-container">
-          <button
-            class="button-sort"
-            :class="{ active: activeButton.js === 'asc' }"
-            @click="changeSortDirection('js', 'asc')"
-          >
-            A-Z
-          </button>
-          <button
-            class="button-sort"
-            :class="{ active: activeButton.js === 'desc' }"
-            @click="changeSortDirection('js', 'desc')"
-          >
-            Z-A
-          </button>
-        </div>
+    </section>
+    <section class="coding__content">
+      <h3>JavaScript, TypeScript</h3>
+      <div class="button-sort-container">
+        <button
+          class="button-sort"
+          :class="{ active: activeButton.js === 'asc' }"
+          @click="changeSortDirection('js', 'asc')"
+        >
+          A-Z
+        </button>
+        <button
+          class="button-sort"
+          :class="{ active: activeButton.js === 'desc' }"
+          @click="changeSortDirection('js', 'desc')"
+        >
+          Z-A
+        </button>
       </div>
       <div class="coding__content__items">
         <div
@@ -143,7 +143,7 @@ const changeSortDirection = (section: 'vue' | 'html' | 'js', direction: 'asc' | 
           />
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 <style lang="scss" scoped>
