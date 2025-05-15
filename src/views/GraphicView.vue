@@ -4,13 +4,13 @@ const imagePromotionalData = imageData.promotional
 const imageVectorData = imageData.vector
 </script>
 <template>
-  <div class="graphic">
-    <h2 class="graphic__title">{{ $t('graphic-h') }}</h2>
+  <div class="graphic" aria-labelledby="graphic-section-title">
+    <h2 id="graphic-section-title" class="graphic__title">{{ $t('graphic-h') }}</h2>
 
     <div class="graphic__content">
-      <section>
+      <section aria-labelledby="promotional-section">
         <h3>{{ $t('promotional-graphics') }}</h3>
-        <div class="graphic__content__items">
+        <div class="graphic__content__items" aria-label="promotional items">
           <img
             src="./../assets/images/graphic/poukazka.jpg"
             alt="crafting-butterfly"
@@ -19,9 +19,9 @@ const imageVectorData = imageData.vector
           />
         </div>
       </section>
-      <section>
+      <section aria-labelledby="vector-graphic-section">
         <h3>{{ $t('vector-graphics') }}</h3>
-        <div class="graphic__content__items">
+        <div class="graphic__content__items" aria-label="vector graphic items">
           <img
             src="./../assets/images/graphic/children-circle.png"
             alt="children circle"

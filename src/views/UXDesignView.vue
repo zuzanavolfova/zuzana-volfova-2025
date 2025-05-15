@@ -4,11 +4,17 @@ import uxData from './../assets/data/ux-data.json'
 </script>
 
 <template>
-  <div class="ux">
-    <h2 class="ux__title">{{ $t('ux-design-h') }}</h2>
+  <div class="ux" aria-labelledby="ux-section-title">
+    <h2 id="ux-section-title" class="ux__title">{{ $t('ux-design-h') }}</h2>
 
-    <div class="ux__content">
-      <div class="ux__content__item" v-for="(item, index) in uxData" :key="index">
+    <div class="ux__content" aria-label="UX projects cards">
+      <div
+        class="ux__content__item"
+        v-for="(item, index) in uxData"
+        :key="index"
+        role="list"
+        aria-label="UX design project cards"
+      >
         <card-component
           :card-title="item.cardTitle"
           :card-image="item.cardImage"

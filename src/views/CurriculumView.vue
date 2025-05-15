@@ -55,8 +55,8 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="cv">
-    <h2 class="cv__title">{{ $t('curriculum-h') }}</h2>
+  <div class="cv" aria-labelledby="cv-title">
+    <h2 id="cv-title" class="cv__title">{{ $t('curriculum-h') }}</h2>
 
     <div class="cv__content">
       <div class="cv__content__side-bars">
@@ -101,9 +101,23 @@ onBeforeUnmount(() => {
       <div class="cv__content__description">
         <div class="cv__content__description__education">
           <div class="cv__content__description__item">
-            <span @click="isOpen(0)" class="cv__content__description__title">TypeScript</span>
+            <button
+              @click="isOpen(0)"
+              class="cv__content__description__title"
+              :aria-expanded="isDetailOpen[0]"
+              :aria-controls="'detail-0'"
+              :id="'toggle-0'"
+            >
+              TypeScript
+            </button>
             <transition name="fade">
-              <div v-if="isDetailOpen[0]" class="cv__content__description__detail">
+              <div
+                v-if="isDetailOpen[0]"
+                class="cv__content__description__detail"
+                :id="'detail-0'"
+                role="region"
+                :aria-labelledby="'toggle-0'"
+              >
                 <h6>TypeScript</h6>
                 <span class="cv__content__description__subtitle"
                   >Udemy (Maximilian Schwarzmüller course)</span
@@ -112,11 +126,23 @@ onBeforeUnmount(() => {
             </transition>
           </div>
           <div class="cv__content__description__item">
-            <span @click="isOpen(1)" class="cv__content__description__title"
-              >Vue.js - The Complete Guide</span
+            <button
+              @click="isOpen(1)"
+              class="cv__content__description__title"
+              :aria-expanded="isDetailOpen[1]"
+              :aria-controls="'detail-1'"
+              :id="'toggle-1'"
             >
+              Vue.js - The Complete Guide
+            </button>
             <transition name="fade">
-              <div v-if="isDetailOpen[1]" class="cv__content__description__detail">
+              <div
+                v-if="isDetailOpen[1]"
+                class="cv__content__description__detail"
+                :id="'detail-1'"
+                role="region"
+                :aria-labelledby="'toggle-1'"
+              >
                 <h6>Vue.js - The Complete Guide</h6>
                 <span class="cv__content__description__subtitle"
                   >Udemy (Maximilian Schwarzmüller course)</span
@@ -125,11 +151,23 @@ onBeforeUnmount(() => {
             </transition>
           </div>
           <div class="cv__content__description__item">
-            <span @click="isOpen(2)" class="cv__content__description__title">{{
-              $t('coding-course')
-            }}</span>
+            <button
+              @click="isOpen(2)"
+              class="cv__content__description__title"
+              :aria-expanded="isDetailOpen[2]"
+              :aria-controls="'detail-2'"
+              :id="'toggle-2'"
+            >
+              {{ $t('coding-course') }}
+            </button>
             <transition name="fade">
-              <div v-if="isDetailOpen[2]" class="cv__content__description__detail">
+              <div
+                v-if="isDetailOpen[2]"
+                class="cv__content__description__detail"
+                :id="'detail-2'"
+                role="region"
+                :aria-labelledby="'toggle-2'"
+              >
                 <h6>{{ $t('coding-course') }}</h6>
                 <span class="cv__content__description__subtitle">{{
                   $t('czechitas-semestr-course')
@@ -139,9 +177,23 @@ onBeforeUnmount(() => {
             </transition>
           </div>
           <div class="cv__content__description__item">
-            <span @click="isOpen(3)" class="cv__content__description__title">JavaScript1</span>
+            <button
+              @click="isOpen(3)"
+              class="cv__content__description__title"
+              :aria-expanded="isDetailOpen[3]"
+              :aria-controls="'detail-3'"
+              :id="'toggle-3'"
+            >
+              JavaScript1
+            </button>
             <transition name="fade">
-              <div v-if="isDetailOpen[3]" class="cv__content__description__detail">
+              <div
+                v-if="isDetailOpen[3]"
+                class="cv__content__description__detail"
+                :id="'detail-3'"
+                role="region"
+                :aria-labelledby="'toggle-3'"
+              >
                 <h6>JavaScript1</h6>
                 <span class="cv__content__description__subtitle">{{
                   $t('czechitas-semestr-course')
@@ -151,11 +203,23 @@ onBeforeUnmount(() => {
             </transition>
           </div>
           <div class="cv__content__description__item">
-            <span @click="isOpen(4)" class="cv__content__description__title"
-              >UX design Professional Certificate</span
+            <button
+              @click="isOpen(4)"
+              class="cv__content__description__title"
+              :aria-expanded="isDetailOpen[4]"
+              :aria-controls="'detail-4'"
+              :id="'toggle-4'"
             >
+              UX design Professional Certificate
+            </button>
             <transition name="fade">
-              <div v-if="isDetailOpen[4]" class="cv__content__description__detail">
+              <div
+                v-if="isDetailOpen[4]"
+                class="cv__content__description__detail"
+                :id="'detail-4'"
+                role="region"
+                :aria-labelledby="'toggle-4'"
+              >
                 <h6>UX design Professional Certificate</h6>
                 <span class="cv__content__description__subtitle">{{
                   $t('czechitas-google-semestr-course')
@@ -165,11 +229,23 @@ onBeforeUnmount(() => {
             </transition>
           </div>
           <div class="cv__content__description__item">
-            <span @click="isOpen(5)" class="cv__content__description__title">{{
-              $t('culture-management')
-            }}</span>
+            <button
+              @click="isOpen(5)"
+              class="cv__content__description__title"
+              :aria-expanded="isDetailOpen[5]"
+              :aria-controls="'detail-5'"
+              :id="'toggle-5'"
+            >
+              {{ $t('culture-management') }}
+            </button>
             <transition name="fade">
-              <div v-if="isDetailOpen[5]" class="cv__content__description__detail">
+              <div
+                v-if="isDetailOpen[5]"
+                class="cv__content__description__detail"
+                :id="'detail-5'"
+                role="region"
+                :aria-labelledby="'toggle-5'"
+              >
                 <span class="cv__content__description__subtitle">Masarykova univerzita Brno</span>
                 <h6>{{ $t('culture-management') }}</h6>
                 <div>{{ $t('mgr-study-program') }}</div>
@@ -179,11 +255,23 @@ onBeforeUnmount(() => {
         </div>
         <div class="cv__content__description__work-experience">
           <div class="cv__content__description__item">
-            <span @click="isOpen(6)" class="cv__content__description__title"
-              >Vue.js frontend {{ $t('developer') }}</span
+            <button
+              @click="isOpen(6)"
+              class="cv__content__description__title"
+              :aria-expanded="isDetailOpen[6]"
+              :aria-controls="'detail-6'"
+              :id="'toggle-6'"
             >
+              Vue.js frontend {{ $t('developer') }}
+            </button>
             <transition name="fade">
-              <div v-if="isDetailOpen[6]" class="cv__content__description__detail">
+              <div
+                v-if="isDetailOpen[6]"
+                class="cv__content__description__detail"
+                :id="'detail-6'"
+                role="region"
+                :aria-labelledby="'toggle-6'"
+              >
                 <span class="cv__content__description__subtitle">Rieter CZ</span>
                 <h6>Vue.js frontend {{ $t('developer') }}</h6>
                 <div>
@@ -193,11 +281,23 @@ onBeforeUnmount(() => {
             </transition>
           </div>
           <div class="cv__content__description__item">
-            <span @click="isOpen(7)" class="cv__content__description__title"
-              >Back office manager</span
+            <button
+              @click="isOpen(7)"
+              class="cv__content__description__title"
+              :aria-expanded="isDetailOpen[7]"
+              :aria-controls="'detail-7'"
+              :id="'toggle-7'"
             >
+              Back office manager
+            </button>
             <transition name="fade">
-              <div v-if="isDetailOpen[7]" class="cv__content__description__detail">
+              <div
+                v-if="isDetailOpen[7]"
+                class="cv__content__description__detail"
+                :id="'detail-7'"
+                role="region"
+                :aria-labelledby="'toggle-7'"
+              >
                 <span class="cv__content__description__subtitle"
                   >KROUPAHELÁN advokátní kancelář, s.r.o.</span
                 >
@@ -209,9 +309,23 @@ onBeforeUnmount(() => {
             </transition>
           </div>
           <div class="cv__content__description__item">
-            <span @click="isOpen(8)" class="cv__content__description__title">Manager</span>
+            <button
+              @click="isOpen(8)"
+              class="cv__content__description__title"
+              :aria-expanded="isDetailOpen[8]"
+              :aria-controls="'detail-8'"
+              :id="'toggle-8'"
+            >
+              Manager
+            </button>
             <transition name="fade">
-              <div v-if="isDetailOpen[8]" class="cv__content__description__detail">
+              <div
+                v-if="isDetailOpen[8]"
+                class="cv__content__description__detail"
+                :id="'detail-8'"
+                role="region"
+                :aria-labelledby="'toggle-8'"
+              >
                 <span class="cv__content__description__subtitle">HELLO Language School</span>
                 <h6>Manager</h6>
                 <div>
@@ -221,11 +335,23 @@ onBeforeUnmount(() => {
             </transition>
           </div>
           <div class="cv__content__description__item">
-            <span @click="isOpen(9)" class="cv__content__description__title">{{
-              $t('coordinator-language-courses')
-            }}</span>
+            <button
+              @click="isOpen(9)"
+              class="cv__content__description__title"
+              :aria-expanded="isDetailOpen[9]"
+              :aria-controls="'detail-9'"
+              :id="'toggle-9'"
+            >
+              {{ $t('coordinator-language-courses') }}
+            </button>
             <transition name="fade">
-              <div v-if="isDetailOpen[9]" class="cv__content__description__detail">
+              <div
+                v-if="isDetailOpen[9]"
+                class="cv__content__description__detail"
+                :id="'detail-9'"
+                role="region"
+                :aria-labelledby="'toggle-9'"
+              >
                 <span class="cv__content__description__subtitle">Jazyková škola HELLO</span>
                 <h6>{{ $t('coordinator-language-courses') }}</h6>
               </div>
@@ -281,12 +407,12 @@ onBeforeUnmount(() => {
     }
     &__description {
       position: relative;
-      top: 56px;
+      top: 54px;
       display: flex;
       flex-direction: column;
-      gap: 86px;
+      gap: 82px;
       @media (min-width: 650px) {
-        gap: calc(86px - 28px);
+        gap: calc(82px - 28px);
       }
       &__education {
         display: grid;
@@ -322,6 +448,8 @@ onBeforeUnmount(() => {
       }
       &__title {
         color: var(--primary-color);
+        background: transparent;
+        border: none;
         font-weight: 600;
         margin-left: 16px;
         max-width: calc(100% - 16px);
