@@ -173,6 +173,13 @@ onBeforeUnmount(() => {
                   $t('czechitas-semestr-course')
                 }}</span>
                 <div>HTML, CSS, BEM, SASS, 11ty figma, GIMP, GitHub, Visual Studio Code.</div>
+                <a
+                  href="https://www.czechitas.cz/kurzy/stan-se-koderkou"
+                  role="link"
+                  aria-label="Visit codding course detail"
+                >
+                  {{ $t('detail-coding-course') }}</a
+                >
               </div>
             </transition>
           </div>
@@ -199,6 +206,13 @@ onBeforeUnmount(() => {
                   $t('czechitas-semestr-course')
                 }}</span>
                 <div>JavaScript, GitHub, Visual Studio Code.</div>
+                <a
+                  href="https://www.czechitas.cz/kurzy/javascript-1-zaklady"
+                  role="link"
+                  aria-label="Visit javaScript course detail"
+                >
+                  {{ $t('detail-javaScript-course') }}</a
+                >
               </div>
             </transition>
           </div>
@@ -354,6 +368,9 @@ onBeforeUnmount(() => {
               >
                 <span class="cv__content__description__subtitle">Jazyková škola HELLO</span>
                 <h6>{{ $t('coordinator-language-courses') }}</h6>
+                <div>
+                  {{ $t('work-descr-hello-coordinator') }}
+                </div>
               </div>
             </transition>
           </div>

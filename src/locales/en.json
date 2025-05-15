@@ -27,8 +27,11 @@
   "developer": "developer",
   "coordinator-language-courses": "Coordinator of Language Courses",
   "work-descr-hello": "Team management, organization of Cambridge English Exams. Search for new business opportunities.",
+  "work-descr-hello-coordinator": "sCoordination of lecturers, preparation of courses, administrative management of the office and reception, contact with clients.",
   "work-descr-KHAK": "Cooperation in the development of websites www.kontrolasmluv.cz and www.kroupahelan.cz. Design and implementation of effective process of recruitment. Management and optimization of DMS and CRM.",
   "work-descr-rieter": " Development of HMI Framework for industry machines. Cooperation with UX designers, technical evaluation of UX designs and implementation in the framework. Cooperation with frontend and backend developers in international team. UX design, Vue.js, HTML, CSS, scss, Tailwind, JavaScript, Python Visual Studio Code, Git, SourceTree, Bash, Postman.",
   "promotional-graphics": "Promotional Graphics",
-  "vector-graphics": "Vector Graphics"
+  "vector-graphics": "Vector Graphics",
+  "detail-coding-course": "Coding course detai",
+  "detail-javaScript-course": "Javascript course detail"
 }

@@ -26,10 +26,13 @@
   "culture-management": "Management v kultuře",
   "mgr-study-program": "Magisterský studijní program",
   "developer": "programátor",
-  "coordinator-language-courses": "Koordinátor jazykových kurzů",
-  "work-descr-hello": "Vedení týmu lektorů, organizace Cambridge English Exams. Hledání nových businesových příležitostí.",
-  "work-descr-KHAK": "Spolupráce na vývoji stránek www.kontrolasmluv.cz and www.kroupahelan.cz. Design a implementace efektriního procesu náboru nových zaměstanaců. Management a optimalizace DMS a CRM.",
+  "coordinator-language-courses": "Koordinátor jazykových kurzů.",
+  "work-descr-hello-coordinator": "Koordinace lektorů, příprava kurzů, administrativní zajištění chodu kanceláře a recepce, kontakt s klienty.",
+  "work-descr-hello": "Vedení týmu lektorů. Organizace Cambridge English Exams. Organizační, materiální a personální zajištění chodu pobočky. Hledání nových businesových příležitostí.",
+  "work-descr-KHAK": "Spolupráce na vývoji stránek www.kontrolasmluv.cz and www.kroupahelan.cz. Design a implementace efektriního procesu náboru nových zaměstanaců. Management a optimalizace DMS a CRM. Vedení spisů. Administrativa",
   "work-descr-rieter": " Vývoj HMI frameworku pro průmyslové stroje. Spolupráce s UX designery, technické zhodnocení UX designu a implementace do projektu. Spolupráce s frontend a backend developery v mezinárodním týmu. UX design, Vue.js, HTML, CSS, scss, Tailwind, JavaScript, Python Visual Studio Code, Git, SourceTree, Bash, Postman.",
   "promotional-graphics": "Propagační grafika",
-  "vector-graphics": "Vektorová grafika"
+  "vector-graphics": "Vektorová grafika",
+  "detail-coding-course": "Detailní obsah kurzu Kodérka",
+  "detail-javaScript-course": "Detailní obsah kurzu JavaScript"
 }
