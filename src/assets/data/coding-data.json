@@ -40,10 +40,10 @@
   ],
   "javaScript": [
     {
-      "cardTitle": "JavaScript studium",
+      "cardTitle": "Javascript, Typescript",
       "cardImage": "javaScript.png",
-      "cardDescriptionShort": "JavaScript studium",
-      "cardDescription": "JavaScript",
+      "cardDescriptionShort": "Javascript, Typescript",
+      "cardDescription": " JavaScript, HTML, CSS, BEM, SASS",
       "buttonRedirect": "https://github.com/zuzanavolfova/javaScriptStudy"
     }
   ]
