@@ -56,8 +56,8 @@ const goToLink = (): void => {
 </script>
 <template>
   <div class="card__container">
-    <div class="card__item">
-      <h4 class="card__item__title">{{ $t(cardTitle) }}</h4>
+    <div class="card__item" role="region">
+      <h4 class="card__item__title" :aria-label="`${cardTitle}`">{{ $t(cardTitle) }}</h4>
       <p class="card__item__image">
         <img :src="imageUrl" :alt="cardImage" height="80px" loading="lazy" />
       </p>
@@ -66,7 +66,13 @@ const goToLink = (): void => {
         {{ $t(cardDescription, { value: $t(cardDescriptionParams.value) }) }}
       </p>
       <p>
-        <button class="card__item__button" @click="goToLink()">{{ $t(buttonTitle) }}</button>
+        <button
+          class="card__item__button"
+          @click="goToLink()"
+          :aria-label="`${$t(buttonTitle)} - ${$t(cardTitle)}`"
+        >
+          {{ $t(buttonTitle) }}
+        </button>
       </p>
     </div>
   </div>
