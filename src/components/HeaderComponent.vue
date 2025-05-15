@@ -317,7 +317,6 @@ const handleMenuIsOpen = () => {
       font-weight: 600;
       &:hover {
         transform: scale(1.2);
-        // border-bottom: 2px dotted var(--primary-color);
         transition: width 0.3s ease;
       }
     }
