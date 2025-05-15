@@ -3,9 +3,11 @@ import { computed, ref, onMounted, onUnmounted, nextTick } from 'vue'
 import HamburgerMenu from './../widgets/HamburgerMenu.vue'
 import i18next from 'i18next'
 import { useStore } from './../stores/main'
+import { useRouter } from 'vue-router'
 import { createClickOutsideHandler } from './../stores/actions'
 
 const store = useStore()
+const router = useRouter()
 const isMenuOpen = ref<boolean>(false)
 const isLocaleMenuOpen = ref<boolean>(false)
 const locale = computed<string>(() => store.currentLocale)
@@ -41,6 +43,10 @@ const updateDropdownHeight = () => {
   }
 }
 
+const navigateTo = (path: string): void => {
+  router.push(path)
+  isMenuOpen.value = false
+}
 const handleClickOutsideMenu = createClickOutsideHandler(
   ['.header__menu__hamburger__container'],
   ['hamburger'],
@@ -73,31 +79,138 @@ const handleMenuIsOpen = () => {
 </script>
 <template>
   <div class="header">
-    <h1 class="header__title" @click="$router.push('/')">ZUZANA VOLFOVÁ</h1>
+    <h1 class="header__title">
+      <a href="/" @click.prevent="$router.push('/')" aria-label="ZUZANA VOLFOVÁ - Homepage"
+        >ZUZANA VOLFOVÁ</a
+      >
+    </h1>
     <menu class="header__menu" :class="{ 'header__menu--scrolled': isScrolled }">
-      <HamburgerMenu class="header__menu__hamburger" @open-menu="handleMenuIsOpen()" />
-      <div v-if="isMenuOpen" @click="isMenuOpen = false" class="header__menu__hamburger__container">
-        <div @click="$router.push('/')">{{ $t('home-h') }}</div>
-        <div @click="$router.push('/coding')">{{ $t('coding-h') }}</div>
-        <div @click="$router.push('/UX')">{{ $t('ux-design-h') }}</div>
-        <div @click="$router.push('/graphic')">{{ $t('graphic-h') }}</div>
-        <div @click="$router.push('/curriculum')">{{ $t('curriculum-h') }}</div>
-      </div>
-      <div class="header__menu__container">
-        <div class="header__menu__item" @click="$router.push('/')">{{ $t('home-h') }}</div>
-        <div class="header__menu__item" @click="$router.push('/coding')">{{ $t('coding-h') }}</div>
-        <div class="header__menu__item" @click="$router.push('/UX')">{{ $t('ux-design-h') }}</div>
-        <div class="header__menu__item" @click="$router.push('/graphic')">
+      <HamburgerMenu
+        class="header__menu__hamburger"
+        @open-menu="handleMenuIsOpen()"
+        :aria-expanded="isMenuOpen ? 'true' : 'false'"
+        aria-controls="mobile-nav"
+        aria-label="Main menu"
+        role="button"
+        tabindex="0"
+        @keydown.enter="handleMenuIsOpen"
+        @keydown.space="handleMenuIsOpen"
+      />
+      <nav
+        v-if="isMenuOpen"
+        @click="isMenuOpen = false"
+        class="header__menu__hamburger__container"
+        aria-label="Mobile navigation"
+      >
+        <div
+          tabindex="0"
+          role="link"
+          @click="navigateTo('/')"
+          @keydown.enter="navigateTo('/')"
+          @keydown.space="navigateTo('/')"
+        >
+          {{ $t('home-h') }}
+        </div>
+        <div
+          tabindex="0"
+          role="link"
+          @click="navigateTo('/coding')"
+          @keydown.enter="navigateTo('/coding')"
+          @keydown.space="navigateTo('/coding')"
+        >
+          {{ $t('coding-h') }}
+        </div>
+        <div
+          tabindex="0"
+          role="link"
+          @click="navigateTo('/UX')"
+          @keydown.enter="navigateTo('/UX')"
+          @keydown.space="navigateTo('/UX')"
+        >
+          {{ $t('ux-design-h') }}
+        </div>
+        <div
+          tabindex="0"
+          role="link"
+          @click="$router.push('/graphic')"
+          @keydown.enter="navigateTo('/graphic')"
+          @keydown.space="navigateTo('/graphic')"
+        >
           {{ $t('graphic-h') }}
         </div>
-        <div class="header__menu__item" @click="$router.push('/curriculum')">
+        <div
+          tabindex="0"
+          role="link"
+          @click="navigateTo('/curriculum')"
+          @keydown.enter="navigateTo('/curriculum')"
+          @keydown.space="navigateTo('/curriculum')"
+        >
           {{ $t('curriculum-h') }}
         </div>
-      </div>
+      </nav>
+      <nav class="header__menu__container" aria-label="Desktop navigation">
+        <div
+          class="header__menu__item"
+          tabindex="0"
+          role="link"
+          @click="$router.push('/')"
+          @keydown.enter="$router.push('/')"
+          @keydown.space="$router.push('/')"
+        >
+          {{ $t('home-h') }}
+        </div>
+        <div
+          class="header__menu__item"
+          tabindex="0"
+          role="link"
+          @click="$router.push('/coding')"
+          @keydown.enter="$router.push('/coding')"
+          @keydown.space="$router.push('/coding')"
+        >
+          {{ $t('coding-h') }}
+        </div>
+        <div
+          class="header__menu__item"
+          tabindex="0"
+          role="link"
+          @click="$router.push('/UX')"
+          @keydown.enter="$router.push('/UX')"
+          @keydown.space="$router.push('/UX')"
+        >
+          {{ $t('ux-design-h') }}
+        </div>
+        <div
+          class="header__menu__item"
+          tabindex="0"
+          role="link"
+          @click="$router.push('/graphic')"
+          @keydown.enter="$router.push('/graphic')"
+          @keydown.space="$router.push('/graphic')"
+        >
+          {{ $t('graphic-h') }}
+        </div>
+        <div
+          class="header__menu__item"
+          tabindex="0"
+          role="link"
+          @click="$router.push('/curriculum')"
+          @keydown.enter="$router.push('/curriculum')"
+          @keydown.space="$router.push('/curriculum')"
+        >
+          {{ $t('curriculum-h') }}
+        </div>
+      </nav>
     </menu>
     <div
       class="header__locale"
+      tabindex="0"
+      role="button"
+      aria-haspopup="true"
+      :aria-expanded="isLocaleMenuOpen ? 'true' : 'false'"
+      aria-controls="locale-dropdown"
       @click="isLocaleMenuOpen = !isLocaleMenuOpen"
+      @keydown.enter="isLocaleMenuOpen = !isLocaleMenuOpen"
+      @keydown.space="isLocaleMenuOpen = !isLocaleMenuOpen"
       :class="{
         'header__locale--active': isLocaleMenuOpen,
         'header__locale--scrolled': isScrolled,
@@ -105,13 +218,22 @@ const handleMenuIsOpen = () => {
     >
       {{ $t(locale) }}
     </div>
-    <div v-if="isLocaleMenuOpen" class="header__locale__dropdown">
-      <div class="header__locale__dropdown__arrow"></div>
+    <div
+      v-if="isLocaleMenuOpen"
+      class="header__locale__dropdown"
+      role="menu"
+      aria-label="Language selection"
+    >
+      <div class="header__locale__dropdown__arrow" aria-hidden="true"></div>
       <div
         v-for="(item, index) in store.availableLocale"
         :key="index"
         class="header__locale__dropdown__item"
+        role="menuitem"
+        tabindex="0"
         @click="changeLocale(item.title)"
+        @keydown.enter="changeLocale(item.title)"
+        @keydown.space="changeLocale(item.title)"
       >
         <img class="header__locale__dropdown__image" :src="item.image" :alt="item.title" />
         <span class="header__locale__dropdown__title">{{ $t(item.title) }}</span>
@@ -127,6 +249,10 @@ const handleMenuIsOpen = () => {
     text-align: center;
     padding: 8px;
     cursor: pointer;
+    & a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
   }
   &__menu {
     position: fixed;
@@ -257,6 +383,9 @@ const handleMenuIsOpen = () => {
     @media (min-width: 650px) {
       right: 10px;
       top: 60px;
+    }
+    @media (min-width: 1250px) {
+      right: calc(50% - 600px);
     }
 
     &::before {
