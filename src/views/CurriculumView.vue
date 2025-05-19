@@ -28,14 +28,11 @@ const closeDetail = (): void => {
 }
 
 const handleClickOutside = (event: MouseEvent): void => {
-  // If no details are open, nothing to do
   if (!isDetailOpen.value.some((open) => open)) return
 
-  // Check if click was on detail title
   const clickedElement = event.target as HTMLElement
   if (clickedElement.classList.contains('cv__content__description__title')) return
 
-  // Check if click was inside one of the open details
   const isClickInsideDetail = Array.from(
     document.querySelectorAll('.cv__content__description__detail'),
   ).some((detail) => detail.contains(event.target as Node))
