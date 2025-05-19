@@ -11,10 +11,18 @@
         padding: 50px;
         margin: 0;
       }
-      h1 {
-        font-size: 72px;
-        margin-bottom: 0;
-        color: #e74c3c;
+      .header {
+        min-height: 100px;
+        overflow: visible;
+      }
+      .header h1 {
+        text-align: center;
+        padding: 8px;
+        cursor: pointer;
+        & a {
+          color: var(--primary-color);
+          text-decoration: none;
+        }
       }
       h2 {
         margin-top: 10px;
@@ -32,8 +40,13 @@
     </style>
   </head>
   <body>
-    <h1>404</h1>
-    <h2>Aj aj něco se pokazilo</h2>
+    <header class="header">
+      <h1>
+        <a href="/zuzana-volfova-2025/" aria-label="ZUZANA VOLFOVÁ - Homepage">ZUZANA VOLFOVÁ</a>
+      </h1>
+    </header>
+    <h2>404</h2>
+    <p>Aj aj něco se pokazilo</p>
 
     <a href="/zuzana-volfova-2025/">Zpět na hlavní stránku</a>
 
