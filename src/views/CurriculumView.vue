@@ -42,12 +42,20 @@ const handleClickOutside = (event: MouseEvent): void => {
   }
 }
 
+const handleKeyDown = (event: KeyboardEvent): void => {
+  if (event.key === 'Escape' && isDetailOpen.value.some((open) => open)) {
+    closeDetail()
+  }
+}
+
 onMounted(() => {
   document.addEventListener('click', handleClickOutside)
+  document.addEventListener('keydown', handleKeyDown)
 })
 
 onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside)
+  document.addEventListener('keydown', handleKeyDown)
 })
 </script>
 
