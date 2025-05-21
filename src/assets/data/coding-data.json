@@ -5,7 +5,8 @@
       "cardImage": "cv.png",
       "cardDescriptionShort": "zv-presentation",
       "cardDescription": "Vue.js, Pinia, Typescript, Bootstrap, Git, fetch",
-      "buttonRedirect": "https://github.com/zuzanavolfova/zuzana-volfova-2025"
+      "buttonRedirect": "https://github.com/zuzanavolfova/zuzana-volfova-2025",
+      "buttonWebRedirect": null
     }
   ],
   "htmlCss": [

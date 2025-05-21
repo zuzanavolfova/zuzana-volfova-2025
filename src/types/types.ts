@@ -8,6 +8,6 @@ export type CardData = {
   cardDescriptionShort: string
   cardDescription: string
   buttonRedirect: string
-  buttonWebRedirect: string | undefined
+  buttonWebRedirect: string | null
 }
 export type SordDirection = 'asc' | 'desc'
