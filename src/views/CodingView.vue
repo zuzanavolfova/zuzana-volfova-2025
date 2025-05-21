@@ -189,6 +189,7 @@ const changeSortDirection = (section: 'vue' | 'html' | 'js', direction: 'asc' | 
     flex-direction: column;
     text-align: center;
     &__items {
+      margin: auto;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       grid-template-rows: auto auto 1fr auto;
