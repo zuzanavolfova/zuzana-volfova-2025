@@ -2,6 +2,9 @@
 
 This project is developing with Vue 3 in Vite and Pinia.
 
+001 commits includes basics before UX testing
+002 commits includes changes after UX testing
+
 ## Project Setup
 
 ```sh
