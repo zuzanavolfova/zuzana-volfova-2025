@@ -2,7 +2,7 @@
 import { computed, ref } from 'vue'
 import CardComponent from '../components/CardComponent.vue'
 import dataJson from './../assets/data/coding-data.json'
-import type { CardData, SordDirection } from './../types/interfaces'
+import type { CardData, SordDirection } from '../types/types'
 const vueData = ref<CardData[]>(dataJson.vue)
 const htmlCssData = ref<CardData[]>(dataJson.htmlCss)
 const javaScriptData = ref<CardData[]>(dataJson.javaScript)
