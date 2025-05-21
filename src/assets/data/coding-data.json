@@ -14,7 +14,8 @@
       "cardImage": "tvoreni.png",
       "cardDescriptionShort": "crafting-butterfly",
       "cardDescription": "HTML, CSS, BEM, SASS, 11ty, GitHub, figma",
-      "buttonRedirect": "https://github.com/zuzanavolfova/Zaverecny-projekt-koderka"
+      "buttonRedirect": "https://github.com/zuzanavolfova/Zaverecny-projekt-koderka",
+      "buttonWebRedirect": "https://tvoreni-pro-motylky.netlify.app/"
     }
   ],
   "javaScript": [
@@ -23,7 +24,8 @@
       "cardImage": "javaScript.png",
       "cardDescriptionShort": "Javascript, Typescript",
       "cardDescription": " JavaScript, HTML, CSS, BEM, SASS",
-      "buttonRedirect": "https://github.com/zuzanavolfova/javaScript-study"
+      "buttonRedirect": "https://github.com/zuzanavolfova/javaScript-study",
+      "buttonWebRedirect": "https://zuzanavolfova.github.io/javaScript-study/"
     }
   ]
 }
