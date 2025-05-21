@@ -3,21 +3,10 @@ import { computed, ref } from 'vue'
 import CardComponent from '../components/CardComponent.vue'
 import dataJson from './../assets/data/coding-data.json'
 import type { CardData, SordDirection } from '../types/types'
-const vueData = ref<CardData[]>(dataJson.vue)
-const htmlCssData = ref<CardData[]>(dataJson.htmlCss)
-const javaScriptData = ref<CardData[]>(dataJson.javaScript)
+const data = ref<CardData[]>(dataJson)
 
-const sortDirections = ref({
-  vue: 'asc' as SordDirection,
-  html: 'asc' as SordDirection,
-  js: 'asc' as SordDirection,
-})
-
-const activeButton = ref({
-  vue: null as SordDirection | null,
-  html: null as SordDirection | null,
-  js: null as SordDirection | null,
-})
+const sordDirection = ref('desc' as SordDirection)
+const activeButton = ref('desc' as SordDirection | null)
 
 const sortData = (data: CardData[], direction: string): CardData[] => {
   return [...data].sort((a, b) => {
@@ -26,24 +15,11 @@ const sortData = (data: CardData[], direction: string): CardData[] => {
   })
 }
 
-const sortedVueData = computed<CardData[]>(() => sortData(vueData.value, sortDirections.value.vue))
-const sortedHtmlData = computed<CardData[]>(() =>
-  sortData(htmlCssData.value, sortDirections.value.html),
-)
-const sortedJavaScriptData = computed<CardData[]>(() =>
-  sortData(javaScriptData.value, sortDirections.value.js),
-)
-const changeSortDirection = (section: 'vue' | 'html' | 'js', direction: 'asc' | 'desc'): void => {
-  if (section === 'vue') {
-    sortDirections.value.vue = direction
-  }
-  if (section === 'html') {
-    sortDirections.value.html = direction
-  }
-  if (section === 'js') {
-    sortDirections.value.js = direction
-  }
-  activeButton.value[section] = direction
+const sortedData = computed<CardData[]>(() => sortData(data.value, sordDirection.value))
+
+const changeSortDirection = (direction: 'asc' | 'desc'): void => {
+  activeButton.value = direction
+  sordDirection.value = direction
 }
 </script>
 
@@ -55,18 +31,18 @@ const changeSortDirection = (section: 'vue' | 'html' | 'js', direction: 'asc' | 
       <div class="button-sort-container" role="group" aria-label="Sort Vue projects">
         <button
           class="button-sort"
-          :class="{ active: activeButton.vue === 'asc' }"
-          @click="changeSortDirection('vue', 'asc')"
-          :aria-pressed="activeButton.vue === 'asc'"
+          :class="{ active: activeButton === 'asc' }"
+          @click="changeSortDirection('asc')"
+          :aria-pressed="activeButton === 'asc'"
           aria-label="Sort Vue projects A to Z"
         >
           A-Z
         </button>
         <button
           class="button-sort"
-          :class="{ active: activeButton.vue === 'desc' }"
-          @click="changeSortDirection('vue', 'desc')"
-          :aria-pressed="activeButton.vue === 'desc'"
+          :class="{ active: activeButton === 'desc' }"
+          @click="changeSortDirection('desc')"
+          :aria-pressed="activeButton === 'desc'"
           aria-label="Sort Vue projects Z to A"
         >
           Z-A
@@ -75,91 +51,7 @@ const changeSortDirection = (section: 'vue' | 'html' | 'js', direction: 'asc' | 
       <div class="coding__content__items" role="list" aria-label="Vue and React project cards">
         <div
           class="coding__content__item"
-          v-for="(item, index) in sortedVueData"
-          :key="index"
-          role="listitem"
-        >
-          <card-component
-            :card-title="item.cardTitle"
-            :card-image="item.cardImage"
-            :card-description-short="item.cardDescriptionShort"
-            :card-description="item.cardDescription"
-            :button-redirect="item.buttonRedirect"
-            :button-web-redirect="item.buttonWebRedirect ?? undefined"
-          />
-        </div>
-      </div>
-    </section>
-    <section class="coding__content" aria-labelledby="javaSctipt-section">
-      <h3 id="javaScript-section">JavaScript, TypeScript</h3>
-      <div class="button-sort-container" role="group" aria-label="Sort JavaScript projects">
-        <button
-          class="button-sort"
-          :class="{ active: activeButton.js === 'asc' }"
-          @click="changeSortDirection('js', 'asc')"
-          :aria-pressed="activeButton.js === 'asc'"
-          aria-label="Sort JavaScript projects A to Z"
-        >
-          A-Z
-        </button>
-        <button
-          class="button-sort"
-          :class="{ active: activeButton.js === 'desc' }"
-          @click="changeSortDirection('js', 'desc')"
-          :aria-pressed="activeButton.js === 'desc'"
-          aria-label="Sort JavaScript projects Z to A"
-        >
-          Z-A
-        </button>
-      </div>
-      <div
-        class="coding__content__items"
-        role="list"
-        aria-label="JavaScript and TypeScript project cards"
-      >
-        <div
-          class="coding__content__item"
-          v-for="(item, index) in sortedJavaScriptData"
-          :key="index"
-          role="listitem"
-        >
-          <card-component
-            :card-title="item.cardTitle"
-            :card-image="item.cardImage"
-            :card-description-short="item.cardDescriptionShort"
-            :card-description="item.cardDescription"
-            :button-redirect="item.buttonRedirect"
-            :button-web-redirect="item.buttonWebRedirect ?? undefined"
-          />
-        </div>
-      </div>
-    </section>
-    <section class="coding__content" aria-labelledby="html-css-section">
-      <h3 id="html-css-section">HTML, CSS</h3>
-      <div class="button-sort-container" role="group" aria-label="Sort HTML and CSS projects">
-        <button
-          class="button-sort"
-          :class="{ active: activeButton.html === 'asc' }"
-          @click="changeSortDirection('html', 'asc')"
-          :aria-pressed="activeButton.html === 'asc'"
-          aria-label="Sort HTML and CSS projects A to Z"
-        >
-          A-Z
-        </button>
-        <button
-          class="button-sort"
-          :class="{ active: activeButton.html === 'desc' }"
-          @click="changeSortDirection('html', 'desc')"
-          :aria-pressed="activeButton.html === 'desc'"
-          aria-label="Sort HTML and CSS projects Z to A"
-        >
-          Z-A
-        </button>
-      </div>
-      <div class="coding__content__items" role="list" aria-label="HTML and CSS project cards">
-        <div
-          class="coding__content__item"
-          v-for="(item, index) in sortedHtmlData"
+          v-for="(item, index) in sortedData"
           :key="index"
           role="listitem"
         >
