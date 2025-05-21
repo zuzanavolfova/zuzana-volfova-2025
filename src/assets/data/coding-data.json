@@ -1,32 +1,26 @@
-{
-  "vue": [
-    {
-      "cardTitle": "zv-presentation",
-      "cardImage": "cv.png",
-      "cardDescriptionShort": "zv-presentation",
-      "cardDescription": "Vue.js, Pinia, Typescript, Bootstrap, Git, fetch",
-      "buttonRedirect": "https://github.com/zuzanavolfova/zuzana-volfova-2025",
-      "buttonWebRedirect": null
-    }
-  ],
-  "htmlCss": [
-    {
-      "cardTitle": "crafting-butterfly",
-      "cardImage": "tvoreni.png",
-      "cardDescriptionShort": "crafting-butterfly",
-      "cardDescription": "HTML, CSS, BEM, SASS, 11ty, GitHub, figma",
-      "buttonRedirect": "https://github.com/zuzanavolfova/Zaverecny-projekt-koderka",
-      "buttonWebRedirect": "https://tvoreni-pro-motylky.netlify.app/"
-    }
-  ],
-  "javaScript": [
-    {
-      "cardTitle": "Javascript, Typescript",
-      "cardImage": "javaScript.png",
-      "cardDescriptionShort": "Javascript, Typescript",
-      "cardDescription": " JavaScript, HTML, CSS, BEM, SASS",
-      "buttonRedirect": "https://github.com/zuzanavolfova/javaScript-study",
-      "buttonWebRedirect": "https://zuzanavolfova.github.io/javaScript-study/"
-    }
-  ]
-}
+[
+  {
+    "cardTitle": "zv-presentation",
+    "cardImage": "cv.png",
+    "cardDescriptionShort": "zv-presentation",
+    "cardDescription": "Vue.js, Pinia, Typescript, Bootstrap, Git, fetch",
+    "buttonRedirect": "https://github.com/zuzanavolfova/zuzana-volfova-2025",
+    "buttonWebRedirect": null
+  },
+  {
+    "cardTitle": "crafting-butterfly",
+    "cardImage": "tvoreni.png",
+    "cardDescriptionShort": "crafting-butterfly",
+    "cardDescription": "HTML, CSS, BEM, SASS, 11ty, GitHub, figma",
+    "buttonRedirect": "https://github.com/zuzanavolfova/Zaverecny-projekt-koderka",
+    "buttonWebRedirect": "https://tvoreni-pro-motylky.netlify.app/"
+  },
+  {
+    "cardTitle": "Javascript, Typescript",
+    "cardImage": "javaScript.png",
+    "cardDescriptionShort": "Javascript, Typescript",
+    "cardDescription": " JavaScript, HTML, CSS, BEM, SASS",
+    "buttonRedirect": "https://github.com/zuzanavolfova/javaScript-study",
+    "buttonWebRedirect": "https://zuzanavolfova.github.io/javaScript-study/"
+  }
+]
