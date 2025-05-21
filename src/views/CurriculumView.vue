@@ -2,18 +2,7 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import SideBar from './../components/SideBar.vue'
 
-const isDetailOpen = ref<boolean[]>([
-  false,
-  false,
-  false,
-  false,
-  false,
-  false,
-  false,
-  false,
-  false,
-  false,
-])
+const isDetailOpen = ref<boolean[]>(Array(10).fill(false))
 
 const isOpen = (position: number): void => {
   for (let i = 0; i < isDetailOpen.value.length; i++) {
