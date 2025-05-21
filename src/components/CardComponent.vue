@@ -32,6 +32,10 @@ const props = defineProps({
   },
   buttonRedirect: {
     type: String,
+    required: true,
+  },
+  buttonWebRedirect: {
+    type: String || undefined,
     required: false,
   },
 })
@@ -50,30 +54,38 @@ watchEffect(async () => {
     imageUrl.value = ''
   }
 })
-const goToLink = (): void => {
-  window.open(props.buttonRedirect || 'https://github.com/zuzanavolfova', '_blank')
+const goToLink = (redirectPath: string): void => {
+  window.open(redirectPath || 'https://github.com/zuzanavolfova', '_blank')
 }
 </script>
 <template>
   <div class="card__container">
     <div class="card__item" role="region">
       <h4 class="card__item__title" :aria-label="`${cardTitle}`">{{ $t(cardTitle) }}</h4>
-      <p class="card__item__image">
+      <div class="card__item__image">
         <img :src="imageUrl" :alt="cardImage" height="80px" loading="lazy" />
-      </p>
+      </div>
 
-      <p class="card__item__perex">
+      <div class="card__item__perex">
         {{ $t(cardDescription, { value: $t(cardDescriptionParams.value) }) }}
-      </p>
-      <p>
+      </div>
+      <div class="card__item__buttons">
         <button
           class="card__item__button"
-          @click="goToLink()"
+          @click="goToLink(buttonRedirect)"
           :aria-label="`${$t(buttonTitle)} - ${$t(cardTitle)}`"
         >
           {{ $t(buttonTitle) }}
         </button>
-      </p>
+        <button
+          v-if="buttonWebRedirect"
+          class="card__item__button"
+          @click="goToLink(buttonWebRedirect)"
+          :aria-label="`${$t('web')} - ${$t(cardTitle)}`"
+        >
+          {{ $t('web') }}
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -104,6 +116,10 @@ const goToLink = (): void => {
       @media (min-width: 1250px) {
         height: 28px;
       }
+    }
+    &__buttons {
+      display: flex;
+      gap: 12px;
     }
     &__button {
       @include button;
