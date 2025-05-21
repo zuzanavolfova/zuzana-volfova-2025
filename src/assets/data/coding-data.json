@@ -6,20 +6,6 @@
       "cardDescriptionShort": "zv-presentation",
       "cardDescription": "Vue.js, Pinia, Typescript, Bootstrap, Git, fetch",
       "buttonRedirect": "https://github.com/zuzanavolfova/zuzana-volfova-2025"
-    },
-    {
-      "cardTitle": "react-project",
-      "cardImage": "react.png",
-      "cardDescriptionShort": "react-project",
-      "cardDescription": "React, TypeScript, @mui/x-data-grid, formik",
-      "buttonRedirect": "https://github.com/zuzanavolfova/react-project"
-    },
-    {
-      "cardTitle": "Vue-extern-lib",
-      "cardImage": "vue.png",
-      "cardDescriptionShort": "Vue-extern-lib",
-      "cardDescription": "Vue.js, Pinia, Typescript, PrimeVue, fetch, GIT",
-      "buttonRedirect": "https://github.com/zuzanavolfova/cz-nic"
     }
   ],
   "htmlCss": [
@@ -29,13 +15,6 @@
       "cardDescriptionShort": "crafting-butterfly",
       "cardDescription": "HTML, CSS, BEM, SASS, 11ty, GitHub, figma",
       "buttonRedirect": "https://github.com/zuzanavolfova/Zaverecny-projekt-koderka"
-    },
-    {
-      "cardTitle": "Zuzana Volfová web 2022",
-      "cardImage": "web-2022.png",
-      "cardDescriptionShort": "Zuzana Volfová web 2022",
-      "cardDescription": "HTML, CSS, BEM, SASS, 11ty, GitHub, figma",
-      "buttonRedirect": "https://github.com/zuzanavolfova/zuzana-volfova"
     }
   ],
   "javaScript": [
