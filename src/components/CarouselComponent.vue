@@ -131,7 +131,7 @@
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 4px;
 }
 .carousel {
   @media (min-width: 650px) {
