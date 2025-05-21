@@ -33,6 +33,9 @@
   &__link {
     color: var(--text-dark-grey);
     text-decoration: none;
+    &:hover {
+      font-weight: 600;
+    }
   }
 }
 </style>
