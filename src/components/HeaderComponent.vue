@@ -12,6 +12,14 @@ const isMenuOpen = ref<boolean>(false)
 const isLocaleMenuOpen = ref<boolean>(false)
 const locale = computed<string>(() => store.currentLocale)
 
+const menuItems = [
+  { path: '/', label: 'home-h' },
+  { path: '/coding', label: 'coding-h' },
+  { path: '/UX', label: 'ux-design-h' },
+  { path: '/graphic', label: 'graphic-h' },
+  { path: '/curriculum', label: 'curriculum-h' },
+]
+
 const changeLocale = async (val: string): Promise<void> => {
   await i18next.changeLanguage(val)
   store.currentLocale = val
@@ -103,101 +111,29 @@ const handleMenuIsOpen = () => {
         aria-label="Mobile navigation"
       >
         <div
+          v-for="item in menuItems"
+          :key="item.path"
           tabindex="0"
           role="link"
-          @click="navigateTo('/')"
-          @keydown.enter="navigateTo('/')"
-          @keydown.space="navigateTo('/')"
+          @click="navigateTo(item.path)"
+          @keydown.enter="navigateTo(item.path)"
+          @keydown.space.prevent="navigateTo(item.path)"
         >
-          {{ $t('home-h') }}
-        </div>
-        <div
-          tabindex="0"
-          role="link"
-          @click="navigateTo('/coding')"
-          @keydown.enter="navigateTo('/coding')"
-          @keydown.space="navigateTo('/coding')"
-        >
-          {{ $t('coding-h') }}
-        </div>
-        <div
-          tabindex="0"
-          role="link"
-          @click="navigateTo('/UX')"
-          @keydown.enter="navigateTo('/UX')"
-          @keydown.space="navigateTo('/UX')"
-        >
-          {{ $t('ux-design-h') }}
-        </div>
-        <div
-          tabindex="0"
-          role="link"
-          @click="$router.push('/graphic')"
-          @keydown.enter="navigateTo('/graphic')"
-          @keydown.space="navigateTo('/graphic')"
-        >
-          {{ $t('graphic-h') }}
-        </div>
-        <div
-          tabindex="0"
-          role="link"
-          @click="navigateTo('/curriculum')"
-          @keydown.enter="navigateTo('/curriculum')"
-          @keydown.space="navigateTo('/curriculum')"
-        >
-          {{ $t('curriculum-h') }}
+          {{ $t(item.label) }}
         </div>
       </nav>
       <nav class="header__menu__container" aria-label="Desktop navigation">
         <div
+          v-for="item in menuItems"
+          :key="item.path"
           class="header__menu__item"
           tabindex="0"
           role="link"
-          @click="$router.push('/')"
-          @keydown.enter="$router.push('/')"
-          @keydown.space="$router.push('/')"
+          @click="navigateTo(item.path)"
+          @keydown.enter="navigateTo(item.path)"
+          @keydown.space.prevent="navigateTo(item.path)"
         >
-          {{ $t('home-h') }}
-        </div>
-        <div
-          class="header__menu__item"
-          tabindex="0"
-          role="link"
-          @click="$router.push('/coding')"
-          @keydown.enter="$router.push('/coding')"
-          @keydown.space="$router.push('/coding')"
-        >
-          {{ $t('coding-h') }}
-        </div>
-        <div
-          class="header__menu__item"
-          tabindex="0"
-          role="link"
-          @click="$router.push('/UX')"
-          @keydown.enter="$router.push('/UX')"
-          @keydown.space="$router.push('/UX')"
-        >
-          {{ $t('ux-design-h') }}
-        </div>
-        <div
-          class="header__menu__item"
-          tabindex="0"
-          role="link"
-          @click="$router.push('/graphic')"
-          @keydown.enter="$router.push('/graphic')"
-          @keydown.space="$router.push('/graphic')"
-        >
-          {{ $t('graphic-h') }}
-        </div>
-        <div
-          class="header__menu__item"
-          tabindex="0"
-          role="link"
-          @click="$router.push('/curriculum')"
-          @keydown.enter="$router.push('/curriculum')"
-          @keydown.space="$router.push('/curriculum')"
-        >
-          {{ $t('curriculum-h') }}
+          {{ $t(item.label) }}
         </div>
       </nav>
     </menu>
