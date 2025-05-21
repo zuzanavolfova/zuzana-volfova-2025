@@ -52,7 +52,7 @@
           loading="lazy"
         />
         <div class="carousel-caption d-none d-md-block">
-          <h5>{{ $t('curriculum-h') }}</h5>
+          <h2>{{ $t('curriculum-h') }}</h2>
         </div>
       </div>
       <div
@@ -69,7 +69,7 @@
           loading="lazy"
         />
         <div class="carousel-caption d-none d-md-block">
-          <h5>{{ $t('coding-h') }}</h5>
+          <h2>{{ $t('coding-h') }}</h2>
         </div>
       </div>
       <div
@@ -86,7 +86,7 @@
           loading="lazy"
         />
         <div class="carousel-caption d-none d-md-block">
-          <h5>{{ $t('ux-design-h') }}</h5>
+          <h2>{{ $t('ux-design-h') }}</h2>
         </div>
       </div>
       <div
@@ -103,7 +103,7 @@
           loading="lazy"
         />
         <div class="carousel-caption d-none d-md-block">
-          <h5>{{ $t('graphic-h') }}</h5>
+          <h2>{{ $t('graphic-h') }}</h2>
         </div>
       </div>
     </div>
@@ -139,8 +139,9 @@
     margin: auto;
   }
 }
-.carousel-item h5 {
-  color: white;
+.carousel-item h2 {
+  color: white !important;
+  font-size: 20px;
 }
 .carousel-item > img {
   height: 160px;
