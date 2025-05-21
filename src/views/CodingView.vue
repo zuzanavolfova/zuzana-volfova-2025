@@ -28,13 +28,13 @@ const changeSortDirection = (direction: 'asc' | 'desc'): void => {
     <h2 id="coding-section-title" class="coding__title">{{ $t('coding-h') }}</h2>
     <section class="coding__content" aria-labelledby="vue-section">
       <h3>Vue.js, React</h3>
-      <div class="button-sort-container" role="group" aria-label="Sort Vue projects">
+      <div class="button-sort-container" role="group" aria-label="Sort projects">
         <button
           class="button-sort"
           :class="{ active: activeButton === 'asc' }"
           @click="changeSortDirection('asc')"
           :aria-pressed="activeButton === 'asc'"
-          aria-label="Sort Vue projects A to Z"
+          aria-label="Sort projects A to Z"
         >
           A-Z
         </button>
@@ -43,12 +43,12 @@ const changeSortDirection = (direction: 'asc' | 'desc'): void => {
           :class="{ active: activeButton === 'desc' }"
           @click="changeSortDirection('desc')"
           :aria-pressed="activeButton === 'desc'"
-          aria-label="Sort Vue projects Z to A"
+          aria-label="Sort projects Z to A"
         >
           Z-A
         </button>
       </div>
-      <div class="coding__content__items" role="list" aria-label="Vue and React project cards">
+      <div class="coding__content__items" role="list" aria-label="Project cards">
         <div
           class="coding__content__item"
           v-for="(item, index) in sortedData"
