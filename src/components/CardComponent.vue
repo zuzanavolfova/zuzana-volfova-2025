@@ -59,7 +59,11 @@ const goToLink = (redirectPath: string): void => {
 }
 </script>
 <template>
-  <div class="card__container">
+  <div
+    @click="goToLink(buttonWebRedirect)"
+    :aria-label="`${$t('web')} - ${$t(cardTitle)}`"
+    class="card__container"
+  >
     <div class="card__item" role="region">
       <h4 class="card__item__title" :aria-label="`${cardTitle}`">{{ $t(cardTitle) }}</h4>
       <div class="card__item__image">
@@ -69,23 +73,13 @@ const goToLink = (redirectPath: string): void => {
       <div class="card__item__perex">
         {{ $t(cardDescription, { value: $t(cardDescriptionParams.value) }) }}
       </div>
-      <div class="card__item__buttons">
-        <button
-          class="card__item__button"
-          @click="goToLink(buttonRedirect)"
-          :aria-label="`${$t(buttonTitle)} - ${$t(cardTitle)}`"
-        >
-          {{ $t(buttonTitle) }}
-        </button>
-        <button
-          v-if="buttonWebRedirect"
-          class="card__item__button"
-          @click="goToLink(buttonWebRedirect)"
-          :aria-label="`${$t('web')} - ${$t(cardTitle)}`"
-        >
-          {{ $t('web') }}
-        </button>
-      </div>
+      <button
+        class="card__item__button"
+        @click="goToLink(buttonRedirect)"
+        :aria-label="`${$t(buttonTitle)} - ${$t(cardTitle)}`"
+      >
+        {{ $t(buttonTitle) }}
+      </button>
     </div>
   </div>
 </template>
@@ -93,6 +87,7 @@ const goToLink = (redirectPath: string): void => {
 @use '@/assets/styles/mixins' as *;
 .card {
   &__container {
+    cursor: pointer;
     margin: 28px;
     height: 380px;
     &:hover {
@@ -116,10 +111,6 @@ const goToLink = (redirectPath: string): void => {
       @media (min-width: 1250px) {
         height: 28px;
       }
-    }
-    &__buttons {
-      display: flex;
-      gap: 12px;
     }
     &__button {
       @include button;
