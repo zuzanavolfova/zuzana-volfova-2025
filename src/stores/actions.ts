@@ -1,5 +1,12 @@
 import type { Ref } from 'vue'
 
+const isClickInside = (target: HTMLElement, elements: HTMLElement[]): boolean => {
+  return elements.some((element) => element.contains(target))
+}
+
+const isClickExcluded = (target: HTMLElement, excludeSelectors: string[]): boolean =>
+  excludeSelectors.some((selector) => target.classList.contains(selector))
+
 export const createClickOutsideHandler = (
   elementSelectors: string[],
   excludeSelectors: string[],
@@ -8,19 +15,15 @@ export const createClickOutsideHandler = (
   return (event: MouseEvent): void => {
     const target = event.target as HTMLElement
 
-    for (const selector of excludeSelectors) {
-      if (target.classList.contains(selector)) {
-        return
-      }
+    if (isClickExcluded(target, excludeSelectors)) {
+      return
     }
 
-    const elements = elementSelectors.flatMap((selector) =>
-      Array.from(document.querySelectorAll(selector)),
+    const insideElements: HTMLElement[] = elementSelectors.flatMap((selector) =>
+      Array.from(document.querySelectorAll<HTMLElement>(selector)),
     )
 
-    const isClickInside = elements.some((element) => element.contains(target))
-
-    if (!isClickInside) {
+    if (!isClickInside(target, insideElements)) {
       stateToToggle.value = false
     }
   }
