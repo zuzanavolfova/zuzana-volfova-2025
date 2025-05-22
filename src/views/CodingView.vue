@@ -61,7 +61,9 @@ const changeSortDirection = (direction: 'asc' | 'desc'): void => {
             :card-description-short="item.cardDescriptionShort"
             :card-description="item.cardDescription"
             :button-redirect="item.buttonRedirect"
-            :button-web-redirect="item.buttonWebRedirect ?? undefined"
+            :button-web-redirect="
+              item.buttonWebRedirect ?? 'https://zuzanavolfova.github.io/zuzana-volfova-2025/#/'
+            "
           />
         </div>
       </div>
