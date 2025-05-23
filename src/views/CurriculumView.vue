@@ -445,7 +445,7 @@ onBeforeUnmount(() => {
       }
       &__detail {
         position: absolute;
-        top: 100%;
+        top: 112%;
         left: -90px;
         z-index: 100;
         margin: 0 20px;
