@@ -6,7 +6,8 @@
     "translationParams": { "value": "project-koderka" },
     "cardDescription": "figma-text",
     "buttonTitle": "figma-project",
-    "buttonRedirect": "https://www.figma.com/design/lPqMSAqkLRTpklgPr40uZ5/Tvoreni-pro-deti"
+    "buttonRedirect": "https://www.figma.com/design/lPqMSAqkLRTpklgPr40uZ5/Tvoreni-pro-deti",
+    "buttonWebRedirect": "https://www.figma.com/design/lPqMSAqkLRTpklgPr40uZ5/Tvoreni-pro-deti"
   },
   {
     "cardTitle": "tree-wishes",
@@ -15,7 +16,8 @@
     "translationParams": { "value": "project-coursera" },
     "cardDescription": "adobe-text",
     "buttonTitle": "adobe-project",
-    "buttonRedirect": "https://xd.adobe.com/view/657ea26e-5c27-4e08-9e93-4d1d38c9c00b-302d/"
+    "buttonRedirect": "https://xd.adobe.com/view/657ea26e-5c27-4e08-9e93-4d1d38c9c00b-302d/",
+    "buttonWebRedirect": "https://xd.adobe.com/view/657ea26e-5c27-4e08-9e93-4d1d38c9c00b-302d/"
   },
   {
     "cardTitle": "gallery-project",
@@ -24,6 +26,7 @@
     "cardDescription": "figma-text",
     "translationParams": { "value": "project-coursera" },
     "buttonTitle": "figma-project",
-    "buttonRedirect": "https://www.figma.com/design/BJTHvUzeW2G1qJzxzP78ZQ/Gallery-project1?node-id=433-842%2F/"
+    "buttonRedirect": "https://www.figma.com/design/BJTHvUzeW2G1qJzxzP78ZQ/Gallery-project1?node-id=433-842%2F/",
+    "buttonWebRedirect": "https://www.figma.com/design/BJTHvUzeW2G1qJzxzP78ZQ/Gallery-project1?node-id=433-842%2F/"
   }
 ]
