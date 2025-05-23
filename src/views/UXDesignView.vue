@@ -23,6 +23,7 @@ import uxData from './../assets/data/ux-data.json'
           :card-descriptionParams="item.translationParams"
           :button-title="item.buttonTitle"
           :button-redirect="item.buttonRedirect"
+          :button-web-redirect="item.buttonWebRedirect"
         />
       </div>
     </div>
