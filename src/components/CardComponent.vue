@@ -35,7 +35,7 @@ const props = defineProps({
     required: true,
   },
   buttonWebRedirect: {
-    type: String || undefined,
+    type: String,
     required: false,
   },
 })
@@ -54,7 +54,7 @@ watchEffect(async () => {
     imageUrl.value = ''
   }
 })
-const goToLink = (redirectPath: string): void => {
+const goToLink = (redirectPath: string | undefined): void => {
   window.open(redirectPath || 'https://github.com/zuzanavolfova', '_blank')
 }
 </script>
