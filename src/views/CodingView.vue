@@ -1,12 +1,22 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import CardComponent from '../components/CardComponent.vue'
-import dataJson from './../assets/data/coding-data.json'
 import type { CardData, SordDirection } from '../types/types'
-const data = ref<CardData[]>(dataJson)
+import { getData } from './../stores/getters'
+
+const data = ref<CardData[]>([])
 
 const sordDirection = ref('desc' as SordDirection)
 const activeButton = ref('desc' as SordDirection | null)
+
+onMounted(async (): Promise<void> => {
+  try {
+    data.value = await getData()
+  } catch (error) {
+    console.error('Failed to load data:', error)
+    data.value = []
+  }
+})
 
 const sortData = (data: CardData[], direction: string): CardData[] => {
   return [...data].sort((a, b) => {
