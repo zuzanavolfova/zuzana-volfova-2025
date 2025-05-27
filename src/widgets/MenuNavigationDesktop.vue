@@ -7,9 +7,7 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{ navigate: [path: string] }>()
-const handleNavigation = (path: string) => {
-  emit('navigate', path)
-}
+
 </script>
 <template>
   <nav class="header__menu__container" aria-label="Desktop navigation">
@@ -19,9 +17,9 @@ const handleNavigation = (path: string) => {
       class="header__menu__item"
       tabindex="0"
       role="link"
-      @click="handleNavigation(item.path)"
-      @keydown.enter="handleNavigation(item.path)"
-      @keydown.space.prevent="handleNavigation(item.path)"
+      @click="emit('navigate', item.path)"
+      @keydown.enter="emit('navigate', item.path)"
+      @keydown.space.prevent="emit('navigate', item.path)"
     >
       {{ $t(item.label) }}
     </div>

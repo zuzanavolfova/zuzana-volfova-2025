@@ -7,9 +7,6 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{ navigate: [path: string] }>()
-const handleNavigation = (path: string) => {
-  emit('navigate', path)
-}
 </script>
 
 <template>
@@ -19,9 +16,9 @@ const handleNavigation = (path: string) => {
       :key="item.path"
       tabindex="0"
       role="link"
-      @click="handleNavigation(item.path)"
-      @keydown.enter="handleNavigation(item.path)"
-      @keydown.space.prevent="handleNavigation(item.path)"
+      @click="emit('navigate', item.path)"
+      @keydown.enter="emit('navigate', item.path)"
+      @keydown.space.prevent="emit('navigate', item.path)"
     >
       {{ $t(item.label) }}
     </div>

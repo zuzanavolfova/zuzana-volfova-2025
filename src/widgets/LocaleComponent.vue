@@ -58,7 +58,7 @@ const emit = defineEmits<{ changeLocale: [val: string] }>()
 .header__locale {
   position: fixed;
   right: 40px;
-  top: 68px;
+  top: 66px;
   width: auto;
   min-width: 32px;
   height: 32px;
