@@ -12,7 +12,7 @@ const isMenuOpen = ref<boolean>(false)
 const isLocaleMenuOpen = ref<boolean>(false)
 const locale = computed<string>(() => store.currentLocale)
 
-const menuItems = [
+const menuItems: Array<{ path: string; label: string }> = [
   { path: '/', label: 'home-h' },
   { path: '/coding', label: 'coding-h' },
   { path: '/UX', label: 'ux-design-h' },

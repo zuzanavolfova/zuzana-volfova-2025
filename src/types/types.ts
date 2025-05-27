@@ -2,6 +2,7 @@ export interface ImageProperties {
   title: string
   image: string
 }
+
 export type CardData = {
   cardTitle: string
   cardImage: string
@@ -10,4 +11,10 @@ export type CardData = {
   buttonRedirect: string
   buttonWebRedirect: string | null
 }
+
 export type SordDirection = 'asc' | 'desc'
+
+export interface MenuItem {
+  path: string
+  label: string
+}
