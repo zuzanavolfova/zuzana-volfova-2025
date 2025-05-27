@@ -32,26 +32,7 @@ const handleScroll = (): void => {
   isScrolled.value = window.scrollY > 50
 }
 
-const countDropdownHeight = (element: HTMLElement): string => {
-  const rect = element.getBoundingClientRect()
-  const viewportHeight = window.innerHeight || document.documentElement.clientHeight
-  const heightOut = rect.bottom > viewportHeight
-  return heightOut ? viewportHeight - rect.top - 40 + 'px' : 'auto'
-}
-
-const dropdownHeight = ref('auto')
-
-const updateDropdownHeight = () => {
-  const menuDropdownElement = document.querySelector(
-    '.header__menu__hamburger__container',
-  ) as HTMLElement | null
-
-  if (menuDropdownElement) {
-    dropdownHeight.value = countDropdownHeight(menuDropdownElement)
-  }
-}
-
-const navigateTo = (path: string): void => {
+const handleNavigation = (path: string) => {
   router.push(path)
   isMenuOpen.value = false
 }
@@ -80,9 +61,6 @@ onUnmounted(() => {
 
 const handleMenuIsOpen = () => {
   isMenuOpen.value = !isMenuOpen.value
-  nextTick(() => {
-    updateDropdownHeight()
-  })
 }
 </script>
 <template>
