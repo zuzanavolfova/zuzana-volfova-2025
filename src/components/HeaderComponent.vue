@@ -4,10 +4,13 @@ import HamburgerMenu from './../widgets/HamburgerMenu.vue'
 import i18next from 'i18next'
 import { useStore } from './../stores/main'
 import { useRouter } from 'vue-router'
+
 import { createClickOutsideHandler } from './../stores/actions'
+import MenuNavigationSmall from './../widgets/MenuNavigationSmall.vue'
 
 const store = useStore()
 const router = useRouter()
+
 const isMenuOpen = ref<boolean>(false)
 const isLocaleMenuOpen = ref<boolean>(false)
 const locale = computed<string>(() => store.currentLocale)
@@ -82,24 +85,12 @@ const handleMenuIsOpen = () => {
         @keydown.enter="handleMenuIsOpen"
         @keydown.space="handleMenuIsOpen"
       />
-      <nav
+      <MenuNavigationSmall
         v-if="isMenuOpen"
-        @click="isMenuOpen = false"
-        class="header__menu__hamburger__container"
-        aria-label="Mobile navigation"
-      >
-        <div
-          v-for="item in menuItems"
-          :key="item.path"
-          tabindex="0"
-          role="link"
-          @click="navigateTo(item.path)"
-          @keydown.enter="navigateTo(item.path)"
-          @keydown.space.prevent="navigateTo(item.path)"
-        >
-          {{ $t(item.label) }}
-        </div>
-      </nav>
+        @click="isMenuOpen = !isMenuOpen"
+        :menu-items="menuItems"
+        @navigate="handleNavigation"
+      />
       <nav class="header__menu__container" aria-label="Desktop navigation">
         <div
           v-for="item in menuItems"
@@ -107,9 +98,9 @@ const handleMenuIsOpen = () => {
           class="header__menu__item"
           tabindex="0"
           role="link"
-          @click="navigateTo(item.path)"
-          @keydown.enter="navigateTo(item.path)"
-          @keydown.space.prevent="navigateTo(item.path)"
+          @click="handleNavigation(item.path)"
+          @keydown.enter="handleNavigation(item.path)"
+          @keydown.space.prevent="handleNavigation(item.path)"
         >
           {{ $t(item.label) }}
         </div>
@@ -188,31 +179,6 @@ const handleMenuIsOpen = () => {
     &__hamburger {
       justify-self: center;
       margin: 8px;
-      &__container {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: max-content;
-        text-align: center;
-        padding: 8px 0;
-        text-transform: uppercase;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: var(--extra-light-background);
-        z-index: 1000;
-        box-shadow: 1px 2px 6px rgba(124, 124, 124, 0.5);
-        height: v-bind(dropdownHeight);
-        overflow: scroll;
-        div {
-          cursor: pointer;
-          padding: 8px 12px;
-          width: 100%;
-          &:hover {
-            background-color: white;
-          }
-        }
-      }
     }
     &__container {
       display: none;
