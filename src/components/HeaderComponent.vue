@@ -7,6 +7,7 @@ import { useRouter } from 'vue-router'
 
 import { createClickOutsideHandler } from './../stores/actions'
 import MenuNavigationSmall from './../widgets/MenuNavigationSmall.vue'
+import MenuNavigationDesktop from '../widgets/MenuNavigationDesktop.vue'
 
 const store = useStore()
 const router = useRouter()
@@ -91,20 +92,7 @@ const handleMenuIsOpen = () => {
         :menu-items="menuItems"
         @navigate="handleNavigation"
       />
-      <nav class="header__menu__container" aria-label="Desktop navigation">
-        <div
-          v-for="item in menuItems"
-          :key="item.path"
-          class="header__menu__item"
-          tabindex="0"
-          role="link"
-          @click="handleNavigation(item.path)"
-          @keydown.enter="handleNavigation(item.path)"
-          @keydown.space.prevent="handleNavigation(item.path)"
-        >
-          {{ $t(item.label) }}
-        </div>
-      </nav>
+      <MenuNavigationDesktop :menu-items="menuItems" @navigate="handleNavigation" />
     </menu>
     <div
       class="header__locale"
@@ -179,26 +167,6 @@ const handleMenuIsOpen = () => {
     &__hamburger {
       justify-self: center;
       margin: 8px;
-    }
-    &__container {
-      display: none;
-      @media (min-width: 650px) {
-        display: flex;
-        justify-content: space-between;
-        color: var(--text-medium-grey);
-        padding: 8px 80px;
-        max-width: 1250px;
-      }
-    }
-    &__item {
-      cursor: pointer;
-      font-size: 18px;
-      color: var(--text-medium-grey);
-      font-weight: 600;
-      &:hover {
-        transform: scale(1.2);
-        transition: width 0.3s ease;
-      }
     }
   }
   &__locale {
