@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import HamburgerMenu from './../widgets/HamburgerMenu.vue'
 import i18next from 'i18next'
 import { useStore } from './../stores/main'
@@ -8,13 +8,13 @@ import { useRouter } from 'vue-router'
 import { createClickOutsideHandler } from './../stores/actions'
 import MenuNavigationSmall from './../widgets/MenuNavigationSmall.vue'
 import MenuNavigationDesktop from '../widgets/MenuNavigationDesktop.vue'
+import LocaleComponent from './../widgets/LocaleComponent.vue'
 
 const store = useStore()
 const router = useRouter()
 
 const isMenuOpen = ref<boolean>(false)
 const isLocaleMenuOpen = ref<boolean>(false)
-const locale = computed<string>(() => store.currentLocale)
 
 const menuItems: Array<{ path: string; label: string }> = [
   { path: '/', label: 'home-h' },
@@ -94,44 +94,14 @@ const handleMenuIsOpen = () => {
       />
       <MenuNavigationDesktop :menu-items="menuItems" @navigate="handleNavigation" />
     </menu>
-    <div
-      class="header__locale"
-      tabindex="0"
-      role="button"
-      aria-haspopup="true"
-      :aria-expanded="isLocaleMenuOpen ? 'true' : 'false'"
-      aria-controls="locale-dropdown"
+    <LocaleComponent
+      :is-locale-menu-open="isLocaleMenuOpen"
+      :is-scrolled="isScrolled"
+      @change-locale="changeLocale"
       @click="isLocaleMenuOpen = !isLocaleMenuOpen"
-      @keydown.enter="isLocaleMenuOpen = !isLocaleMenuOpen"
-      @keydown.space="isLocaleMenuOpen = !isLocaleMenuOpen"
-      :class="{
-        'header__locale--active': isLocaleMenuOpen,
-        'header__locale--scrolled': isScrolled,
-      }"
-    >
-      {{ $t(locale) }}
-    </div>
-    <div
-      v-if="isLocaleMenuOpen"
-      class="header__locale__dropdown"
-      role="menu"
-      aria-label="Language selection"
-    >
-      <div class="header__locale__dropdown__arrow" aria-hidden="true"></div>
-      <div
-        v-for="(item, index) in store.availableLocale"
-        :key="index"
-        class="header__locale__dropdown__item"
-        role="menuitem"
-        tabindex="0"
-        @click="changeLocale(item.title)"
-        @keydown.enter="changeLocale(item.title)"
-        @keydown.space="changeLocale(item.title)"
-      >
-        <img class="header__locale__dropdown__image" :src="item.image" :alt="item.title" />
-        <span class="header__locale__dropdown__title">{{ $t(item.title) }}</span>
-      </div>
-    </div>
+      @keydown.enter.prevent="isLocaleMenuOpen = !isLocaleMenuOpen"
+      @keydown.space.prevent="isLocaleMenuOpen = !isLocaleMenuOpen"
+    />
   </div>
 </template>
 <style lang="scss" scoped>
@@ -167,100 +137,6 @@ const handleMenuIsOpen = () => {
     &__hamburger {
       justify-self: center;
       margin: 8px;
-    }
-  }
-  &__locale {
-    position: fixed;
-    right: 40px;
-    top: 68px;
-    width: auto;
-    min-width: 32px;
-    height: 32px;
-    text-transform: uppercase;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    color: var(--text-dark-grey);
-    box-shadow: 1px 2px 6px rgba(124, 124, 124, 0.5);
-    padding: 0 4px;
-    z-index: 1001;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    @media (prefers-color-scheme: dark) {
-      box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
-    }
-    @media (min-width: 650px) {
-      top: 10px;
-      right: 10px;
-      width: 32px;
-      margin: 8px;
-    }
-    @media (min-width: 1250px) {
-      position: fixed;
-      right: calc(50% - 600px);
-      width: 32px;
-      margin: 8px;
-    }
-    &--active {
-      background-color: var(--light-background);
-    }
-    &:hover {
-      background-color: var(--light-background);
-    }
-    &:active {
-      background-color: var(--light-background);
-    }
-    &--scrolled {
-      top: 10px;
-    }
-  }
-  &__locale__dropdown {
-    position: fixed;
-    right: 20px;
-    top: 110px;
-    width: 100px;
-    height: auto;
-    padding: 6px 0;
-    box-shadow: 1px 2px 6px rgba(124, 124, 124, 0.5);
-    background-color: var(--extra-light-background);
-    cursor: pointer;
-    z-index: 1000;
-    @media (min-width: 650px) {
-      right: 10px;
-      top: 60px;
-    }
-    @media (min-width: 1250px) {
-      right: calc(50% - 600px);
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: -9px;
-      right: 20px;
-      width: 30px;
-      height: 14px;
-      background: var(--extra-light-background);
-      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-      @media (min-width: 650px) {
-        right: 8px;
-      }
-    }
-    &__item {
-      display: flex;
-      align-items: center;
-      padding: 6px 0;
-      &:hover {
-        background-color: white;
-      }
-    }
-    &__image {
-      width: 44px;
-    }
-    &__title {
-      text-transform: uppercase;
     }
   }
 }
