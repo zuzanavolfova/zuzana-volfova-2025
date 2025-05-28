@@ -13,6 +13,7 @@
       role="link"
       aria-label="Visit Zuzana Volfová's LinkedIn profile"
       href="https://www.linkedin.com/in/zuzana-volfová"
+      target="_blank"
       >LinkedIn</a
     >
   </footer>

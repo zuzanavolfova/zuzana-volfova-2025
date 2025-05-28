@@ -169,6 +169,7 @@ onBeforeUnmount(() => {
                 <div>HTML, CSS, BEM, SASS, 11ty figma, GIMP, GitHub, Visual Studio Code.</div>
                 <a
                   href="https://www.czechitas.cz/kurzy/stan-se-koderkou"
+                  target="_blank"
                   role="link"
                   aria-label="Visit codding course detail"
                 >
@@ -202,6 +203,7 @@ onBeforeUnmount(() => {
                 <div>JavaScript, GitHub, Visual Studio Code.</div>
                 <a
                   href="https://www.czechitas.cz/kurzy/javascript-1-zaklady"
+                  target="_blank"
                   role="link"
                   aria-label="Visit javaScript course detail"
                 >
