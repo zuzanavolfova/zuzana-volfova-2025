@@ -87,12 +87,16 @@ const imageVectorData = imageData.vector
       display: flex;
       flex-direction: column;
       gap: 28px;
+
       @media (min-width: 650px) {
         flex-direction: row;
         gap: 42px;
         flex-wrap: wrap;
         justify-content: center;
         padding: 24px;
+      }
+      & img {
+        height: auto;
       }
     }
   }
