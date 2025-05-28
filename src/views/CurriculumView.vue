@@ -116,6 +116,15 @@ onBeforeUnmount(() => {
                 <span class="cv__content__description__subtitle"
                   >Udemy (Maximilian Schwarzmüller course)</span
                 >
+                <div>{{ $t('course-info', { lectures: '338', videoHours: '22.5' }) }}</div>
+                <a
+                  href="https://www.udemy.com/course/understanding-typescript/"
+                  target="_blank"
+                  role="link"
+                  aria-label="Visit typeScript course detail"
+                >
+                  {{ $t('detail-ts-course') }}</a
+                >
               </div>
             </transition>
           </div>
@@ -519,5 +528,8 @@ onBeforeUnmount(() => {
   @media (min-width: 650px) {
     display: none;
   }
+}
+a {
+  color: var(--text-dark-grey);
 }
 </style>
