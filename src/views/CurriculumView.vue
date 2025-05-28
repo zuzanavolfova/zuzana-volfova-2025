@@ -44,7 +44,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside)
-  document.addEventListener('keydown', handleKeyDown)
+  document.removeEventListener('keydown', handleKeyDown)
 })
 </script>
 
