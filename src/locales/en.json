@@ -34,5 +34,7 @@
   "vector-graphics": "Vector Graphics",
   "detail-coding-course": "Coding course detai",
   "detail-javaScript-course": "Javascript course detail",
-  "web": "Web pages"
+  "web": "Web pages",
+  "detail-vue-course": "VUE.js course detail",
+  "course-info": "Lectures: {{lectures}}, Video: {{videoHours}} total hours"
 }

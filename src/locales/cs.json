@@ -35,5 +35,7 @@
   "vector-graphics": "Vektorová grafika",
   "detail-coding-course": "Detailní obsah kurzu Kodérka",
   "detail-javaScript-course": "Detailní obsah kurzu JavaScript",
-  "web": "Webove stranky"
+  "web": "Webove stranky",
+  "detail-vue-course": "Detailní obsah kurzu VUE.js",
+  "course-info": "Lekce: {{lectures}}, Videa: {{videoHours}} total hours"
 }

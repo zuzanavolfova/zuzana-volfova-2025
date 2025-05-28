@@ -138,8 +138,17 @@ onBeforeUnmount(() => {
                 :aria-labelledby="'toggle-1'"
               >
                 <h6>Vue.js - The Complete Guide</h6>
-                <span class="cv__content__description__subtitle"
-                  >Udemy (Maximilian Schwarzmüller course)</span
+                <span class="cv__content__description__subtitle">
+                  Udemy (Maximilian Schwarzmüller course)
+                </span>
+                <div>{{ $t('course-info', { lectures: '333', videoHours: '32' }) }}</div>
+                <a
+                  href="https://www.udemy.com/course/vuejs-2-the-complete-guide/"
+                  target="_blank"
+                  role="link"
+                  aria-label="Visit javaScript course detail"
+                >
+                  {{ $t('detail-vue-course') }}</a
                 >
               </div>
             </transition>
