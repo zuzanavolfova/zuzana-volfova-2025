@@ -1,38 +1,38 @@
 {
   "promotional": [
     {
-      "cardImage": "poukazka.jpg",
-      "cardDescriptionShort": "crafting-butterfly"
+      "cardImage": "poukazka.webp",
+      "cardDescriptionShort": ""
     }
   ],
   "vector": [
     {
-      "cardImage": "children-circle.png",
+      "cardImage": "children-circle.webp",
       "imageDescriptionShort": "children circle"
     },
     {
-      "cardImage": "klaun.png",
+      "cardImage": "klaun.webp",
       "imageDescriptionShort": "claun"
     },
     {
-      "cardImage": "motyl.png",
+      "cardImage": "motyl.webp",
       "imageDescriptionShort": "butterfly"
     },
     {
-      "cardImage": "icons-light.png",
+      "cardImage": "icons-light.webp",
       "imageDescriptionShort": "icons"
     },
     {
-      "cardImage": "icons.png",
+      "cardImage": "icons.webp",
       "imageDescriptionShort": "icons"
     },
 
     {
-      "cardImage": "motyl.png",
+      "cardImage": "motyl.webp",
       "imageDescriptionShort": "butterfly"
     },
     {
-      "cardImage": "responzive.png",
+      "cardImage": "responzive.webp",
       "imageDescriptionShort": "resposive screen"
     }
   ]

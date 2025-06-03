@@ -45,7 +45,7 @@
         aria-label="Slide 1 of 4"
       >
         <img
-          src="./../assets/images/volfova-zuzana-foto.jpg"
+          src="./../assets/images/volfova-zuzana-foto.webp"
           class="d-block w-30"
           alt="lick to navigate to curriculum"
           @click="$router.push('/curriculum')"
@@ -62,7 +62,7 @@
         aria-label="Slide 2 of 4"
       >
         <img
-          src="./../assets/images/javaScript.png"
+          src="./../assets/images/javaScript.webp"
           class="d-block w-100"
           alt="click to navigate to coding"
           @click="$router.push('/coding')"
@@ -79,7 +79,7 @@
         aria-label="Slide 3 of 4"
       >
         <img
-          src="./../assets/images/ux-design.png"
+          src="./../assets/images/ux-design.webp"
           class="d-block w-100"
           alt="click to navigate to UX design"
           @click="$router.push('/UX')"
@@ -96,7 +96,7 @@
         aria-label="Slide 4 of 4"
       >
         <img
-          src="./../assets/images/poukazka.jpg"
+          src="./../assets/images/poukazka.webp"
           class="d-block w-100"
           alt="click to navigate to graphic"
           @click="$router.push('/graphic')"

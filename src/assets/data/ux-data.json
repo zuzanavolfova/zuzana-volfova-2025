@@ -1,7 +1,7 @@
 [
   {
     "cardTitle": "crafting-butterfly",
-    "cardImage": "ux-creating.png",
+    "cardImage": "ux-creating.webp",
     "cardDescriptionShort": "crafting-butterfly",
     "translationParams": { "value": "project-koderka" },
     "cardDescription": "figma-text",
@@ -11,7 +11,7 @@
   },
   {
     "cardTitle": "tree-wishes",
-    "cardImage": "ux-tree.png",
+    "cardImage": "ux-tree.webp",
     "cardDescriptionShort": "AdobeXD, studijní projekt kurzu Coursera.",
     "translationParams": { "value": "project-coursera" },
     "cardDescription": "adobe-text",
@@ -21,7 +21,7 @@
   },
   {
     "cardTitle": "gallery-project",
-    "cardImage": "ux-gallery.png",
+    "cardImage": "ux-gallery.webp",
     "cardDescriptionShort": "Figma, studijní projekt kurzu Coursera.",
     "cardDescription": "figma-text",
     "translationParams": { "value": "project-coursera" },

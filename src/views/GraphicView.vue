@@ -1,8 +1,4 @@
-<script setup lang="ts">
-import imageData from './../assets/data/img-data.json'
-const imagePromotionalData = imageData.promotional
-const imageVectorData = imageData.vector
-</script>
+<script setup lang="ts"></script>
 <template>
   <div class="graphic" aria-labelledby="graphic-section-title">
     <h2 id="graphic-section-title" class="graphic__title">{{ $t('graphic-h') }}</h2>
@@ -11,51 +7,24 @@ const imageVectorData = imageData.vector
       <section aria-labelledby="promotional-section">
         <h3>{{ $t('promotional-graphics') }}</h3>
         <div class="graphic__content__items" aria-label="promotional items">
-          <img
-            src="./../assets/images/graphic/poukazka.jpg"
-            alt="crafting-butterfly"
-            height="220px"
-            loading="lazy"
-          />
+          <img src="./../assets/images/graphic/poukazka.webp" alt="" loading="lazy" />
         </div>
       </section>
       <section aria-labelledby="vector-graphic-section">
         <h3>{{ $t('vector-graphics') }}</h3>
         <div class="graphic__content__items" aria-label="vector graphic items">
           <img
-            src="./../assets/images/graphic/children-circle.png"
+            src="./../assets/images/graphic/children-circle.webp"
             alt="children circle"
-            height="220px"
             loading="lazy"
           />
+          <img src="./../assets/images/graphic/klaun.webp" alt="claun" loading="lazy" />
+          <img src="./../assets/images/graphic/icons-light.webp" alt="icons" loading="lazy" />
+          <img src="./../assets/images/graphic/icons.webp" alt="icons" loading="lazy" />
+          <img src="./../assets/images/graphic/motyl.webp" alt="butterfly" loading="lazy" />
           <img
-            src="./../assets/images/graphic/klaun.png"
-            alt="claun"
-            height="220px"
-            loading="lazy"
-          />
-          <img
-            src="./../assets/images/graphic/icons-light.png"
-            alt="icons"
-            height="220px"
-            loading="lazy"
-          />
-          <img
-            src="./../assets/images/graphic/icons.png"
-            alt="icons"
-            height="220px"
-            loading="lazy"
-          />
-          <img
-            src="./../assets/images/graphic/motyl.png"
-            alt="butterfly"
-            height="220px"
-            loading="lazy"
-          />
-          <img
-            src="./../assets/images/graphic/responzive.png"
+            src="./../assets/images/graphic/responzive.webp"
             alt="resposive screen"
-            height="220px"
             loading="lazy"
           />
         </div>
@@ -96,7 +65,10 @@ const imageVectorData = imageData.vector
         padding: 24px;
       }
       & img {
-        height: auto;
+        max-width: 100%;
+        @media (min-width: 650px) {
+          max-width: 600px;
+        }
       }
     }
   }

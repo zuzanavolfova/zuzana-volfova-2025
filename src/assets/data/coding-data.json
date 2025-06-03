@@ -1,7 +1,7 @@
 [
   {
     "cardTitle": "zv-presentation",
-    "cardImage": "cv.png",
+    "cardImage": "cv.webp",
     "cardDescriptionShort": "zv-presentation",
     "cardDescription": "Vue.js, Pinia, Typescript, Bootstrap, Git, fetch",
     "buttonRedirect": "https://github.com/zuzanavolfova/zuzana-volfova-2025",
@@ -9,7 +9,7 @@
   },
   {
     "cardTitle": "crafting-butterfly",
-    "cardImage": "tvoreni.png",
+    "cardImage": "tvoreni.webp",
     "cardDescriptionShort": "crafting-butterfly",
     "cardDescription": "HTML, CSS, BEM, SASS, 11ty, GitHub, figma",
     "buttonRedirect": "https://github.com/zuzanavolfova/Zaverecny-projekt-koderka",
@@ -17,7 +17,7 @@
   },
   {
     "cardTitle": "Javascript, Typescript",
-    "cardImage": "javaScript.png",
+    "cardImage": "javaScript.webp",
     "cardDescriptionShort": "Javascript, Typescript",
     "cardDescription": " JavaScript, HTML, CSS, BEM, SASS",
     "buttonRedirect": "https://github.com/zuzanavolfova/javaScript-study",
