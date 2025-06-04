@@ -1,0 +1,17 @@
+@import './colors.scss';
+
+.button-sort-container {
+  margin: 0 18px;
+  display: flex;
+}
+.button-sort {
+  background-color: transparent;
+  width: 52px;
+  border: none;
+  color: var(--text-dark-grey);
+  cursor: pointer;
+}
+
+.button-sort:hover {
+  transform: scale(1.2);
+}
