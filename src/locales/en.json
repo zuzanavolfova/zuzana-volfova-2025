@@ -37,5 +37,6 @@
   "web": "Web pages",
   "detail-vue-course": "VUE.js course detail",
   "detail-ts-course": "TypeScript course detail",
+  "detail-react-course": "React course detail",
   "course-info": "Lectures: {{lectures}}, Video: {{videoHours}} total hours"
 }

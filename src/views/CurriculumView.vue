@@ -102,7 +102,7 @@ onBeforeUnmount(() => {
               :aria-controls="'detail-0'"
               :id="'toggle-0'"
             >
-              TypeScript
+              TypeScript, React
             </button>
             <transition name="fade">
               <div
@@ -112,19 +112,34 @@ onBeforeUnmount(() => {
                 role="region"
                 :aria-labelledby="'toggle-0'"
               >
-                <h6>TypeScript</h6>
+                <h6>TypeScript, React</h6>
                 <span class="cv__content__description__subtitle"
                   >Udemy (Maximilian Schwarzmüller course)</span
                 >
-                <div>{{ $t('course-info', { lectures: '338', videoHours: '22.5' }) }}</div>
-                <a
-                  href="https://www.udemy.com/course/understanding-typescript/"
-                  target="_blank"
-                  role="link"
-                  aria-label="Visit typeScript course detail"
-                >
-                  {{ $t('detail-ts-course') }}</a
-                >
+                <div>
+                  TypeScript: {{ $t('course-info', { lectures: '338', videoHours: '22.5' }) }}
+                </div>
+                <div>React: {{ $t('course-info', { lectures: '726', videoHours: '71.5' }) }}</div>
+                <div>
+                  <a
+                    href="https://www.udemy.com/course/understanding-typescript/"
+                    target="_blank"
+                    role="link"
+                    aria-label="Visit typeScript course detail"
+                  >
+                    {{ $t('detail-ts-course') }}</a
+                  >
+                </div>
+                <div>
+                  <a
+                    href="https://www.udemy.com/course/react-the-complete-guide-incl-redux/"
+                    target="_blank"
+                    role="link"
+                    aria-label="Visit React course detail"
+                  >
+                    {{ $t('detail-react-course') }}</a
+                  >
+                </div>
               </div>
             </transition>
           </div>
@@ -460,7 +475,7 @@ onBeforeUnmount(() => {
         width: 100%;
         max-width: 200px;
         @media (min-width: 650px) {
-          max-width: 600px;
+          max-width: 900px;
         }
       }
       &__detail {

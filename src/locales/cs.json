@@ -38,5 +38,6 @@
   "web": "Webove stranky",
   "detail-vue-course": "Detailní obsah kurzu VUE.js",
   "detail-ts-course": "Detailní obsah kurzu TypeScript",
+  "detail-react-course": "Detailní obsah kurzu React",
   "course-info": "Lekce: {{lectures}}, Videa: {{videoHours}} hodin celkem"
 }
