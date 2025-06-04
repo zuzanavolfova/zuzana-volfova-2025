@@ -10,12 +10,12 @@ defineProps({
 </script>
 
 <template>
-  <div class="side-bar">
+  <aside class="side-bar">
     <div v-if="sideBarTitle" class="side-bar__title">{{ sideBarTitle }}</div>
     <div class="side-bar__content">
       <slot></slot>
     </div>
-  </div>
+  </aside>
 </template>
 
 <style scoped lang="scss">

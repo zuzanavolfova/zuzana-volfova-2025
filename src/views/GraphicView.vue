@@ -6,13 +6,13 @@
     <div class="graphic__content">
       <section aria-labelledby="promotional-section">
         <h3>{{ $t('promotional-graphics') }}</h3>
-        <div class="graphic__content__items" aria-label="promotional items">
+        <figure class="graphic__content__items" aria-label="promotional items">
           <img src="./../assets/images/graphic/poukazka.webp" alt="" loading="lazy" />
-        </div>
+        </figure>
       </section>
       <section aria-labelledby="vector-graphic-section">
         <h3>{{ $t('vector-graphics') }}</h3>
-        <div class="graphic__content__items" aria-label="vector graphic items">
+        <figure class="graphic__content__items" aria-label="vector graphic items">
           <img
             src="./../assets/images/graphic/children-circle.webp"
             alt="children circle"
@@ -27,7 +27,7 @@
             alt="resposive screen"
             loading="lazy"
           />
-        </div>
+        </figure>
       </section>
     </div>
   </div>
