@@ -38,5 +38,14 @@
   "detail-vue-course": "VUE.js course detail",
   "detail-ts-course": "TypeScript course detail",
   "detail-react-course": "React course detail",
-  "course-info": "Lectures: {{lectures}}, Video: {{videoHours}} total hours"
+  "course-info": "Lectures: {{lectures}}, Video: {{videoHours}} total hours",
+  "contact-info-text": "Contact information for Zuzana Volfová",
+  "send-email-to-zv": "Send an email to zuzka.volfova@gmail.com",
+  "visitzv-linkein": "Visit Zuzana Volfová's LinkedIn profile",
+  "main-menu": "Main menu",
+  "zv-homepage": "Zuzana Volfová - homepage",
+  "sort-projects": "Sort projects",
+  "sort-projects-A-Z": "Sort projects A-Z",
+  "sort-projects-Z-A": "Sort projects Z-A",
+  "projects-cards": "Projects cards",
 }
