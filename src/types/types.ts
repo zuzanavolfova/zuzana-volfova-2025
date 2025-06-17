@@ -12,7 +12,7 @@ export type CardData = {
   buttonWebRedirect: string | null
 }
 
-export type SordDirection = 'asc' | 'desc'
+export type SortDirection = 'asc' | 'desc'
 
 export interface MenuItem {
   path: string

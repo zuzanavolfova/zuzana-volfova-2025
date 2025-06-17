@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { computed, ref, onMounted } from 'vue'
 import CardComponent from '../components/CardComponent.vue'
-import type { CardData, SordDirection } from '../types/types'
+import type { CardData, SortDirection } from '../types/types'
 import { getData } from './../stores/getters'
 
 const data = ref<CardData[]>([])
 
-const sordDirection = ref('desc' as SordDirection)
-const activeButton = ref('desc' as SordDirection | null)
+const sordDirection = ref('desc' as SortDirection)
+const activeButton = ref('desc' as SortDirection | null)
 
 onMounted(async (): Promise<void> => {
   try {
@@ -18,7 +18,7 @@ onMounted(async (): Promise<void> => {
   }
 })
 
-const sortData = (data: CardData[], direction: string): CardData[] => {
+const sortData = (data: CardData[], direction: SortDirection): CardData[] => {
   return [...data].sort((a, b) => {
     const comparison = a.cardTitle.localeCompare(b.cardTitle)
     return direction === 'asc' ? comparison : -comparison
