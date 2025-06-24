@@ -7,13 +7,19 @@ import { RouterView } from 'vue-router'
 <template>
   <div class="app">
     <HeaderComponent />
-    <RouterView />
+    <RouterView class="router-view" />
     <Footer />
   </div>
 </template>
 
 <style scoped>
 .app {
-  background-color: var(--basic-background)
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--basic-background);
+}
+.router-view {
+  flex: 1 0 auto;
 }
 </style>
