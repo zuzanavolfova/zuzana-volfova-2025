@@ -91,23 +91,12 @@ const changeSortDirection = (direction: 'asc' | 'desc'): void => {
     text-align: center;
   }
   &__content {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
     &__items {
       margin: auto;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      grid-template-rows: auto auto 1fr auto;
       gap: 18px;
-    }
-    &__item {
-      @media (min-width: 650px) {
-        flex-basis: 50%;
-      }
-      @media (min-width: 950px) {
-        flex-basis: 33%;
-      }
+      text-align: center;
     }
   }
 }

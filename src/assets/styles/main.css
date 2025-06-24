@@ -1,7 +1,5 @@
 :root {
-  --side-bar-width: 140px;
-  margin: 0 auto;
-  background-color: var(--root-background);
+  --root-background: #8327330b;
 }
 
 body {
@@ -50,45 +48,18 @@ body {
   transform: scale(1.2);
 }
 
-:root {
-  --root-background: #8327330b;
-}
-
-body {
-  --primary-color: #832734;
-  --text-light-grey: #a7a3a3;
-  --text-medium-grey: #615f5f;
-  --text-dark-grey: #434343;
-  --basic-background: white;
-  --extra-light-background: #f9f9f9;
-  --light-background: #e1e1e1;
-  --medium-background: #a2a2a2;
-  --bs-heading-color: var(--primary-color);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --root-background: #4e656a;
-  }
-  body {
-    background-color: #b6b6b6 !important;
-    --basic-background: #b6b6b6;
-    --primary-color: #01677e;
-    --text-light-grey: #a7a3a3;
-    --text-medium-grey: #615f5f;
-    --text-dark-grey: #434343;
-    --extra-light-background: #f9f9f9;
-    --light-background: #e1e1e1;
-    --medium-background: #a2a2a2;
-    --bs-heading-color: var(--primary-color);
-  }
-}
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   font-weight: normal;
+}
+
+:root {
+  --side-bar-width: 140px;
+  margin: 0 auto;
+  background-color: var(--root-background);
 }
 
 @media (min-width: 650px) {
@@ -107,19 +78,7 @@ body {
   max-width: 1250px;
   margin: 0 auto;
   line-height: 1.6;
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
