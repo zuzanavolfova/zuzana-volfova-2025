@@ -37,7 +37,6 @@ const changeSortDirection = (direction: 'asc' | 'desc'): void => {
   <div class="coding" aria-labelledby="coding-section-title">
     <h2 id="coding-section-title" class="coding__title">{{ $t('coding-h') }}</h2>
     <section class="coding__content" aria-labelledby="vue-section">
-      <h3>Vue.js, React</h3>
       <div class="button-sort-container" role="group" aria-label="Sort projects">
         <button
           class="button-sort"
