@@ -45,7 +45,7 @@
         aria-label="Slide 1 of 4"
       >
         <img
-          src="./../assets/images/volfova-zuzana-foto.webp"
+          src="./../assets/images/cv.webp"
           class="d-block w-30"
           alt="lick to navigate to curriculum"
           @click="$router.push('/curriculum')"
