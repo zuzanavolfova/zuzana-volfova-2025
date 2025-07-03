@@ -81,8 +81,10 @@ const changeSortDirection = (direction: 'asc' | 'desc'): void => {
 </template>
 <style lang="scss" scoped>
 .coding {
-  margin: 18px auto;
+  margin: 18px 0;
   padding: 18px;
+  width: 100%;
+
   @media (min-width: 650px) {
     margin: 24px auto;
     padding: 24px;
@@ -94,7 +96,9 @@ const changeSortDirection = (direction: 'asc' | 'desc'): void => {
     &__items {
       margin: auto;
       display: grid;
+      width: auto;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-rows: auto auto 1fr auto;
       gap: 18px;
       text-align: center;
     }

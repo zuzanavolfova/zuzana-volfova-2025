@@ -8,6 +8,9 @@
   margin: 0;
   font-weight: normal;
 }
+* {
+  box-sizing: border-box;
+}
 
 :root {
   --side-bar-width: 140px;

@@ -15,11 +15,16 @@ import { RouterView } from 'vue-router'
 <style scoped>
 .app {
   min-height: 100vh;
+  width: 100%;
+  background-color: var(--basic-background);
   display: flex;
   flex-direction: column;
-  background-color: var(--basic-background);
+  margin: 0;
+  padding: 0;
 }
+
 .router-view {
-  flex: 1 0 auto;
+  flex: 1;
+  width: 100%;
 }
 </style>
