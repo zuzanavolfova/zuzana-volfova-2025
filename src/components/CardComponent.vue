@@ -75,7 +75,7 @@ const goToLink = (redirectPath: string | undefined): void => {
       </div>
       <button
         class="card__item__button"
-        @click="goToLink(buttonRedirect)"
+        @click.stop="goToLink(buttonRedirect)"
         :aria-label="`${$t(buttonTitle)} - ${$t(cardTitle)}`"
       >
         {{ $t(buttonTitle) }}
