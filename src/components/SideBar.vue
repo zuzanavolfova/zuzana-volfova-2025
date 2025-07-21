@@ -35,11 +35,14 @@ defineProps({
       text-decoration-line: underline;
     }
   }
-
   &__content {
     display: flex;
     flex-direction: column;
     color: var(--text-dark-grey);
+  }
+  :slotted(h4) {
+    color: var(--text-dark-grey);
+    font-weight: 600;
   }
 }
 </style>
