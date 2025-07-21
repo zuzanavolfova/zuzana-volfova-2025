@@ -15,13 +15,15 @@ interface CardComponentProps {
   buttonTitle?: string
   buttonRedirect: string
   buttonWebRedirect?: string
+  fallbackUrl?: string
 }
 
 const props = withDefaults(defineProps<CardComponentProps>(), {
   cardTitle: '',
   cardDescription: '',
   cardDescriptionParams: () => ({}),
-  buttonTitle: 'gitHub-repo'
+  buttonTitle: 'gitHub-repo',
+  fallbackUrl: 'https://github.com/zuzanavolfova'
 })
 const imageUrl = ref('')
 
@@ -39,7 +41,7 @@ watchEffect(() => {
   }
 })
 const goToLink = (redirectPath: string | undefined): void => {
-  const url = redirectPath || 'https://github.com/zuzanavolfova'
+  const url = redirectPath || props.fallbackUrl
   window.open(url, '_blank')
 }
 </script>
