@@ -41,7 +41,7 @@ const props = defineProps({
 })
 const imageUrl = ref('')
 
-watchEffect(async () => {
+watchEffect(() => {
   if (!props.cardImage) {
     imageUrl.value = ''
     return
