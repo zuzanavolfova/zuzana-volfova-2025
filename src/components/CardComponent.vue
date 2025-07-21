@@ -67,7 +67,7 @@ const goToLink = (redirectPath: string | undefined): void => {
     <div class="card__item" role="region">
       <h4 class="card__item__title" :aria-label="`${cardTitle}`">{{ $t(cardTitle) }}</h4>
       <div class="card__item__image">
-        <img :src="imageUrl" :alt="cardImage" height="80px" loading="lazy" />
+        <img :src="imageUrl" :alt="cardImage" loading="lazy" />
       </div>
 
       <div class="card__item__perex">
