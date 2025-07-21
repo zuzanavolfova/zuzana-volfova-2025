@@ -84,7 +84,7 @@ const goToLink = (redirectPath: string | undefined): void => {
   </div>
 </template>
 <style lang="scss" scoped>
-@use '@/assets/styles/mixins' as *;
+@use '@/styles/mixins' as *;
 .card {
   &__container {
     cursor: pointer;
