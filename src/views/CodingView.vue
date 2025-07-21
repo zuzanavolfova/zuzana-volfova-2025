@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { computed, ref, onMounted } from 'vue'
 import CardComponent from '../components/CardComponent.vue'
-import type { CardData, SortDirection } from '../types/types'
+import type { CardData } from '../types/interfaces'
+import type { SortDirection } from '../types/types'
 import { getData } from './../stores/getters'
 
 const data = ref<CardData[]>([])

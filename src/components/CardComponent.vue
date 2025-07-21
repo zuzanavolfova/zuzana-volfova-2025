@@ -1,22 +1,10 @@
 <script setup lang="ts">
 import { ref, watchEffect } from 'vue'
+import type { CardComponentProps } from '@/types/interfaces'
 
-interface CardDescriptionParams {
-  value?: string
-  [key: string]: unknown
-}
-
-interface CardComponentProps {
-  cardTitle?: string
-  cardImage?: string
-  cardDescriptionShort?: string
-  cardDescription?: string
-  cardDescriptionParams?: CardDescriptionParams
-  buttonTitle?: string
-  buttonRedirect: string
-  buttonWebRedirect?: string
-  fallbackUrl?: string
-}
+defineOptions({
+  name: 'CardComponent'
+})
 
 const props = withDefaults(defineProps<CardComponentProps>(), {
   cardTitle: '',

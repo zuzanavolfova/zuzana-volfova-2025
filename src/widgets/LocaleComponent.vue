@@ -2,6 +2,10 @@
 import { useStore } from './../stores/main'
 import { defineProps, computed, defineEmits } from 'vue'
 
+defineOptions({
+  name: 'LocaleComponent'
+})
+
 defineProps({
   isLocaleMenuOpen: {
     type: Boolean,

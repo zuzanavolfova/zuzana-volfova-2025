@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
 
+defineOptions({
+  name: 'SideBar'
+})
+
 defineProps({
   sideBarTitle: {
     type: String,

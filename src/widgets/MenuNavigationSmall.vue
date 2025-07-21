@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { defineProps, defineEmits } from 'vue'
-import type { MenuItem } from './../types/types'
+import type { MenuItem } from './../types/interfaces'
+
+defineOptions({
+  name: 'MenuNavigationSmall'
+})
 
 const props = defineProps<{
   menuItems: MenuItem[]
