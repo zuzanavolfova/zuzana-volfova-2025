@@ -1,43 +1,27 @@
 <script setup lang="ts">
-import { defineProps, ref, watchEffect } from 'vue'
+import { ref, watchEffect } from 'vue'
 
-const props = defineProps({
-  cardTitle: {
-    type: String,
-    required: false,
-    default: '',
-  },
-  cardImage: {
-    type: String,
-    required: false,
-  },
-  cardDescriptionShort: {
-    type: String,
-    required: false,
-  },
-  cardDescription: {
-    type: String,
-    required: false,
-    default: '',
-  },
-  cardDescriptionParams: {
-    type: Object,
-    required: false,
-    default: () => ({}),
-  },
-  buttonTitle: {
-    type: String,
-    required: false,
-    default: 'gitHub-repo',
-  },
-  buttonRedirect: {
-    type: String,
-    required: true,
-  },
-  buttonWebRedirect: {
-    type: String,
-    required: false,
-  },
+interface CardDescriptionParams {
+  value?: string
+  [key: string]: unknown
+}
+
+interface CardComponentProps {
+  cardTitle?: string
+  cardImage?: string
+  cardDescriptionShort?: string
+  cardDescription?: string
+  cardDescriptionParams?: CardDescriptionParams
+  buttonTitle?: string
+  buttonRedirect: string
+  buttonWebRedirect?: string
+}
+
+const props = withDefaults(defineProps<CardComponentProps>(), {
+  cardTitle: '',
+  cardDescription: '',
+  cardDescriptionParams: () => ({}),
+  buttonTitle: 'gitHub-repo'
 })
 const imageUrl = ref('')
 
@@ -55,7 +39,8 @@ watchEffect(() => {
   }
 })
 const goToLink = (redirectPath: string | undefined): void => {
-  window.open(redirectPath || 'https://github.com/zuzanavolfova', '_blank')
+  const url = redirectPath || 'https://github.com/zuzanavolfova'
+  window.open(url, '_blank')
 }
 </script>
 <template>
@@ -71,7 +56,7 @@ const goToLink = (redirectPath: string | undefined): void => {
       </div>
 
       <div class="card__item__perex">
-        {{ $t(cardDescription, { value: $t(cardDescriptionParams.value) }) }}
+        {{ $t(cardDescription || '', { value: $t(cardDescriptionParams?.value || '') }) }}
       </div>
       <button
         class="card__item__button"
