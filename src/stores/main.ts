@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import type { ImageProperties } from '../types/types'
+import type { ImageProperties } from '../types/interfaces'
 
 export const useStore = defineStore('dataStore', {
   state: () => ({
