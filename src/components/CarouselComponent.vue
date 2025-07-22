@@ -47,7 +47,7 @@
         <img
           src="./../assets/images/cv.webp"
           class="d-block w-30"
-          alt="lick to navigate to curriculum"
+          alt="click to navigate to curriculum"
           @click="$router.push('/curriculum')"
           loading="lazy"
         />
