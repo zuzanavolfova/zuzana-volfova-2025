@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineEmits<{
+  openMenu: []
+}>()
+</script>
 
 <template>
   <nav class="hamburger-menu" @click="$emit('openMenu')">
