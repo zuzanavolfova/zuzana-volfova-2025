@@ -52,7 +52,7 @@ const emit = defineEmits<{ changeLocale: [val: string] }>()
         @keydown.enter="emit('changeLocale', item.title)"
         @keydown.space="emit('changeLocale', item.title)"
       >
-        <img class="header__locale__dropdown__image" :src="item.image" :alt="item.title" />
+        <img class="header__locale__dropdown__image" :src="item.image" :alt="item.title" loading="lazy" />
         <span class="header__locale__dropdown__title">{{ $t(item.title) }}</span>
       </div>
     </div>
