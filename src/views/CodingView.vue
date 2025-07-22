@@ -7,7 +7,7 @@ import { getData } from './../stores/getters'
 
 const data = ref<CardData[]>([])
 
-const sordDirection = ref('desc' as SortDirection)
+const sortDirection = ref('desc' as SortDirection)
 const activeButton = ref('desc' as SortDirection | null)
 
 onMounted(async (): Promise<void> => {
@@ -26,11 +26,11 @@ const sortData = (data: CardData[], direction: SortDirection): CardData[] => {
   })
 }
 
-const sortedData = computed<CardData[]>(() => sortData(data.value, sordDirection.value))
+const sortedData = computed<CardData[]>(() => sortData(data.value, sortDirection.value))
 
 const changeSortDirection = (direction: 'asc' | 'desc'): void => {
   activeButton.value = direction
-  sordDirection.value = direction
+  sortDirection.value = direction
 }
 </script>
 
