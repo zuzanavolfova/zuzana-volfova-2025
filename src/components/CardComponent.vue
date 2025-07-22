@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue'
+import { computed } from 'vue'
 import type { CardComponentProps } from '@/types/interfaces'
 
 defineOptions({
@@ -13,19 +13,17 @@ const props = withDefaults(defineProps<CardComponentProps>(), {
   buttonTitle: 'gitHub-repo',
   fallbackUrl: 'https://github.com/zuzanavolfova'
 })
-const imageUrl = ref('')
 
-watchEffect(() => {
+const imageUrl = computed(() => {
   if (!props.cardImage) {
-    imageUrl.value = ''
-    return
+    return ''
   }
 
   try {
-    imageUrl.value = new URL(`../assets/images/${props.cardImage}`, import.meta.url).href
+    return new URL(`../assets/images/${props.cardImage}`, import.meta.url).href
   } catch (error) {
     console.error('Failed to load image:', error)
-    imageUrl.value = ''
+    return ''
   }
 })
 const goToLink = (redirectPath: string | undefined): void => {
@@ -42,7 +40,7 @@ const goToLink = (redirectPath: string | undefined): void => {
     <div class="card__item" role="region">
       <h4 class="card__item__title" :aria-label="`${cardTitle}`">{{ $t(cardTitle) }}</h4>
       <div class="card__item__image">
-        <img :src="imageUrl" :alt="cardImage" loading="lazy" />
+        <img :src="imageUrl" :alt="$t(cardTitle)" loading="lazy" />
       </div>
 
       <div class="card__item__perex">
