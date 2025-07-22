@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useStore } from './../stores/main'
-import { defineProps, computed, defineEmits } from 'vue'
+import { computed } from 'vue'
 
 defineOptions({
   name: 'LocaleComponent'
