@@ -45,23 +45,6 @@
         aria-label="Slide 1 of 4"
       >
         <img
-          src="./../assets/images/cv.webp"
-          class="d-block w-30"
-          alt="click to navigate to curriculum"
-          @click="$router.push('/curriculum')"
-          loading="lazy"
-        />
-        <div class="carousel-caption d-none d-md-block">
-          <h2>{{ $t('curriculum-h') }}</h2>
-        </div>
-      </div>
-      <div
-        class="carousel-item"
-        role="group"
-        aria-roledescription="slide"
-        aria-label="Slide 2 of 4"
-      >
-        <img
           src="./../assets/images/javaScript.webp"
           class="d-block w-100"
           alt="click to navigate to coding"
@@ -72,6 +55,24 @@
           <h2>{{ $t('coding-h') }}</h2>
         </div>
       </div>
+      <div
+        class="carousel-item"
+        role="group"
+        aria-roledescription="slide"
+        aria-label="Slide 2 of 4"
+      >
+        <img
+          src="./../assets/images/cv.webp"
+          class="d-block w-30"
+          alt="click to navigate to curriculum"
+          @click="$router.push('/curriculum')"
+          loading="lazy"
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h2>{{ $t('curriculum-h') }}</h2>
+        </div>
+      </div>
+
       <div
         class="carousel-item"
         role="group"
