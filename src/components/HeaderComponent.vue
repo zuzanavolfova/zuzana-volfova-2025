@@ -83,8 +83,8 @@ const handleMenuIsOpen = () => {
         aria-label="Main menu"
         role="button"
         tabindex="0"
-        @keydown.enter="handleMenuIsOpen"
-        @keydown.space="handleMenuIsOpen"
+        @keydown.enter="handleMenuIsOpen()"
+        @keydown.space="handleMenuIsOpen()"
       />
       <MenuNavigationSmall
         v-if="isMenuOpen"
