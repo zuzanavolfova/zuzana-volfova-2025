@@ -1,9 +1,5 @@
 <script setup lang="ts">
 
-defineOptions({
-  name: 'SideBar'
-})
-
 defineProps({
   sideBarTitle: {
     type: String,

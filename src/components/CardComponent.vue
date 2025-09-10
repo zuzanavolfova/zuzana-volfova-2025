@@ -2,10 +2,6 @@
 import { computed } from 'vue'
 import type { CardComponentProps } from '@/types/interfaces'
 
-defineOptions({
-  name: 'CardComponent'
-})
-
 const props = withDefaults(defineProps<CardComponentProps>(), {
   cardTitle: '',
   cardDescription: '',

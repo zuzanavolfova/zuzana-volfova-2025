@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import type { MenuItem } from './../types/interfaces'
 
-defineOptions({
-  name: 'MenuNavigationDesktop'
-})
-
 const props = defineProps<{
   menuItems: MenuItem[]
 }>()
