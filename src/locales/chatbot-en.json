@@ -1,0 +1,16 @@
+{
+  "chatbot-title": "Resume Chat",
+  "chatbot-greeting": "Hello! I'm a chatbot with information about Zuzana Volfová. How can I help you?",
+  "chatbot-placeholder": "Ask about education, experience...",
+  "chatbot-help": "You can ask about education, work experience, skills or specific technologies like Vue.js, React, TypeScript.",
+  "chatbot-education-intro": "Here is an overview of my education:",
+  "chatbot-work-intro": "Here is an overview of my work experience:",
+  "chatbot-skills-intro": "My main skills:",
+  "chatbot-vue-intro": "I have extensive experience with Vue.js:",
+  "chatbot-work-experience": "Work experience:",
+  "chatbot-education": "Education:",
+  "chatbot-contact-info": "For contact information please check the main portfolio page.",
+  "chatbot-no-understand": "Sorry, I don't understand your question.",
+  "chatbot-hobbies": "In my free time I like to read sci-fi, fantasy, and books based on true events, dance street dance, ride a bike or paint.",
+  "chatbot-it-education": "Courses - see CV"
+}

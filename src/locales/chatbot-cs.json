@@ -1,0 +1,16 @@
+{
+  "chatbot-title": "Chat o životopise",
+  "chatbot-greeting": "Ahoj! Jsem chatbot s informacemi o Zuzaně Volfové. Jak vám mohu pomoci?",
+  "chatbot-placeholder": "Zeptejte se na vzdělání, zkušenosti...",
+  "chatbot-help": "Můžete se zeptat na vzdělání, pracovní zkušenosti, dovednosti nebo konkrétní technologie jako Vue.js, React, TypeScript.",
+  "chatbot-education-intro": "Zde je přehled mého vzdělání:",
+  "chatbot-work-intro": "Zde je přehled mých pracovních zkušeností:",
+  "chatbot-skills-intro": "Mé hlavní dovednosti:",
+  "chatbot-vue-intro": "Mám rozsáhlé zkušenosti s Vue.js:",
+  "chatbot-work-experience": "Pracovní zkušenost:",
+  "chatbot-education": "Vzdělání:",
+  "chatbot-contact-info": "Pro kontaktní informace se prosím podívejte na hlavní stránku portfolia.",
+  "chatbot-no-understand": "Omlouváme se, nerozumím vaší otázce.",
+  "chatbot-hobbies": "Ve volném čase ráda čtu sci-fi, fantasy a knihy podle skutečných událostí, tancuju street dance, jezdím na kole nebo maluju.",
+  "chatbot-it-education": "Kurzy viz životopis"
+}
