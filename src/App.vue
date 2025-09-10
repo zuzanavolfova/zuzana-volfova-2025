@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import HeaderComponent from './components/HeaderComponent.vue'
 import Footer from './components/FooterComponent.vue'
+import ChatBot from './components/ChatBot.vue'
 import { RouterView } from 'vue-router'
 </script>
 
@@ -9,6 +10,7 @@ import { RouterView } from 'vue-router'
     <HeaderComponent />
     <RouterView class="router-view" />
     <Footer />
+    <ChatBot />
   </div>
 </template>
 
