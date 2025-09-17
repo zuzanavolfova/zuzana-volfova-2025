@@ -135,8 +135,7 @@ const handleMenuIsOpen = () => {
       padding: 10px;
     }
     &__hamburger {
-      justify-self: center;
-      margin: 8px;
+      margin: 8px 40px;
     }
   }
 }

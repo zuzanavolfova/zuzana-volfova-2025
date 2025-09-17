@@ -27,11 +27,8 @@ const emit = defineEmits<{ navigate: [path: string] }>()
 <style lang="scss" scoped>
 .header__menu__hamburger__container {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   width: max-content;
-  text-align: center;
-  padding: 8px 0;
+  padding: 8px 4px;
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
@@ -43,8 +40,11 @@ const emit = defineEmits<{ navigate: [path: string] }>()
     cursor: pointer;
     padding: 8px 12px;
     width: 100%;
+    border-bottom: 1px solid transparent;
     &:hover {
       background-color: white;
+      transform: scale(1.04);
+      border-bottom: 1px solid var(--primary-color);
     }
   }
 }
