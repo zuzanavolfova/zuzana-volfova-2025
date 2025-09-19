@@ -77,6 +77,7 @@ const handleMenuIsOpen = () => {
     <menu class="header__menu" :class="{ 'header__menu--scrolled': isScrolled }">
       <HamburgerMenu
         class="header__menu__hamburger"
+        :is-menu-open="isMenuOpen"
         @open-menu="handleMenuIsOpen()"
         :aria-expanded="isMenuOpen ? 'true' : 'false'"
         aria-controls="mobile-nav"
