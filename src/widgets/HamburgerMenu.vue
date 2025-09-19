@@ -1,15 +1,21 @@
 <script setup lang="ts">
-defineEmits<{
+import { computed } from 'vue'
+
+const props = defineProps<{
+  isMenuOpen: boolean
+}>()
+
+const emit = defineEmits<{
   openMenu: []
 }>()
 </script>
-
 <template>
   <nav class="hamburger-menu" @click="$emit('openMenu')">
-    <div class="hamburger"></div>
-    <div class="hamburger"></div>
-    <div class="hamburger"></div>
-    <div class="hamburger"></div>
+    <div class="hamburger" :style="{ display: isMenuOpen ? 'none' : 'block' }"></div>
+    <div :class="['hamburger', { 'menu-open': isMenuOpen }]"></div>
+
+    <div :class="['hamburger', { 'menu-open': isMenuOpen }]"></div>
+    <div class="hamburger" :style="{ display: isMenuOpen ? 'none' : 'block' }"></div>
   </nav>
 </template>
 
@@ -32,5 +38,18 @@ defineEmits<{
   width: 100%;
   background-color: var(--primary-color);
   border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.hamburger:nth-child(2).menu-open {
+  transform: rotate(45deg) translateY(12px);
+  width: 120%;
+  transform-origin: center;
+}
+
+.hamburger:nth-child(3).menu-open {
+  transform: rotate(-45deg) translateY(-12px);
+  width: 120%;
+  transform-origin: center;
 }
 </style>
