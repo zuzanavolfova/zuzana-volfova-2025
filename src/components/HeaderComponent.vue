@@ -86,12 +86,14 @@ const handleMenuIsOpen = () => {
         @keydown.enter="handleMenuIsOpen()"
         @keydown.space="handleMenuIsOpen()"
       />
-      <MenuNavigationSmall
-        v-if="isMenuOpen"
-        @click="isMenuOpen = !isMenuOpen"
-        :menu-items="menuItems"
-        @navigate="handleNavigation"
-      />
+      <Transition name="menu">
+        <MenuNavigationSmall
+          v-if="isMenuOpen"
+          @click="isMenuOpen = !isMenuOpen"
+          :menu-items="menuItems"
+          @navigate="handleNavigation"
+        />
+      </Transition>
       <MenuNavigationDesktop :menu-items="menuItems" @navigate="handleNavigation" />
     </menu>
     <LocaleComponent
@@ -138,5 +140,16 @@ const handleMenuIsOpen = () => {
       margin: 8px 40px;
     }
   }
+}
+
+.menu-enter-active,
+.menu-leave-active {
+  transition: transform 0.3s ease-out;
+}
+.menu-enter-from {
+  transform: translateX(-100%);
+}
+.menu-leave-to {
+  transform: translateX(-100%);
 }
 </style>
